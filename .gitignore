@@ -1,0 +1,6 @@
+dvwa-results/
+dvwa-results*/
+references/local-tool-install-status.generated.json
+scripts/__pycache__/
+**/__pycache__/
+*.pyc

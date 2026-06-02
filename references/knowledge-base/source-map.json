@@ -1,0 +1,317 @@
+[
+  {
+    "module": "setup",
+    "title": "DVWA Setup And Usage",
+    "route": "setup.php / login.php / security.php",
+    "guide": "references/knowledge-base/setup/guide.md",
+    "sources": {
+      "github": {
+        "url": "https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/Web%E5%AE%89%E5%85%A8/%E9%9D%B6%E5%9C%BA/DVWA-WalkThrough.md",
+        "local_file": "D:\\WorkSpace\\综合实践5\\1earn\\1earn\\Security\\RedTeam\\Web安全\\靶场\\DVWA-WalkThrough.md",
+        "heading": "搭建/使用",
+        "start_line": 44,
+        "end_line": 71,
+        "split_notes": "references/knowledge-base/setup/sources/github.md"
+      },
+      "cnblogs": {
+        "url": "https://www.cnblogs.com/chadlas/p/15707475.html",
+        "split_notes": "references/knowledge-base/setup/sources/cnblogs.md"
+      }
+    },
+    "local_image_count": 4
+  },
+  {
+    "module": "brute-force",
+    "title": "Brute Force",
+    "route": "vulnerabilities/brute/",
+    "guide": "references/knowledge-base/brute-force/guide.md",
+    "sources": {
+      "github": {
+        "url": "https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/Web%E5%AE%89%E5%85%A8/%E9%9D%B6%E5%9C%BA/DVWA-WalkThrough.md",
+        "local_file": "D:\\WorkSpace\\综合实践5\\1earn\\1earn\\Security\\RedTeam\\Web安全\\靶场\\DVWA-WalkThrough.md",
+        "heading": "Brute_Force",
+        "start_line": 72,
+        "end_line": 461,
+        "split_notes": "references/knowledge-base/brute-force/sources/github.md"
+      },
+      "cnblogs": {
+        "url": "https://www.cnblogs.com/chadlas/articles/15706231.html",
+        "split_notes": "references/knowledge-base/brute-force/sources/cnblogs.md"
+      }
+    },
+    "local_image_count": 20
+  },
+  {
+    "module": "command-injection",
+    "title": "Command Injection",
+    "route": "vulnerabilities/exec/",
+    "guide": "references/knowledge-base/command-injection/guide.md",
+    "sources": {
+      "github": {
+        "url": "https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/Web%E5%AE%89%E5%85%A8/%E9%9D%B6%E5%9C%BA/DVWA-WalkThrough.md",
+        "local_file": "D:\\WorkSpace\\综合实践5\\1earn\\1earn\\Security\\RedTeam\\Web安全\\靶场\\DVWA-WalkThrough.md",
+        "heading": "Command_Injection",
+        "start_line": 462,
+        "end_line": 692,
+        "split_notes": "references/knowledge-base/command-injection/sources/github.md"
+      },
+      "cnblogs": {
+        "url": "https://www.cnblogs.com/chadlas/articles/15706124.html",
+        "split_notes": "references/knowledge-base/command-injection/sources/cnblogs.md"
+      }
+    },
+    "local_image_count": 0
+  },
+  {
+    "module": "csrf",
+    "title": "CSRF",
+    "route": "vulnerabilities/csrf/",
+    "guide": "references/knowledge-base/csrf/guide.md",
+    "sources": {
+      "github": {
+        "url": "https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/Web%E5%AE%89%E5%85%A8/%E9%9D%B6%E5%9C%BA/DVWA-WalkThrough.md",
+        "local_file": "D:\\WorkSpace\\综合实践5\\1earn\\1earn\\Security\\RedTeam\\Web安全\\靶场\\DVWA-WalkThrough.md",
+        "heading": "CSRF",
+        "start_line": 693,
+        "end_line": 1011,
+        "split_notes": "references/knowledge-base/csrf/sources/github.md"
+      },
+      "cnblogs": {
+        "url": "https://www.cnblogs.com/chadlas/articles/15708801.html",
+        "split_notes": "references/knowledge-base/csrf/sources/cnblogs.md"
+      }
+    },
+    "local_image_count": 3
+  },
+  {
+    "module": "file-inclusion",
+    "title": "File Inclusion",
+    "route": "vulnerabilities/fi/",
+    "guide": "references/knowledge-base/file-inclusion/guide.md",
+    "sources": {
+      "github": {
+        "url": "https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/Web%E5%AE%89%E5%85%A8/%E9%9D%B6%E5%9C%BA/DVWA-WalkThrough.md",
+        "local_file": "D:\\WorkSpace\\综合实践5\\1earn\\1earn\\Security\\RedTeam\\Web安全\\靶场\\DVWA-WalkThrough.md",
+        "heading": "File_Inclusion",
+        "start_line": 1012,
+        "end_line": 1214,
+        "split_notes": "references/knowledge-base/file-inclusion/sources/github.md"
+      },
+      "cnblogs": {
+        "url": "https://www.cnblogs.com/chadlas/articles/15719775.html",
+        "split_notes": "references/knowledge-base/file-inclusion/sources/cnblogs.md"
+      }
+    },
+    "local_image_count": 9
+  },
+  {
+    "module": "file-upload",
+    "title": "File Upload",
+    "route": "vulnerabilities/upload/",
+    "guide": "references/knowledge-base/file-upload/guide.md",
+    "sources": {
+      "github": {
+        "url": "https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/Web%E5%AE%89%E5%85%A8/%E9%9D%B6%E5%9C%BA/DVWA-WalkThrough.md",
+        "local_file": "D:\\WorkSpace\\综合实践5\\1earn\\1earn\\Security\\RedTeam\\Web安全\\靶场\\DVWA-WalkThrough.md",
+        "heading": "File_Upload",
+        "start_line": 1215,
+        "end_line": 1571,
+        "split_notes": "references/knowledge-base/file-upload/sources/github.md"
+      },
+      "cnblogs": {
+        "url": "https://www.cnblogs.com/chadlas/articles/15720878.html",
+        "split_notes": "references/knowledge-base/file-upload/sources/cnblogs.md"
+      }
+    },
+    "local_image_count": 13
+  },
+  {
+    "module": "insecure-captcha",
+    "title": "Insecure CAPTCHA",
+    "route": "vulnerabilities/captcha/",
+    "guide": "references/knowledge-base/insecure-captcha/guide.md",
+    "sources": {
+      "github": {
+        "url": "https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/Web%E5%AE%89%E5%85%A8/%E9%9D%B6%E5%9C%BA/DVWA-WalkThrough.md",
+        "local_file": "D:\\WorkSpace\\综合实践5\\1earn\\1earn\\Security\\RedTeam\\Web安全\\靶场\\DVWA-WalkThrough.md",
+        "heading": "Insecure_CAPTCHA",
+        "start_line": 1572,
+        "end_line": 2002,
+        "split_notes": "references/knowledge-base/insecure-captcha/sources/github.md"
+      },
+      "cnblogs": {
+        "url": "https://www.cnblogs.com/chadlas/articles/15722429.html",
+        "split_notes": "references/knowledge-base/insecure-captcha/sources/cnblogs.md"
+      }
+    },
+    "local_image_count": 5
+  },
+  {
+    "module": "sql-injection",
+    "title": "SQL Injection",
+    "route": "vulnerabilities/sqli/",
+    "guide": "references/knowledge-base/sql-injection/guide.md",
+    "sources": {
+      "github": {
+        "url": "https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/Web%E5%AE%89%E5%85%A8/%E9%9D%B6%E5%9C%BA/DVWA-WalkThrough.md",
+        "local_file": "D:\\WorkSpace\\综合实践5\\1earn\\1earn\\Security\\RedTeam\\Web安全\\靶场\\DVWA-WalkThrough.md",
+        "heading": "SQL_Injection",
+        "start_line": 2003,
+        "end_line": 2405,
+        "split_notes": "references/knowledge-base/sql-injection/sources/github.md"
+      },
+      "cnblogs": {
+        "url": "https://www.cnblogs.com/chadlas/articles/15724905.html",
+        "split_notes": "references/knowledge-base/sql-injection/sources/cnblogs.md"
+      }
+    },
+    "local_image_count": 21
+  },
+  {
+    "module": "sql-injection-blind",
+    "title": "SQL Injection Blind",
+    "route": "vulnerabilities/sqli_blind/",
+    "guide": "references/knowledge-base/sql-injection-blind/guide.md",
+    "sources": {
+      "github": {
+        "url": "https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/Web%E5%AE%89%E5%85%A8/%E9%9D%B6%E5%9C%BA/DVWA-WalkThrough.md",
+        "local_file": "D:\\WorkSpace\\综合实践5\\1earn\\1earn\\Security\\RedTeam\\Web安全\\靶场\\DVWA-WalkThrough.md",
+        "heading": "SQL_Injection(Blind)",
+        "start_line": 2406,
+        "end_line": 2797,
+        "split_notes": "references/knowledge-base/sql-injection-blind/sources/github.md"
+      },
+      "cnblogs": {
+        "url": "https://www.cnblogs.com/chadlas/articles/15735045.html",
+        "split_notes": "references/knowledge-base/sql-injection-blind/sources/cnblogs.md"
+      }
+    },
+    "local_image_count": 0
+  },
+  {
+    "module": "weak-session-ids",
+    "title": "Weak Session IDs",
+    "route": "vulnerabilities/weak_id/",
+    "guide": "references/knowledge-base/weak-session-ids/guide.md",
+    "sources": {
+      "github": {
+        "url": "https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/Web%E5%AE%89%E5%85%A8/%E9%9D%B6%E5%9C%BA/DVWA-WalkThrough.md",
+        "local_file": "D:\\WorkSpace\\综合实践5\\1earn\\1earn\\Security\\RedTeam\\Web安全\\靶场\\DVWA-WalkThrough.md",
+        "heading": "Weak_Session_IDs",
+        "start_line": 2798,
+        "end_line": 2978,
+        "split_notes": "references/knowledge-base/weak-session-ids/sources/github.md"
+      },
+      "cnblogs": {
+        "url": "https://www.cnblogs.com/chadlas/articles/15740487.html",
+        "split_notes": "references/knowledge-base/weak-session-ids/sources/cnblogs.md"
+      }
+    },
+    "local_image_count": 6
+  },
+  {
+    "module": "xss-dom",
+    "title": "XSS DOM",
+    "route": "vulnerabilities/xss_d/",
+    "guide": "references/knowledge-base/xss-dom/guide.md",
+    "sources": {
+      "github": {
+        "url": "https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/Web%E5%AE%89%E5%85%A8/%E9%9D%B6%E5%9C%BA/DVWA-WalkThrough.md",
+        "local_file": "D:\\WorkSpace\\综合实践5\\1earn\\1earn\\Security\\RedTeam\\Web安全\\靶场\\DVWA-WalkThrough.md",
+        "heading": "XSS",
+        "start_line": 2979,
+        "end_line": 3395,
+        "split_notes": "references/knowledge-base/xss-dom/sources/github.md"
+      },
+      "cnblogs": {
+        "url": "https://www.cnblogs.com/chadlas/articles/15755444.html",
+        "split_notes": "references/knowledge-base/xss-dom/sources/cnblogs.md"
+      }
+    },
+    "local_image_count": 3
+  },
+  {
+    "module": "xss-reflected",
+    "title": "XSS Reflected",
+    "route": "vulnerabilities/xss_r/",
+    "guide": "references/knowledge-base/xss-reflected/guide.md",
+    "sources": {
+      "github": {
+        "url": "https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/Web%E5%AE%89%E5%85%A8/%E9%9D%B6%E5%9C%BA/DVWA-WalkThrough.md",
+        "local_file": "D:\\WorkSpace\\综合实践5\\1earn\\1earn\\Security\\RedTeam\\Web安全\\靶场\\DVWA-WalkThrough.md",
+        "heading": "XSS",
+        "start_line": 2979,
+        "end_line": 3395,
+        "split_notes": "references/knowledge-base/xss-reflected/sources/github.md"
+      },
+      "cnblogs": {
+        "url": "https://www.cnblogs.com/chadlas/articles/15756337.html",
+        "split_notes": "references/knowledge-base/xss-reflected/sources/cnblogs.md"
+      }
+    },
+    "local_image_count": 3
+  },
+  {
+    "module": "xss-stored",
+    "title": "XSS Stored",
+    "route": "vulnerabilities/xss_s/",
+    "guide": "references/knowledge-base/xss-stored/guide.md",
+    "sources": {
+      "github": {
+        "url": "https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/Web%E5%AE%89%E5%85%A8/%E9%9D%B6%E5%9C%BA/DVWA-WalkThrough.md",
+        "local_file": "D:\\WorkSpace\\综合实践5\\1earn\\1earn\\Security\\RedTeam\\Web安全\\靶场\\DVWA-WalkThrough.md",
+        "heading": "XSS",
+        "start_line": 2979,
+        "end_line": 3395,
+        "split_notes": "references/knowledge-base/xss-stored/sources/github.md"
+      },
+      "cnblogs": {
+        "url": "https://www.cnblogs.com/chadlas/articles/15756338.html",
+        "split_notes": "references/knowledge-base/xss-stored/sources/cnblogs.md"
+      }
+    },
+    "local_image_count": 3
+  },
+  {
+    "module": "csp-bypass",
+    "title": "CSP Bypass",
+    "route": "vulnerabilities/csp/",
+    "guide": "references/knowledge-base/csp-bypass/guide.md",
+    "sources": {
+      "github": {
+        "url": "https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/Web%E5%AE%89%E5%85%A8/%E9%9D%B6%E5%9C%BA/DVWA-WalkThrough.md",
+        "local_file": "D:\\WorkSpace\\综合实践5\\1earn\\1earn\\Security\\RedTeam\\Web安全\\靶场\\DVWA-WalkThrough.md",
+        "heading": "CSP_Bypass",
+        "start_line": 3396,
+        "end_line": 3569,
+        "split_notes": "references/knowledge-base/csp-bypass/sources/github.md"
+      },
+      "cnblogs": {
+        "url": null,
+        "split_notes": null
+      }
+    },
+    "local_image_count": 6
+  },
+  {
+    "module": "javascript-attacks",
+    "title": "JavaScript Attacks",
+    "route": "vulnerabilities/javascript/",
+    "guide": "references/knowledge-base/javascript-attacks/guide.md",
+    "sources": {
+      "github": {
+        "url": "https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/Web%E5%AE%89%E5%85%A8/%E9%9D%B6%E5%9C%BA/DVWA-WalkThrough.md",
+        "local_file": "D:\\WorkSpace\\综合实践5\\1earn\\1earn\\Security\\RedTeam\\Web安全\\靶场\\DVWA-WalkThrough.md",
+        "heading": "JavaScript_Attacks",
+        "start_line": 3570,
+        "end_line": 3818,
+        "split_notes": "references/knowledge-base/javascript-attacks/sources/github.md"
+      },
+      "cnblogs": {
+        "url": null,
+        "split_notes": null
+      }
+    },
+    "local_image_count": 2
+  }
+]

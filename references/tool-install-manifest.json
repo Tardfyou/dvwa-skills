@@ -1,0 +1,86 @@
+{
+  "name": "dvwa-windows-security-tooling",
+  "description": "Tool manifest for recreating the optional DVWA security testing environment on Windows.",
+  "minimum_brute_force_tools": [
+    {
+      "name": "Python requests, BeautifulSoup, and Playwright",
+      "purpose": "Run generated harnesses, parse pages, generate reports, and capture automatic screenshots.",
+      "install": "py -m pip install -r scripts\\requirements.txt",
+      "uninstall": "py -m pip uninstall requests beautifulsoup4 playwright"
+    },
+    {
+      "name": "Playwright Chromium",
+      "purpose": "Capture authenticated DVWA screenshots automatically.",
+      "install": "py -m playwright install chromium",
+      "uninstall": "remove the Playwright browser cache under %LOCALAPPDATA%\\ms-playwright if needed"
+    }
+  ],
+  "winget_packages": [
+    {
+      "name": "Python",
+      "id": "Python.Python.3.12",
+      "required_for": "Python runner when Python is absent"
+    },
+    {
+      "name": "Git",
+      "id": "Git.Git",
+      "required_for": "Clone sqlmap and Burp MCP server"
+    },
+    {
+      "name": "Go",
+      "id": "GoLang.Go",
+      "required_for": "Install ffuf"
+    },
+    {
+      "name": "Temurin JDK",
+      "id": "EclipseAdoptium.Temurin.21.JDK",
+      "required_for": "Build Burp MCP extension"
+    },
+    {
+      "name": "Burp Suite Community",
+      "id": "PortSwigger.BurpSuite.Community",
+      "required_for": "Proxy, Repeater, Intruder, optional MCP"
+    },
+    {
+      "name": "OWASP ZAP",
+      "id": "ZAP.ZAP",
+      "required_for": "Proxy, passive scan, replay, optional API"
+    },
+    {
+      "name": "IDA Free",
+      "id": "Hex-Rays.IDA.Free",
+      "required_for": "Future binary reversing only; not needed for DVWA Brute Force"
+    }
+  ],
+  "source_tools": [
+    {
+      "name": "ffuf",
+      "install": "go install github.com/ffuf/ffuf/v2@latest",
+      "binary": "%GOPATH%\\bin\\ffuf.exe",
+      "purpose": "Fuzzing and low/medium Brute Force demonstrations"
+    },
+    {
+      "name": "sqlmap",
+      "repository": "https://github.com/sqlmapproject/sqlmap.git",
+      "install_path": "C:\\Tools\\sqlmap",
+      "wrapper": "C:\\Tools\\bin\\sqlmap.cmd",
+      "purpose": "SQL Injection modules only; not Brute Force"
+    },
+    {
+      "name": "Burp MCP server",
+      "repository": "https://github.com/PortSwigger/mcp-server.git",
+      "install_path": "C:\\Tools\\burp-mcp-server",
+      "jar": "C:\\Tools\\burp-mcp-server\\build\\libs\\burp-mcp-all.jar",
+      "purpose": "Optional Codex-to-Burp MCP integration"
+    }
+  ],
+  "path_entries": [
+    "C:\\Tools\\bin",
+    "%GOPATH%\\bin"
+  ],
+  "scripts": {
+    "install": "scripts\\windows_tool_setup.ps1",
+    "uninstall": "scripts\\windows_tool_uninstall.ps1",
+    "check": "scripts\\tool_check.py"
+  }
+}
