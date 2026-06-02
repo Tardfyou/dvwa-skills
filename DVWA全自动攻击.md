@@ -237,7 +237,7 @@ python C:\Users\...\.codex\skills\.system\skill-creator\scripts\quick_validate.p
 ```text
 Use $dvwa-automated-testing to solve my authorized local DVWA <MODULE> challenge.
 
-Follow the agent solving protocol. Do not start from the bundled helper, public walkthrough answer, or known default answers. First inspect the live page and matching source code, identify routes, forms, parameters, tokens, cookies, success/failure markers, form hypotheses, choose tools, generate a task-specific Python/requests harness or Burp workflow if needed, execute tests, and report evidence.
+Follow the agent solving protocol. Do not start from the bundled helper, public walkthrough answer, or known default answers. First inspect the live page and matching source code, identify routes, forms, parameters, tokens, cookies, success/failure markers, form hypotheses, choose tools, generate a task-specific Python/requests harness or Burp workflow if needed, execute tests, and report evidence. Do not infer exploitability from difficulty names: `high` is not automatically solvable, and `impossible` is not automatically unsolvable.
 
 URL: http://127.0.0.1/DVWA/
 Login: admin / password

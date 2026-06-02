@@ -29,7 +29,7 @@ Use one of these prompt shapes in Codex.
 ```text
 Use $dvwa-automated-testing to solve my authorized local DVWA <MODULE> challenge.
 
-Follow the agent solving protocol. Do not start from the bundled helper, public walkthrough answer, or known default answers. First inspect the live page and matching source code, identify routes, forms, parameters, tokens, cookies, success/failure markers, form hypotheses, choose tools, generate a task-specific Python/requests harness or Burp workflow if needed, execute tests, and report evidence.
+Follow the agent solving protocol. Do not start from the bundled helper, public walkthrough answer, or known default answers. First inspect the live page and matching source code, identify routes, forms, parameters, tokens, cookies, success/failure markers, form hypotheses, choose tools, generate a task-specific Python/requests harness or Burp workflow if needed, execute tests, and report evidence. Do not infer exploitability from difficulty names: `high` is not automatically solvable, and `impossible` is not automatically unsolvable.
 
 URL: http://127.0.0.1/dvwa/
 Login: admin / password
@@ -48,7 +48,7 @@ Course-report extraction requirements: add a compact zh-CN section named `实验
 ```text
 Use $dvwa-automated-testing to solve my authorized local DVWA <MODULE> challenge.
 
-Follow the agent solving protocol. Do not start from the bundled helper, public walkthrough answer, or known default answers. First inspect the live page and matching source code, identify routes, forms, parameters, tokens, cookies, success/failure markers, form hypotheses, choose tools, generate a task-specific Python/requests harness or Burp workflow if needed, execute tests, and report evidence.
+Follow the agent solving protocol. Do not start from the bundled helper, public walkthrough answer, or known default answers. First inspect the live page and matching source code, identify routes, forms, parameters, tokens, cookies, success/failure markers, form hypotheses, choose tools, generate a task-specific Python/requests harness or Burp workflow if needed, execute tests, and report evidence. Do not infer exploitability from difficulty names: `high` is not automatically solvable, and `impossible` is not automatically unsolvable.
 
 No difficulty is specified. Start at low, then continue to medium, high, and impossible until a level is defended, blocked, or inconclusive. For each attempted level, repeat page inspection, source review, baseline probing, test generation, execution, evidence collection, automatic Playwright screenshot capture, and timing.
 
@@ -249,7 +249,7 @@ When the prompt specifies only the challenge type, Codex should:
 - solve or prove the current level before moving upward
 - repeat source review, request modeling, baseline probe, test generation, automatic screenshot capture, evidence, and timing for each level
 - continue through `medium`, `high`, and `impossible` while the previous level is solved or sufficiently proven
-- stop at the first level classified as `not_vulnerable`, `blocked`, or `inconclusive`
+- stop at the first level classified from evidence as `not_vulnerable`, `blocked`, or `inconclusive`, or when continuing would be unsafe for lab state
 - explain the stop reason in the Markdown report
 
 ## Brute Force Test Expectation
@@ -284,7 +284,7 @@ The final Markdown report should include:
 - execution evidence
 - automatic Playwright screenshots or failed screenshot command/error notes
 - timing summary
-- no-solution or not-exploitable reason for defended high/impossible levels
+- no-solution or not-exploitable reason for any defended, blocked, or inconclusive level
 - remediation and limitations
 - course-report extraction block with experiment conclusion, per-difficulty vulnerability causes, solving steps, tools and operations, core payloads/test inputs, key screenshots, reproduction summary, impossible/no-solution reason, helper scripts, and start/finish/elapsed time
 

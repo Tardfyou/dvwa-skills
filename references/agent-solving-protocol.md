@@ -16,7 +16,8 @@ Use this loop for every module:
    - Confirm the target is DVWA or another authorized web lab/CTF target.
    - Record URL, credentials, module, optional difficulty, source path, output language, and report artifact directory.
    - Keep all requests inside the provided lab scope.
-   - If the user did not specify a difficulty, plan `low -> medium -> high -> impossible` progression and stop at the first defended, blocked, or inconclusive level.
+   - If the user did not specify a difficulty, plan `low -> medium -> high -> impossible` progression and stop only when evidence shows the current level is defended, blocked, inconclusive, or unsafe to continue.
+   - Treat difficulty names as ordering labels only. Do not assume `high` is vulnerable or assume `impossible` is not vulnerable.
 
 2. **Orient**
    - Log in.
@@ -62,6 +63,7 @@ Use this loop for every module:
 9. **Conclude**
    - Classify the result as vulnerable, not vulnerable, credential valid, or inconclusive.
    - Separate authentication success from vulnerability proof.
+   - Base the classification on observed source, request/response behavior, browser state, timing, database/file effects, or tool artifacts. Do not classify from the difficulty name.
    - Include evidence and remediation.
 
 10. **Report**
@@ -70,11 +72,11 @@ Use this loop for every module:
     - Produce a readable Markdown walkthrough report as the primary deliverable. JSON is supporting metadata.
     - Include observations, hypotheses, test generation rationale, attempts, evidence, tool artifacts, automatic Playwright screenshots or failed screenshot command/error notes, timing, and source review.
     - If difficulty progression was used, include a progression table with level, status, evidence, timing, and stop reason.
-    - For defended high/impossible levels, explain why the challenge is not exploitable or why the run is inconclusive.
+    - For any defended, blocked, or inconclusive level, explain why the challenge is not exploitable or why the run is inconclusive.
 
 ## Brute Force-Specific Protocol
 
-If no difficulty is specified, solve Brute Force in order: `low`, `medium`, `high`, `impossible`. Repeat the following protocol per level until a level cannot be exploited or is intentionally defended.
+If no difficulty is specified, solve Brute Force in order: `low`, `medium`, `high`, `impossible`. Repeat the following protocol per level until evidence shows a level cannot be exploited, is blocked, is inconclusive, or continuing would risk the lab state.
 
 1. Set the current difficulty in DVWA.
 2. Inspect the form and determine parameter names and request method.
@@ -85,7 +87,7 @@ If no difficulty is specified, solve Brute Force in order: `low`, `medium`, `hig
    - Start with a few wrong passwords to establish failure behavior.
    - Use user-supplied wordlists when provided.
    - Keep known DVWA defaults late in the sequence during walkthrough/evaluation mode.
-7. For high/impossible, fetch a fresh `user_token` before each attempt.
+7. Fetch a fresh `user_token` whenever the current page/source requires it; this often appears in high/impossible levels but must be confirmed per module and level.
 8. Use Burp/ZAP proxy capture when external-tool evidence is requested.
 9. Capture screenshots where tooling is available: module page, baseline failure, success proof, and defense evidence.
 10. Use `scripts/dvwa_runner.py --mode walkthrough` only after completing the above model, or when the user explicitly asks for a helper smoke test.

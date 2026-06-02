@@ -64,7 +64,9 @@ For each level:
 - record screenshots/evidence/timing
 - classify the result
 
-Continue to the next level only when the current level is solved or sufficiently proven. Stop when the current level is `not_vulnerable`, `blocked`, `inconclusive`, or intentionally defended in a way that should not be bypassable in the lab. The Markdown report must include a progression table with every attempted level and the stop reason.
+Continue to the next level only when the current level is solved or sufficiently proven. Stop when observed source, response, state, or tool evidence classifies the current level as `not_vulnerable`, `blocked`, `inconclusive`, or unsafe to continue. The Markdown report must include a progression table with every attempted level and the evidence-backed stop reason.
+
+Difficulty names are not conclusions. `high` is not automatically exploitable, and `impossible` is not automatically defended. Classify every attempted level independently from evidence.
 
 ## Markdown Report Structure
 
@@ -99,7 +101,7 @@ Use this structure unless the user asks for a different one:
    - run start time, finish time, total elapsed time, and per-phase timing
 11. **Result**
    - vulnerable, not vulnerable, credential valid, blocked, or inconclusive
-   - for high/impossible levels, explain no-solution or not-exploitable reasons such as token freshness, lockout, prepared statements, current-password checks, or rate limits
+   - for any defended, blocked, or inconclusive level, explain no-solution or not-exploitable reasons such as token freshness, lockout, prepared statements, current-password checks, strict allowlists, or rate limits
 12. **Remediation**
    - practical fixes mapped to the observed weakness
 13. **Reproduction Summary**
@@ -217,7 +219,7 @@ If exact timing is unavailable, label it as approximate rather than inventing pr
 
 ## No-Solution Or Not-Exploitable Reports
 
-Some high or impossible lab levels are intentionally protected. A good report should still be useful when no exploit succeeds:
+Some lab levels are intentionally protected, and some high or impossible levels may still have a valid bypass. A good report should stay evidence-driven either way. When no exploit succeeds:
 
 - state the attempted proof path
 - name the defense that prevented exploitation
@@ -226,4 +228,4 @@ Some high or impossible lab levels are intentionally protected. A good report sh
 - list what would be required to continue, such as larger wordlists, valid user interaction, or tool access
 - avoid claiming failure as success
 
-For DVWA `impossible`, successful login using a known valid credential is not proof of a brute-force vulnerability. Treat it as credential validation unless the defense can be bypassed.
+For DVWA Brute Force, successful login using a known valid credential at any difficulty is not proof of a brute-force vulnerability by itself. Treat it as credential validation unless repeated-attempt behavior, missing controls, or a defense bypass proves the vulnerability.

@@ -66,7 +66,7 @@ Use this shape:
 16. Write a readable Markdown walkthrough report plus supporting JSON metadata following `references/reporting-and-artifacts.md`.
 17. Run a final report preflight: no `待补充`, no mojibake, no missing extraction fields, no stale screenshot-not-captured note when screenshots were later captured, and no reliance on a generated repair script as the normal path.
 
-For difficulty progression runs, wrap steps 7-14 in a per-difficulty loop using `low`, `medium`, `high`, then `impossible`. Stop when the current level is classified as `not_vulnerable`, `blocked`, or `inconclusive`, and record the stop reason.
+For difficulty progression runs, wrap steps 7-14 in a per-difficulty loop using `low`, `medium`, `high`, then `impossible`. Classify each level from observed evidence, not from its difficulty name. Stop when the current level is classified as `not_vulnerable`, `blocked`, or `inconclusive`, or when continuing would be unsafe for lab state, and record the stop reason.
 
 ## Brute Force Harness Requirements
 
@@ -74,7 +74,7 @@ For Brute Force:
 
 - Do not try `admin:password` first during walkthrough/evaluation.
 - Probe a wrong credential first.
-- Parse `user_token` for high/impossible before each attempt.
+- Parse `user_token` before each attempt when the current page/source requires it; do not assume token behavior solely from the difficulty name.
 - Stop when a credential is found or when lockout/defense behavior appears.
 - Record every attempted pair and marker.
 - If using Burp, support a proxy argument.

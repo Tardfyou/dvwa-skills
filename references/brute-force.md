@@ -24,10 +24,12 @@ Use observation-first testing:
 
 ## Difficulty Notes
 
-- `low`: Basic GET parameters are typically enough.
-- `medium`: Same request shape as low, but slower response behavior may exist.
-- `high`: Refresh the page and parse a fresh `user_token` before each attempt.
-- `impossible`: Treat as a defense validation case. Avoid interpreting known-valid credential login as a brute-force flaw; look for lockout, token validation, and failure messaging.
+These are starting hypotheses, not conclusions. Inspect the live page and source for the actual run before classifying a level.
+
+- `low`: Basic GET parameters are often enough, but still confirm request method, markers, and source behavior.
+- `medium`: Similar request shape to low may appear, but response timing and filtering must be measured.
+- `high`: Token handling often appears; refresh the page and parse a fresh `user_token` only after confirming the level requires it.
+- `impossible`: Test whether practical defenses are present and effective. Avoid interpreting known-valid credential login as a brute-force flaw; look for lockout, token validation, prepared statements, and failure messaging. If evidence shows a bypass, report it as vulnerable rather than forcing an unsolvable conclusion.
 
 ## Source Review Hints
 

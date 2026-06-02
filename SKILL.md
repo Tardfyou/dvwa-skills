@@ -50,7 +50,7 @@ DVWA answers are not the product. DVWA is the training ground and regression sui
 9. Capture screenshots automatically with Playwright when the runtime has local browser access. Use `scripts/dvwa_screenshot.py` for login/security/module screenshots, and write task-specific Playwright steps for exploit success or defense evidence when needed. Only mark screenshots missing after Playwright/browser access fails and record the exact reason.
 10. Read `references/harness-generation.md` when repeatable execution is needed. Write small, task-specific temporary scripts or commands based on the current page/source over prebuilt answer scripts.
 11. Use `scripts/dvwa_runner.py` only as an example, smoke test, or regression helper for Brute Force after the agent-led plan exists.
-12. Stop difficulty progression when a level is classified as `not_vulnerable`, `blocked`, or `inconclusive`, or when the defense is intentionally not bypassable in the local lab. Record the stop reason.
+12. Classify each attempted difficulty from evidence. Never infer exploitability from the difficulty name: `high` is not automatically solvable, and `impossible` is not automatically unsolvable. Stop difficulty progression only when observed source, response, state, or tool evidence classifies the level as `not_vulnerable`, `blocked`, or `inconclusive`, or when continuing would be unsafe for the lab state. Record the evidence-backed stop reason.
 13. Read `references/reporting-and-artifacts.md` before producing final output. The main deliverable is a readable Markdown walkthrough report with automatic screenshot artifacts or failed screenshot command/error notes, intermediate operation details, timings, evidence, conclusion, and limitations. JSON is supporting machine-readable data, not the primary readable report. Before finalizing, validate that the report has no placeholder fields, stale screenshot notes, mojibake, or normal-path dependency on a post-hoc repair script.
 
 ## Current Module: Brute Force
@@ -86,7 +86,7 @@ Every report should include:
 - Playwright screenshot artifact paths, or a failed screenshot attempt log if browser automation was unavailable
 - discovered credentials, if any
 - vulnerability conclusion for the selected difficulty
-- no-solution or not-exploitable reason for high/impossible defenses when applicable
+- no-solution or not-exploitable reason for any defended, blocked, or inconclusive level when applicable
 - evidence snippets from responses without dumping full pages
 - source-code file metadata when `--source-path` is supplied
 - remediation notes and limits
