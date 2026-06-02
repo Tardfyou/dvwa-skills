@@ -334,7 +334,7 @@ Course-report extraction requirements: add a compact zh-CN section named `实验
 - 测试设计：每个难度先提交错误基线 `codex_probe_user:definitely_wrong_20260602`，再按 `admin:dvwa2026!`、`admin:letmein`、`admin:123456`、`admin:password` 顺序测试，避免直接把默认凭证作为首个尝试。`high` 每次尝试前刷新 token；`impossible` 只验证防护行为和一次有效凭证，不进行大规模错误尝试，避免触发真实账户锁定。
 - 核心 payload/测试输入：`low/medium` 的成功请求为 `GET /dvwa/vulnerabilities/brute/?username=admin&password=password&Login=Login`；`high` 为同一请求追加 `user_token=<fresh token>`；`impossible` 为 `POST /dvwa/vulnerabilities/brute/`，字段为 `username=admin&password=password&Login=Login&user_token=<fresh token>`。
 - 关键证据：本次递进共发起 `38` 个 HTTP 请求，harness 执行时间为 `2026-06-02T09:54:03+08:00` 至 `2026-06-02T09:54:22+08:00`，耗时 `19.735s`。`low/medium/high` 的成功标记均为 `Welcome to the password protected area admin`；`impossible` 防护提示包含 `Alternative, the account has been locked because of too many failed logins.`。证据文件位于 `dvwa-results/brute-force-progression-20260602-094957/requests/`，操作日志为 `operation-log.jsonl`，辅助脚本为 `generated-harnesses/brute_force_progression_harness.py`。
-- 截图说明：原 Brute Force 单题运行时尚未启用 Playwright 自动截图，因此该单题主要依赖 HTTP 响应、源码和日志证据。当前 skill 已补充 Playwright 自动截图能力，后续漏洞实验会自动保存登录页、安全等级页、模块页和利用/防护证明页。
+- 截图说明：Brute Force 子报告已后补 Playwright 运行截图，共 `14` 张，覆盖登录成功页、各难度安全等级页、各难度模块页、`low/medium/high` 成功 proof、`impossible` 防护提示和有效凭证仅验证页。截图目录为 `dvwa-results/brute-force-progression-20260602-094957/screenshots/`，截图脚本为 `generated-harnesses/brute_force_playwright_screenshots.py`。截图补拍时间晚于主 harness，不影响原始 HTTP 请求证据和耗时统计。
 - 实验结论：`low`、`medium`、`high` 均存在可自动化验证的弱口令暴力破解风险；`medium` 的固定延迟和 `high` 的 token 只能提高尝试成本，不能代替账户级防爆破控制。`impossible` 不判定为可利用，因为有效凭证登录不等同于暴力破解成功。
 - 修复建议：统一使用参数化查询；对账号和来源 IP 设置速率限制、失败计数和锁定策略；禁止默认弱口令；记录失败登录日志并告警；保留 CSRF token，但不能把 token 作为唯一防爆破措施。
 
