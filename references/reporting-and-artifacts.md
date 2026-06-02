@@ -114,6 +114,18 @@ Use this structure unless the user asks for a different one:
 16. **Limitations**
    - missing tools, missing MCP/browser control, unavailable screenshots, stopped attempts, assumptions
 
+## Final Report Preflight
+
+Before saving or handing off `report.md`, check the generated Markdown directly:
+
+- no placeholder content such as `待补充`, `TODO`, empty screenshot lists, or empty extraction fields
+- no mojibake in actual file content; distinguish this from PowerShell console display issues by reading UTF-8 text when needed
+- no stale "screenshot not captured" limitation if screenshots were later captured
+- no full JSON blobs pasted where concise evidence snippets would be enough
+- no generated `fix_report.py` listed as a normal helper unless it repaired a clearly logged artifact problem
+
+If a repair script was needed, record why it was needed, rerun the preflight after repair, and prefer fixing the report generator or prompt for the next run.
+
 ## Screenshot Rules
 
 Capture screenshots when browser or screenshot tooling is available. Useful screenshots:
@@ -162,6 +174,12 @@ Screenshot not captured: <reason>. Evidence was recorded through <response snipp
 ```
 
 Never include full-page dumps or sensitive cookies in screenshots or copied evidence unless the user explicitly asks and it is needed for the local lab.
+
+## Windows Encoding Notes
+
+When PHP, Windows command output, or terminal rendering shows localized text with replacement characters, avoid using that text as the sole marker. Prefer stable ASCII markers from the response or source, such as `Password Changed.`, `Welcome to the password protected area`, `ERROR: You have entered an invalid IP.`, `TTL=`, `whoami`, exact parameter names, or file paths.
+
+Run Python harnesses with `py -3.11` and set `PYTHONIOENCODING=utf-8` when capturing text output through PowerShell.
 
 ## Operation Log
 

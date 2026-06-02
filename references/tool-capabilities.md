@@ -6,7 +6,7 @@ Use this file when a DVWA, web-lab, or CTF task asks Codex to combine security t
 
 | Tool | Best Lab Modules | Codex Action | User Setup |
 | --- | --- | --- | --- |
-| Python/requests harness | All request-level modules | Generate a small task-specific script after inspecting page/source | Install `requests`; provide URL/credentials |
+| Python/requests harness | All request-level modules | Generate a small task-specific script after inspecting page/source; run with `py -3.11` on Windows | Install `requests`; provide URL/credentials |
 | Playwright browser automation | All modules needing screenshots or DOM proof | Capture authenticated login/security/module/proof screenshots and browser-visible evidence | Install `playwright` and Chromium |
 | Bundled Brute Force helper | Brute Force regression | Use `scripts/dvwa_runner.py` as a reference helper or smoke test | Install `requests`; provide URL/credentials |
 | Burp Suite Proxy | All web modules | Send browser, generated harness, or helper traffic through `127.0.0.1:8080` | Start Burp and proxy listener |
@@ -39,6 +39,8 @@ When the user asks to solve DVWA Brute Force, Codex should:
 ## Playwright Screenshot Behavior
 
 Prefer Python Playwright through `scripts/dvwa_screenshot.py` or a generated Python proof script. Python Playwright is installed through `scripts\requirements.txt` plus `py -3.11 -m playwright install chromium`.
+
+Run screenshot helpers with `py -3.11`, not generic `py -3`, to keep the same interpreter that has `requests`, `bs4`, and Playwright installed.
 
 If a module-specific proof screenshot script is written in Node, install Node Playwright in that run directory before executing the script:
 

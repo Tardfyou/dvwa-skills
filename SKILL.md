@@ -46,11 +46,12 @@ DVWA answers are not the product. DVWA is the training ground and regression sui
 5. For each selected difficulty, inspect the live DVWA page and the matching source file before choosing payloads or tools.
 6. Build a short hypothesis-driven test plan from observed forms, parameters, source code, tokens, and failure/success markers.
 7. Choose tools from `references/tool-capabilities.md`. Use Burp/ZAP/browser/Python/sqlmap/ffuf/IDA only where the current hypothesis requires them.
-8. Capture screenshots automatically with Playwright when the runtime has local browser access. Use `scripts/dvwa_screenshot.py` for login/security/module screenshots, and write task-specific Playwright steps for exploit success or defense evidence when needed. Only mark screenshots missing after Playwright/browser access fails and record the exact reason.
-9. Read `references/harness-generation.md` when repeatable execution is needed. Write small, task-specific temporary scripts or commands based on the current page/source over prebuilt answer scripts.
-10. Use `scripts/dvwa_runner.py` only as an example, smoke test, or regression helper for Brute Force after the agent-led plan exists.
-11. Stop difficulty progression when a level is classified as `not_vulnerable`, `blocked`, or `inconclusive`, or when the defense is intentionally not bypassable in the local lab. Record the stop reason.
-12. Read `references/reporting-and-artifacts.md` before producing final output. The main deliverable is a readable Markdown walkthrough report with automatic screenshot artifacts or failed screenshot command/error notes, intermediate operation details, timings, evidence, conclusion, and limitations. JSON is supporting machine-readable data, not the primary readable report.
+8. On Windows, run generated Python harnesses and bundled helpers with `py -3.11`; do not use generic `py -3` because it may resolve to an unsupported preview interpreter.
+9. Capture screenshots automatically with Playwright when the runtime has local browser access. Use `scripts/dvwa_screenshot.py` for login/security/module screenshots, and write task-specific Playwright steps for exploit success or defense evidence when needed. Only mark screenshots missing after Playwright/browser access fails and record the exact reason.
+10. Read `references/harness-generation.md` when repeatable execution is needed. Write small, task-specific temporary scripts or commands based on the current page/source over prebuilt answer scripts.
+11. Use `scripts/dvwa_runner.py` only as an example, smoke test, or regression helper for Brute Force after the agent-led plan exists.
+12. Stop difficulty progression when a level is classified as `not_vulnerable`, `blocked`, or `inconclusive`, or when the defense is intentionally not bypassable in the local lab. Record the stop reason.
+13. Read `references/reporting-and-artifacts.md` before producing final output. The main deliverable is a readable Markdown walkthrough report with automatic screenshot artifacts or failed screenshot command/error notes, intermediate operation details, timings, evidence, conclusion, and limitations. JSON is supporting machine-readable data, not the primary readable report. Before finalizing, validate that the report has no placeholder fields, stale screenshot notes, mojibake, or normal-path dependency on a post-hoc repair script.
 
 ## Current Module: Brute Force
 

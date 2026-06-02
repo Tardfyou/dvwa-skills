@@ -14,6 +14,20 @@ Generate a temporary Python/requests harness when:
 
 Do not generate a harness before inspecting the live page and source.
 
+## Python Runtime
+
+On Windows, execute generated Python harnesses and bundled helpers with `py -3.11`.
+Do not use generic `py -3`; it can resolve to a preview interpreter and break stable dependencies such as `requests` or Playwright.
+
+Recommended invocation:
+
+```powershell
+$env:PYTHONIOENCODING='utf-8'
+py -3.11 .\generated-harnesses\<module>_<timestamp>.py
+```
+
+If Windows command output is localized or contains replacement characters, classify responses with stable ASCII markers when available, such as `TTL=`, `whoami`, DVWA English status strings, HTML element IDs, or exact source-derived error text. Do not rely on localized `ping` prose as the only proof marker.
+
 ## Required Inputs From Analysis
 
 Before writing code, identify:
@@ -48,7 +62,9 @@ Use this shape:
 12. Execute tests incrementally.
 13. Classify responses using observed markers.
 14. Record operation log entries and timing for setup, source review, test generation, and execution.
-15. Write a readable Markdown walkthrough report plus supporting JSON metadata following `references/reporting-and-artifacts.md`.
+15. Capture screenshots through Python Playwright where possible, or record the exact failed screenshot command and error.
+16. Write a readable Markdown walkthrough report plus supporting JSON metadata following `references/reporting-and-artifacts.md`.
+17. Run a final report preflight: no `待补充`, no mojibake, no missing extraction fields, no stale screenshot-not-captured note when screenshots were later captured, and no reliance on a generated repair script as the normal path.
 
 For difficulty progression runs, wrap steps 7-14 in a per-difficulty loop using `low`, `medium`, `high`, then `impossible`. Stop when the current level is classified as `not_vulnerable`, `blocked`, or `inconclusive`, and record the stop reason.
 

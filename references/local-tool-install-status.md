@@ -56,6 +56,8 @@ cd D:\WorkSpace\综合实践5\dvwa-skills
 py -3.11 .\scripts\dvwa_screenshot.py --url http://127.0.0.1/dvwa/ --username admin --password password --difficulty low --module-path vulnerabilities/brute/ --output-dir ..\dvwa-results\screenshot-smoke\brute-low
 ```
 
+Use `py -3.11` consistently. A previous `py -3` run resolved to Python 3.14.0a5 and failed while importing `requests`.
+
 CSRF proof screenshots used a generated Node Playwright script. The first temporary `npx.cmd -y -p playwright@1.60.0 node ...` attempt failed because the external generated script did not reliably resolve `require('playwright')` from the temporary npx package. The successful repair was:
 
 ```powershell

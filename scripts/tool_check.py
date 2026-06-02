@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import importlib.util
+import os
 import shutil
 import subprocess
 import sys
@@ -81,6 +82,12 @@ def find_local_walkthrough() -> Path | None:
 def main() -> int:
     checks = []
     checks.append(("Python", sys.executable, sys.version.split()[0]))
+    python_note = (
+        "preferred"
+        if sys.version_info[:2] == (3, 11)
+        else "warning: use py -3.11 for DVWA skill helpers"
+    )
+    checks.append(("Python runtime", "py -3.11", python_note))
     checks.append(("requests", "python package", "installed" if importlib.util.find_spec("requests") else "missing"))
     checks.append(("beautifulsoup4", "python package", "installed" if importlib.util.find_spec("bs4") else "missing"))
     checks.append(("playwright", "python package", "installed" if importlib.util.find_spec("playwright") else "missing"))
@@ -126,6 +133,8 @@ def main() -> int:
     print()
     print("Brute Force minimum: Python + requests + reachable DVWA URL.")
     print("Automatic screenshots: playwright package + Playwright Chromium.")
+    print("Preferred Windows interpreter: py -3.11. Avoid generic py -3 for generated harnesses.")
+    print(f"PYTHONIOENCODING: {os.environ.get('PYTHONIOENCODING', 'not set')}")
     print("Burp/ZAP/ffuf/sqlmap/IDA are optional; sqlmap and IDA are not used for Brute Force.")
     return 0
 

@@ -12,6 +12,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\windows_tool_setup.ps1
 py -3.11 .\scripts\tool_check.py
 ```
 
+Use `py -3.11` for all Python commands in this skill. Avoid generic `py -3`; on this machine it may resolve to a Python preview build instead of the stable 3.11 environment used by `requests` and Playwright.
+
 The setup script installs or prepares:
 
 - Python dependencies from `scripts\requirements.txt`

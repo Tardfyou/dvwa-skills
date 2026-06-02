@@ -92,6 +92,8 @@ py -3.11 -m playwright install chromium
 py -3.11 .\scripts\tool_check.py
 ```
 
+Always use `py -3.11` for this skill's helpers and generated Python harnesses on Windows. Do not use generic `py -3`, because it may resolve to an unsupported preview Python and break imports such as `requests`.
+
 For only the minimum Brute Force environment:
 
 ```powershell
