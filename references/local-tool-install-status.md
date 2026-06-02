@@ -55,3 +55,13 @@ Useful command:
 cd D:\WorkSpace\综合实践5\dvwa-skills
 py -3.11 .\scripts\dvwa_screenshot.py --url http://127.0.0.1/dvwa/ --username admin --password password --difficulty low --module-path vulnerabilities/brute/ --output-dir ..\dvwa-results\screenshot-smoke\brute-low
 ```
+
+CSRF proof screenshots used a generated Node Playwright script. The first temporary `npx.cmd -y -p playwright@1.60.0 node ...` attempt failed because the external generated script did not reliably resolve `require('playwright')` from the temporary npx package. The successful repair was:
+
+```powershell
+cd D:\WorkSpace\综合实践5\dvwa-results\csrf-progression-20260602-103818
+npm.cmd install playwright@1.60.0 --no-audit --no-fund
+node .\generated-harnesses\csrf_playwright_screenshots.js .\screenshots
+```
+
+For future runs, prefer Python Playwright. If a Node proof script is generated, install Node Playwright in the run directory before executing it.

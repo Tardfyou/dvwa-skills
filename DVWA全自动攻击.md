@@ -1,4 +1,4 @@
-# DVWA 自动化靶场解题实验报告
+# DVWA 自动化靶场解题Skill实验报告
 
 ## 0. 文档说明
 
@@ -11,9 +11,9 @@
 ```text
 DVWA URL: http://127.0.0.1/DVWA/ 或 http://127.0.0.1/dvwa/
 DVWA 源码路径: D:\phpStudy\PHPTutorial\WWW\DVWA
-Skill 项目路径: D:\WorkSpace\综合实践5\dvwa-skills
-Codex Skill 安装路径: C:\Users\31435\.codex\skills\dvwa-automated-testing
-实验输出目录: D:\WorkSpace\综合实践5\dvwa-results
+Skill 项目路径: D:\...\dvwa-skills
+Codex Skill 安装路径: C:\Users\...\.codex\skills\dvwa-automated-testing
+实验输出目录: D:\...\dvwa-results
 ```
 
 ## 1. 实验边界与目标
@@ -82,8 +82,8 @@ Codex Skill 安装路径: C:\Users\31435\.codex\skills\dvwa-automated-testing
 | 靶场 | DVWA |
 | 靶场地址 | `http://127.0.0.1/DVWA/` 或 `http://127.0.0.1/dvwa/` |
 | DVWA 源码 | `D:\phpStudy\PHPTutorial\WWW\DVWA` |
-| Skill 项目 | `D:\WorkSpace\综合实践5\dvwa-skills` |
-| 输出目录 | `D:\WorkSpace\综合实践5\dvwa-results` |
+| Skill 项目 | `D:\...\dvwa-skills` |
+| 输出目录 | `D:\...\dvwa-results` |
 
 ### 2.2 AI Skill 环境
 
@@ -92,8 +92,8 @@ Codex Skill 安装路径: C:\Users\31435\.codex\skills\dvwa-automated-testing
 ```text
 Skill 名称: dvwa-automated-testing
 Skill 显示名: dvwa-automated-testing Web Lab Solver
-项目目录: D:\WorkSpace\综合实践5\dvwa-skills
-安装目录: C:\Users\31435\.codex\skills\dvwa-automated-testing
+项目目录: D:\...\dvwa-skills
+安装目录: C:\Users\...\.codex\skills\dvwa-automated-testing
 ```
 
 该 skill 的主要能力包括：
@@ -160,7 +160,7 @@ admin / password
 检查 Python 依赖和工具状态：
 
 ```powershell
-cd D:\WorkSpace\综合实践5\dvwa-skills
+cd D:\...\dvwa-skills
 py -3.11 .\scripts\tool_check.py
 ```
 
@@ -209,8 +209,8 @@ java -jar C:\Tools\burp-mcp-server\libs\mcp-proxy-all.jar --sse-url http://127.0
 检查 skill 安装：
 
 ```powershell
-Get-Item C:\Users\31435\.codex\skills\dvwa-automated-testing | Format-List FullName,LinkType,Target
-python C:\Users\31435\.codex\skills\.system\skill-creator\scripts\quick_validate.py C:\Users\31435\.codex\skills\dvwa-automated-testing
+Get-Item C:\Users\...\.codex\skills\dvwa-automated-testing | Format-List FullName,LinkType,Target
+python C:\Users\...\.codex\skills\.system\skill-creator\scripts\quick_validate.py C:\Users\...\.codex\skills\dvwa-automated-testing
 ```
 
 预期结果：`LinkType` 为空，且输出 `Skill is valid!`。
@@ -341,31 +341,60 @@ Course-report extraction requirements: add a compact zh-CN section named `实验
 | 项目 | 内容 |
 | --- | --- |
 | 模块路径 | `vulnerabilities/exec/` |
-| 当前状态 | 待根据 skill 运行报告补充 |
+| 实验难度 | `low -> medium -> high -> impossible` |
+| 当前状态 | 已完成，单题报告见 `dvwa-results/command-injection-progression-20260602-102141/report.md` |
+| 最高成功难度 | `high` |
+| 停止原因 | `impossible` 使用 CSRF token 和四段数字 IP 校验，含命令分隔符输入被拒绝 |
+
+难度推进结果：
+
+| 难度 | 结论 | 漏洞或防护成因 | 关键证据 |
+| --- | --- | --- | --- |
+| `low` | 可利用 | `ip` 参数直接拼接到 `shell_exec('ping  ' . $target)` | `127.0.0.1 & whoami` 返回 `vin\31435` |
+| `medium` | 可利用 | 黑名单只删除 `&&` 和 `;`，遗漏单个 `&` | `127.0.0.1 && whoami` 未执行，`127.0.0.1 & whoami` 成功 |
+| `high` | 可利用 | 黑名单过滤 `&` 和带空格的 `| `，遗漏无空格管道 | `127.0.0.1 & whoami` 未执行，`127.0.0.1|whoami` 成功 |
+| `impossible` | 不可利用 | token 校验后按 `.` 拆分输入，要求四段均为数字并重组 IP | `127.0.0.1 & whoami` 和 `127.0.0.1|whoami` 均返回 `ERROR: You have entered an invalid IP.` |
 
 实验记录：
 
-- 页面观察：待补充。
-- 源码分析：待补充。
-- Payload 设计：待补充。
-- 系统命令执行证据：待补充。
-- 防护绕过或失败原因：待补充。
-- 修复建议：待补充。
+- 页面与请求模型：目标页面为 `http://127.0.0.1/dvwa/vulnerabilities/exec/`，表单使用 `POST`，核心字段为 `ip` 和 `Submit`；`impossible` 额外需要 fresh `user_token`。正常基线使用 `ip=127.0.0.1&Submit=Submit`，以 `TTL=128` 作为 ping 成功标记。
+- 源码分析：`low.php` 直接读取 `$_REQUEST['ip']` 并拼接执行系统命令。`medium.php` 使用 `str_replace()` 删除 `&&` 和 `;`，但未过滤单个 `&`。`high.php` 扩展黑名单，过滤 `&` 和 `| ` 等字符串，但未过滤无空格的 `|whoami`。`impossible.php` 检查 token，将输入按 `.` 拆为四段，要求四段均为数字，再重组 IP 执行 ping，因此命令分隔符无法进入 shell。
+- 测试设计：测试命令只使用本机无害输出验证 `whoami`，不执行写文件、删除、持久化或外连命令。每个难度先跑正常 ping 基线，再根据源码过滤规则提交最小 proof payload；`impossible` 每次提交前刷新 token，并测试含 `&` 和 `|` 的防御探针。
+- 核心 payload/测试输入：`low` 使用 `ip=127.0.0.1 & whoami&Submit=Submit`；`medium` 先用 `ip=127.0.0.1 && whoami&Submit=Submit` 证明被过滤，再用 `ip=127.0.0.1 & whoami&Submit=Submit` 绕过；`high` 先用 `ip=127.0.0.1 & whoami&Submit=Submit` 证明被过滤，再用 `ip=127.0.0.1|whoami&Submit=Submit` 绕过；`impossible` 使用上述两个注入输入并携带 `user_token=<fresh token>` 验证被拒绝。
+- 关键证据：本次递进共发起 `31` 个 HTTP 请求，harness 执行时间为 `2026-06-02T10:25:23+08:00` 至 `2026-06-02T10:25:50+08:00`，耗时 `26.373s`。`low/medium/high` 的命令执行标记均为 `whoami` 输出 `vin\31435`；`impossible` 防御标记为 `ERROR: You have entered an invalid IP.`。请求证据位于 `dvwa-results/command-injection-progression-20260602-102141/requests/`，操作日志为 `operation-log.jsonl`。
+- 截图与辅助脚本：自动截图已生成，proof 截图包括 `screenshots/proof/low-proof.png`、`medium-proof.png`、`high-proof.png`、`impossible-proof.png`，模块截图位于各难度 `screenshots/<difficulty>/module-<difficulty>.png`。主脚本为 `generated-harnesses/command_injection_progression_harness.py`，截图脚本为 `generated-harnesses/command_injection_proof_screenshots.py`。
+- 实验结论：`low`、`medium`、`high` 均存在命令注入风险，且黑名单过滤在 `medium/high` 中均可被源码导出的分隔符变体绕过。`impossible` 不判定为可利用，因为输入在进入命令执行前已经被严格 IP 格式校验拦截。
+- 修复建议：不要将用户输入拼接进 shell 命令；必须执行系统命令时使用安全参数数组或专用库；对 IP 使用白名单校验，例如 `filter_var($ip, FILTER_VALIDATE_IP)`；避免黑名单过滤；降低 Web 服务账号权限并记录异常输入。
 
 ### 6.3 CSRF
 
 | 项目 | 内容 |
 | --- | --- |
 | 模块路径 | `vulnerabilities/csrf/` |
-| 当前状态 | 待根据 skill 运行报告补充 |
+| 实验难度 | `low -> medium -> high -> impossible` |
+| 当前状态 | 已完成，单题报告见 `dvwa-results/csrf-progression-20260602-103818/report.md` |
+| 最高成功难度 | `medium`；`high` 为同源 fresh token 条件路径，不按盲跨站 CSRF 成功处理 |
+| 停止原因 | `impossible` 同时要求 fresh `user_token` 和当前密码，未观察到独立 CSRF 漏洞 |
+
+难度推进结果：
+
+| 难度 | 结论 | 漏洞或防护成因 | 关键证据 |
+| --- | --- | --- | --- |
+| `low` | 可利用 | 密码修改接口为 GET 请求，无 CSRF token、无 Referer/Origin 校验、无当前密码校验 | 直接请求 `password_new=<tmp>&password_conf=<tmp>&Change=Change` 返回 `Password Changed.` |
+| `medium` | 可利用 | Referer 校验只判断 `HTTP_REFERER` 是否包含 `SERVER_NAME` 子串 | `Referer: http://127.0.0.1.attacker.local/csrf.html` 绕过并修改密码 |
+| `high` | 条件性可变更 | 需要 fresh `user_token`，阻止常规盲跨站 CSRF；但仍不要求当前密码 | 缺失/错误 token 失败，同源读取 fresh token 后可返回 `Password Changed.` |
+| `impossible` | 不可利用 | 同时要求 fresh `user_token` 和 `password_current` 当前密码校验 | 错误当前密码返回 `Passwords did not match or current password incorrect.`；知道当前密码的合法请求才可变更 |
 
 实验记录：
 
-- 状态变更动作：待补充。
-- Token/Referer/Origin 检查：待补充。
-- 构造请求或页面：待补充。
-- 成功或失败证据：待补充。
-- 修复建议：待补充。
+- 状态变更动作：目标页面为 `http://127.0.0.1/dvwa/vulnerabilities/csrf/`，实验动作是修改 `admin` 密码。每个难度均使用临时密码 `dvwa_csrf_tmp_<difficulty>_20260602` 进行验证，成功后通过 `test_credentials.php` 确认临时密码有效，再恢复为 `admin / password`。
+- Token/Referer/Origin 检查：`low` 不检查 token 或 Referer。`medium` 对无 Referer 和外部 Referer 返回 `That request didn't look correct.`，但只做服务器名子串匹配，可被包含 `127.0.0.1` 的伪 Referer 绕过。`high` 表单含 `user_token`，缺失/错误 token 不能完成修改；同源 harness 读取 fresh token 后可修改。`impossible` 在 token 之外还要求提交正确 `password_current`。
+- 构造请求或页面：`low` 核心请求为 `GET /dvwa/vulnerabilities/csrf/?password_new=dvwa_csrf_tmp_low_20260602&password_conf=dvwa_csrf_tmp_low_20260602&Change=Change`。`medium` 同请求附加 `Referer: http://127.0.0.1.attacker.local/csrf.html`。`high` 在请求中追加 `user_token=<fresh token>`。`impossible` 需要 `password_current=<current password>&password_new=<tmp>&password_conf=<tmp>&Change=Change&user_token=<fresh token>`。
+- 成功或失败证据：HTTP harness 总请求数 `50`，开始时间 `2026-06-02T10:44:52+08:00`，结束时间 `2026-06-02T10:50:44+08:00`。`low/medium/high` 的成功响应标记为 `Password Changed.`，并通过 `test_credentials.php` 验证临时密码有效；`impossible` 的错误当前密码标记为 `Passwords did not match or current password incorrect.`，合法变更只在知道当前密码时成立。
+- 关键截图与脚本：截图已生成 22 张，主要包括 `screenshots/low/proof-password-changed.png`、`screenshots/medium/proof-weak-referer.png`、`screenshots/high/token-aware-change.png`、`screenshots/impossible/wrong-current-password.png`、`screenshots/impossible/legitimate-change-with-current-password.png`，完整清单见 `screenshots/screenshots.json`。辅助脚本包括 `generated-harnesses/csrf_progression_harness.py`、`generated-harnesses/csrf_playwright_screenshots.js` 和 `generated-harnesses/fix_report.py`。
+- 截图工具问题说明：本次 CSRF 运行首次调用 `npx.cmd -y -p playwright@1.60.0 node ...` 时失败，原因是生成的 Node 脚本通过 `require('playwright')` 加载模块，而临时 `npx -p` 执行方式没有让该外部脚本稳定解析到 `playwright` 包。随后在报告目录执行 `npm.cmd install playwright@1.60.0 --no-audit --no-fund`，让 `node_modules/playwright` 成为本地依赖，再运行 `node .\generated-harnesses\csrf_playwright_screenshots.js .\screenshots` 成功补齐 22 张截图。后续 skill 已要求优先使用已安装的 Python Playwright 截图 helper；若生成 Node Playwright 脚本，应先确保报告目录存在本地 `node_modules/playwright`。
+- 实验结论：`low` 和 `medium` 存在明确 CSRF 漏洞；`high` 阻止盲跨站 CSRF，但在同源可读 token 的条件下仍可变更密码，因此记录为条件性路径而非外部盲打成功；`impossible` 因同时要求 fresh token 和当前密码，未发现独立 CSRF 可利用路径。
+- 修复建议：所有状态变更请求应使用服务端绑定的 CSRF token；不要依赖 Referer 子串，应严格校验 Origin/Referer 作为辅助控制；密码修改必须要求当前密码或重新认证；Cookie 应设置 `HttpOnly`、`Secure` 和合适的 `SameSite` 策略。
 
 ### 6.4 File Inclusion
 

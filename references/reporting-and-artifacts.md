@@ -140,6 +140,15 @@ py -3.11 .\scripts\dvwa_screenshot.py `
 
 For proof screenshots after an exploit attempt, write task-specific Playwright steps in the generated harness or a small temporary script. Screenshot notes are acceptable only after Playwright/browser execution fails; include the command attempted and the error summary.
 
+Prefer the bundled Python helper and Python Playwright environment for screenshots. If a generated proof screenshot script uses Node and `require('playwright')`, do not assume `npx -p playwright node <script>` will let an external script resolve the temporary package. Either install Playwright locally in the run directory first:
+
+```powershell
+npm.cmd install playwright@1.60.0 --no-audit --no-fund
+node .\generated-harnesses\<proof-screenshot-script>.js .\screenshots
+```
+
+or rewrite the proof screenshot flow as a Python Playwright script. Record this command sequence in the operation log when used.
+
 Store screenshots under the run output directory and link them from `report.md` with relative Markdown image links:
 
 ```markdown

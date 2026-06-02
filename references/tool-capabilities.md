@@ -36,6 +36,19 @@ When the user asks to solve DVWA Brute Force, Codex should:
 
 ## MCP Behavior
 
+## Playwright Screenshot Behavior
+
+Prefer Python Playwright through `scripts/dvwa_screenshot.py` or a generated Python proof script. Python Playwright is installed through `scripts\requirements.txt` plus `py -3.11 -m playwright install chromium`.
+
+If a module-specific proof screenshot script is written in Node, install Node Playwright in that run directory before executing the script:
+
+```powershell
+npm.cmd install playwright@1.60.0 --no-audit --no-fund
+node .\generated-harnesses\<proof-screenshot-script>.js .\screenshots
+```
+
+This avoids module-resolution failures where a temporary `npx -p playwright node <script>` invocation cannot provide `require('playwright')` to an external generated script.
+
 Only use MCP tools that are actually connected in the Codex runtime. Do not assume Burp/ZAP/IDA MCP is present because the skill mentions it.
 
 If an MCP tool is unavailable:
