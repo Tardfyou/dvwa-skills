@@ -1,0 +1,23 @@
+{
+  "name": "api-users-after-login-bypass",
+  "request": {
+    "method": "GET",
+    "url": "http://127.0.0.1:3000/api/Users",
+    "auth": "Bearer/cookie token from login-sqli-bypass"
+  },
+  "response": {
+    "status_code": 200,
+    "url": "http://127.0.0.1:3000/api/Users",
+    "elapsed_s": 0.128,
+    "content_type": "application/json; charset=utf-8",
+    "content_length": null,
+    "response_len": 6343,
+    "headers_subset": {
+      "Access-Control-Allow-Origin": "*",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-Content-Type-Options": "nosniff"
+    },
+    "snippet": "{\"status\":\"success\",\"data\":[{\"id\":1,\"username\":\"\",\"email\":\"admin@juice-sh.op\",\"role\":\"admin\",\"deluxeToken\":\"\",\"lastLoginIp\":\"\",\"profileImage\":\"assets/public/images/uploads/defaultAdmin.png\",\"isActive\":true,\"createdAt\":\"2026-06-08T07:03:07.238Z\",\"updatedAt\":\"2026-06-08T07:03:07.238Z\",\"deletedAt\":null},{\"id\":2,\"username\":\"\",\"email\":\"jim@juice-sh.op\",\"role\":\"customer\",\"deluxeToken\":\"\",\"lastLoginIp\":\"\",\"profileImage\":\"assets/public/images/uploads/default.svg\",\"isActive\":true,\"createdAt\":\"2026-06-08T07:03:07.238Z\",\"updatedAt\":\"2026-06-08T07:03:07.238Z\",\"deletedAt\":null},{\"id\":3,\"username\":\"\",\"email\":\"bender@juice-sh.op\",\"role\":\"customer\",\"deluxeToken\":\"\",\"lastLoginIp\":\"\",\"profileImage\":\"assets/public/images/uploads/default.svg\",\"isActive\":true,\"createdAt\":\"2026-06-08T07:03:07.238Z\",\"updatedAt\":\"2026-06-08T07:03:07.238Z\",\"deletedAt\":null},{\"id\":4,\"username\":\"bkimminich\",\"email\":\"bjoern.kimminich@gmail.com\",\"role\":\"admin\",\"deluxeToken\":\"\",\"lastLoginIp\":\"\",\"profileImage\":\"assets/public/images/"
+  },
+  "extra": {}
+}

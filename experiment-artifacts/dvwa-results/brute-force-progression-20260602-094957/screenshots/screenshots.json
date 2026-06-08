@@ -1,0 +1,105 @@
+{
+  "generated_at": "2026-06-02T11:04:13+08:00",
+  "base_url": "http://127.0.0.1/dvwa/",
+  "module_path": "vulnerabilities/brute/",
+  "items": [
+    {
+      "label": "authenticated home",
+      "difficulty": null,
+      "path": "dvwa-results\\brute-force-progression-20260602-094957\\screenshots\\setup\\authenticated-home.png",
+      "url": "http://127.0.0.1/dvwa/index.php",
+      "timestamp": "2026-06-02T11:03:50+08:00"
+    },
+    {
+      "label": "security low",
+      "difficulty": "low",
+      "path": "dvwa-results\\brute-force-progression-20260602-094957\\screenshots\\low\\security-low.png",
+      "url": "http://127.0.0.1/dvwa/security.php",
+      "timestamp": "2026-06-02T11:03:51+08:00"
+    },
+    {
+      "label": "module low",
+      "difficulty": "low",
+      "path": "dvwa-results\\brute-force-progression-20260602-094957\\screenshots\\low\\module-low.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/brute/",
+      "timestamp": "2026-06-02T11:03:52+08:00"
+    },
+    {
+      "label": "security medium",
+      "difficulty": "medium",
+      "path": "dvwa-results\\brute-force-progression-20260602-094957\\screenshots\\medium\\security-medium.png",
+      "url": "http://127.0.0.1/dvwa/security.php",
+      "timestamp": "2026-06-02T11:03:53+08:00"
+    },
+    {
+      "label": "module medium",
+      "difficulty": "medium",
+      "path": "dvwa-results\\brute-force-progression-20260602-094957\\screenshots\\medium\\module-medium.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/brute/",
+      "timestamp": "2026-06-02T11:03:54+08:00"
+    },
+    {
+      "label": "security high",
+      "difficulty": "high",
+      "path": "dvwa-results\\brute-force-progression-20260602-094957\\screenshots\\high\\security-high.png",
+      "url": "http://127.0.0.1/dvwa/security.php",
+      "timestamp": "2026-06-02T11:03:55+08:00"
+    },
+    {
+      "label": "module high",
+      "difficulty": "high",
+      "path": "dvwa-results\\brute-force-progression-20260602-094957\\screenshots\\high\\module-high.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/brute/",
+      "timestamp": "2026-06-02T11:03:55+08:00"
+    },
+    {
+      "label": "security impossible",
+      "difficulty": "impossible",
+      "path": "dvwa-results\\brute-force-progression-20260602-094957\\screenshots\\impossible\\security-impossible.png",
+      "url": "http://127.0.0.1/dvwa/security.php",
+      "timestamp": "2026-06-02T11:03:57+08:00"
+    },
+    {
+      "label": "module impossible",
+      "difficulty": "impossible",
+      "path": "dvwa-results\\brute-force-progression-20260602-094957\\screenshots\\impossible\\module-impossible.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/brute/",
+      "timestamp": "2026-06-02T11:03:57+08:00"
+    },
+    {
+      "label": "low admin password success",
+      "difficulty": "low",
+      "path": "dvwa-results\\brute-force-progression-20260602-094957\\screenshots\\proof\\low-success-admin-password.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/brute/?username=admin&password=%3Credacted%3E&Login=Login",
+      "timestamp": "2026-06-02T11:04:00+08:00"
+    },
+    {
+      "label": "medium admin password success",
+      "difficulty": "medium",
+      "path": "dvwa-results\\brute-force-progression-20260602-094957\\screenshots\\proof\\medium-success-admin-password.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/brute/?username=admin&password=%3Credacted%3E&Login=Login",
+      "timestamp": "2026-06-02T11:04:02+08:00"
+    },
+    {
+      "label": "high admin password success",
+      "difficulty": "high",
+      "path": "dvwa-results\\brute-force-progression-20260602-094957\\screenshots\\proof\\high-success-admin-password.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/brute/?username=admin&password=%3Credacted%3E&Login=Login&user_token=%3Credacted%3E",
+      "timestamp": "2026-06-02T11:04:05+08:00"
+    },
+    {
+      "label": "impossible invalid probe defense",
+      "difficulty": "impossible",
+      "path": "dvwa-results\\brute-force-progression-20260602-094957\\screenshots\\proof\\impossible-defense-invalid-probe.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/brute/",
+      "timestamp": "2026-06-02T11:04:10+08:00"
+    },
+    {
+      "label": "impossible valid credential only",
+      "difficulty": "impossible",
+      "path": "dvwa-results\\brute-force-progression-20260602-094957\\screenshots\\proof\\impossible-valid-credential-only.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/brute/",
+      "timestamp": "2026-06-02T11:04:12+08:00"
+    }
+  ]
+}

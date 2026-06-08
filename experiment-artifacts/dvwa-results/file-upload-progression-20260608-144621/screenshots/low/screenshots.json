@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-06-08T14:46:53+08:00",
+  "base_url": "http://127.0.0.1/dvwa/",
+  "difficulty": "low",
+  "module_path": "vulnerabilities/upload/",
+  "items": [
+    {
+      "label": "authenticated home",
+      "path": "dvwa-results\\file-upload-progression-20260608-144621\\screenshots\\low\\authenticated-home.png",
+      "url": "http://127.0.0.1/dvwa/index.php",
+      "timestamp": "2026-06-08T14:46:51+08:00"
+    },
+    {
+      "label": "security low",
+      "path": "dvwa-results\\file-upload-progression-20260608-144621\\screenshots\\low\\security-low.png",
+      "url": "http://127.0.0.1/dvwa/security.php",
+      "timestamp": "2026-06-08T14:46:52+08:00"
+    },
+    {
+      "label": "module low",
+      "path": "dvwa-results\\file-upload-progression-20260608-144621\\screenshots\\low\\module-low.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/upload/",
+      "timestamp": "2026-06-08T14:46:52+08:00"
+    }
+  ]
+}

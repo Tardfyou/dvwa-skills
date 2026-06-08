@@ -1,0 +1,21 @@
+{
+  "difficulty": "setup",
+  "label": "get-login",
+  "method": "GET",
+  "url": "http://127.0.0.1/dvwa/login.php",
+  "final_url": "http://127.0.0.1/dvwa/login.php",
+  "status_code": 200,
+  "request_headers": {
+    "User-Agent": "python-requests/2.32.3",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive"
+  },
+  "params": null,
+  "data": null,
+  "json": null,
+  "response_length": 1490,
+  "response_markers": [],
+  "response_snippet": "Notice : Array to string conversion in D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\dvwa\\includes\\dvwaPage.inc.php on line 79 Login :: Damn Vulnerable Web Application (DVWA) --> Username Password --> Damn Vulnerable Web Application (DVWA) --> -->",
+  "duration_s": 0.033
+}

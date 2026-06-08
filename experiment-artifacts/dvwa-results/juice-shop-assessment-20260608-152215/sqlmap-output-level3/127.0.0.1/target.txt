@@ -1,0 +1,1 @@
+http://127.0.0.1:3000/rest/products/search?q=apple (GET)  # C:\Tools\sqlmap\sqlmap.py -u http://127.0.0.1:3000/rest/products/search?q=apple --batch --risk=2 --level=3 --flush-session --timeout=5 --retries=0 --threads=1 --dbms=SQLite --output-dir=dvwa-results/juice-shop-assessment-20260608-152215/sqlmap-output-level3

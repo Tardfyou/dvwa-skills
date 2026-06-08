@@ -1,0 +1,26 @@
+{
+  "name": "login-invalid-baseline",
+  "request": {
+    "method": "POST",
+    "url": "http://127.0.0.1:3000/rest/user/login",
+    "json": {
+      "email": "not-a-user@example.invalid",
+      "password": "definitely_wrong_20260608"
+    }
+  },
+  "response": {
+    "status_code": 401,
+    "url": "http://127.0.0.1:3000/rest/user/login",
+    "elapsed_s": 0.25,
+    "content_type": "text/html; charset=utf-8",
+    "content_length": "26",
+    "response_len": 26,
+    "headers_subset": {
+      "Access-Control-Allow-Origin": "*",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-Content-Type-Options": "nosniff"
+    },
+    "snippet": "Invalid email or password."
+  },
+  "extra": {}
+}

@@ -1,0 +1,116 @@
+{
+  "target_url": "http://127.0.0.1/DVWA/",
+  "module_url": "http://127.0.0.1/DVWA/vulnerabilities/brute/",
+  "module": "Brute Force",
+  "difficulty": "low",
+  "timestamp_utc": "2026-06-02T00:50:01.185717+00:00",
+  "tool": "Python requests task-specific harness",
+  "tool_version": {
+    "python_requests": "2.32.3"
+  },
+  "source_file": {
+    "path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\vulnerabilities\\brute\\source\\low.php",
+    "length": 1028,
+    "last_modified_local": "2026-05-14T09:06:44.967189",
+    "analysis": [
+      "Uses GET parameters username, password, and Login.",
+      "Hashes supplied password with md5 before querying.",
+      "Builds SQL with raw username and md5 password interpolated into the WHERE clause.",
+      "No CSRF token, throttling delay, failed-login counter, or lockout exists in the low handler."
+    ]
+  },
+  "strategy": {
+    "wordlist_source": "Generated from observed DVWA admin account plus generic common passwords; provided login password placed last after invalid baseline.",
+    "classification": {
+      "success_marker": "Welcome to the password protected area",
+      "failure_marker": "Username and/or password incorrect."
+    }
+  },
+  "observations": [
+    {
+      "step": "login",
+      "status": 200,
+      "url": "http://127.0.0.1/DVWA/index.php",
+      "authenticated_marker": true,
+      "cookies": {
+        "security": "impossible",
+        "PHPSESSID": "j6fahhh6g2q6cscm61rhmmp5h6"
+      }
+    },
+    {
+      "step": "set_security_low",
+      "status": 200,
+      "url": "http://127.0.0.1/DVWA/security.php",
+      "security_cookie": "low"
+    },
+    {
+      "step": "module_page",
+      "status": 200,
+      "url": "http://127.0.0.1/DVWA/vulnerabilities/brute/",
+      "has_user_token": false,
+      "has_get_form": true
+    }
+  ],
+  "attempts": [
+    {
+      "index": 1,
+      "username": "admin",
+      "password": "__definitely_wrong_20260602__",
+      "status": 200,
+      "length": 4571,
+      "success_marker": false,
+      "failure_marker": true,
+      "evidence": "lue=\"Login\" name=\"Login\"> </form> <pre><br />Username and/or password incorrect.</pre> </div> <h2>More Information</h2> <ul> "
+    },
+    {
+      "index": 2,
+      "username": "admin",
+      "password": "123456",
+      "status": 200,
+      "length": 4571,
+      "success_marker": false,
+      "failure_marker": true,
+      "evidence": "lue=\"Login\" name=\"Login\"> </form> <pre><br />Username and/or password incorrect.</pre> </div> <h2>More Information</h2> <ul> "
+    },
+    {
+      "index": 3,
+      "username": "admin",
+      "password": "admin",
+      "status": 200,
+      "length": 4571,
+      "success_marker": false,
+      "failure_marker": true,
+      "evidence": "lue=\"Login\" name=\"Login\"> </form> <pre><br />Username and/or password incorrect.</pre> </div> <h2>More Information</h2> <ul> "
+    },
+    {
+      "index": 4,
+      "username": "admin",
+      "password": "letmein",
+      "status": 200,
+      "length": 4571,
+      "success_marker": false,
+      "failure_marker": true,
+      "evidence": "lue=\"Login\" name=\"Login\"> </form> <pre><br />Username and/or password incorrect.</pre> </div> <h2>More Information</h2> <ul> "
+    },
+    {
+      "index": 5,
+      "username": "admin",
+      "password": "password",
+      "status": 200,
+      "length": 4614,
+      "success_marker": true,
+      "failure_marker": false,
+      "evidence": "bmit\" value=\"Login\" name=\"Login\"> </form> <p>Welcome to the password protected area admin</p><img src=\"/dvwa/hackable/users/admi"
+    }
+  ],
+  "request_counts": {
+    "module_attempts": 5,
+    "successes": 1,
+    "failures": 4
+  },
+  "discovered_credentials": {
+    "username": "admin",
+    "password": "password"
+  },
+  "vulnerability_conclusion": "Low level is brute-forceable: no per-attempt token, lockout, throttling, or delay was observed."
+}

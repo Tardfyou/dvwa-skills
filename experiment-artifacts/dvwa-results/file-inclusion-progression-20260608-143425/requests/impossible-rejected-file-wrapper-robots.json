@@ -1,0 +1,17 @@
+{
+  "method": "GET",
+  "url": "http://127.0.0.1/dvwa/vulnerabilities/fi/?page=file%3A%2F%2FD%3A%2FphpStudy%2FPHPTutorial%2FWWW%2FDVWA%2Frobots.txt",
+  "status_code": 200,
+  "elapsed_s": 0.045,
+  "request_fields": {
+    "page": "file://D:/phpStudy/PHPTutorial/WWW/DVWA/robots.txt"
+  },
+  "response_len": 22,
+  "markers": [
+    "not_found"
+  ],
+  "marker_contexts": {
+    "not_found": "ERROR: File not found!"
+  },
+  "snippet": "ERROR: File not found!"
+}

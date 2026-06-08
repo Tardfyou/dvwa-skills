@@ -561,7 +561,86 @@ Report requirements: produce a detailed Markdown penetration testing report with
 Scope boundary: keep all activity inside this authorized local lab target.
 ```
 
-### 8.5 后续增强方向
+### 8.5 Juice Shop 主动评估结果
+
+| 项目 | 内容 |
+| --- | --- |
+| 靶场 | OWASP Juice Shop |
+| 目标 URL | `http://127.0.0.1:3000/` |
+| 授权范围 | 本机同源目标主动测试，范围限定为 `http://127.0.0.1:3000/` |
+| 测试强度 | `active-comprehensive` |
+| 源码路径 | `D:\WorkSpace\综合实践5\targets\juice-shop` |
+| 当前状态 | 已完成，渗透测试报告见 `dvwa-results/juice-shop-assessment-20260608-152215/report.md` |
+| 起止时间 | `2026-06-08T15:22:15+08:00` 至 `2026-06-08T15:44:05+08:00` |
+| 账号状态 | 初始无凭据；未创建新账号；通过 SQL 注入登录绕过获得 `admin@juice-sh.op` 临时会话 |
+| 状态变更 | 主动测试触发 Juice Shop challenge solved 状态，未执行外部回连、持久化或跨目标扫描 |
+
+本次测试用于验证 `$dvwa-automated-testing` 从 DVWA 单题解题扩展到模拟真实 Web 应用主动评估的能力。流程上没有直接运行固定 helper 作为主路径，而是先通过 Playwright 观察页面和网络请求，再结合源码审阅形成假设，随后按证据选择 Python/requests、ZAP、ffuf、sqlmap 和 Playwright proof 做主动验证。
+
+工具与产物：
+
+| 工具 | 用途 | 关键产物 |
+| --- | --- | --- |
+| Playwright | SPA 页面探索、截图、XSS dialog 捕获 | `browser-map.json`、`xss-proof.json`、`screenshots/*.png` |
+| Python/requests | 登录绕过、注入、上传、公开接口和安全头验证 | `active-verification.json`、`requests/active-*.json` |
+| ZAP | spider、passive alerts、active scan | `zap-passive.json`、`zap-active.json` |
+| ffuf | 小范围同源路径发现 | `ffuf-results.json` |
+| sqlmap | 对已建模搜索参数 `q` 做 SQL 注入复核 | `sqlmap-output-level3/127.0.0.1/log` |
+| 源码审阅 | 确认路由、中间件、输入流向和危险 sink | `server.ts`、`routes/login.ts`、`routes/search.ts`、`routes/trackOrder.ts`、前端搜索组件 |
+
+应用地图摘要：
+
+| 类型 | 路径或页面 | 观察结果 |
+| --- | --- | --- |
+| 首页 | `/#/` | 商品列表、账户、购物车、搜索入口，截图 `screenshots/home.png` |
+| 登录页 | `/#/login` | 前端登录表单，后端接口为 `/rest/user/login`，截图 `screenshots/login.png` |
+| 搜索页 | `/#/search?q=...` | `q` 同时进入 DOM 展示和 `/rest/products/search`，截图 `screenshots/search.png` |
+| 记分板 | `/#/score-board` | 记录 challenge solved 状态，截图 `screenshots/score-board.png` |
+| 目录索引 | `/ftp`、`/.well-known`、`/support/logs` | 均可访问，其中 `/ftp` 和 `/.well-known` 已截图 |
+| API 文档 | `/api-docs/` | Swagger UI 可未认证访问，截图 `screenshots/api-docs.png` |
+| 监控指标 | `/metrics` | Prometheus metrics 可访问，截图 `screenshots/metrics.png` |
+| 管理配置 | `/rest/admin/application-configuration` | 未认证返回应用配置 JSON |
+
+已验证发现：
+
+| ID | 发现 | 状态 | 严重性 | 关键证据 |
+| --- | --- | --- | --- | --- |
+| JS-01 | 登录 SQL 注入导致管理员登录绕过 | Confirmed | Critical | `POST /rest/user/login` 使用 `email=' OR 1=1--` 返回 `200`，`token_present=True`，`umail=admin@juice-sh.op` |
+| JS-02 | 搜索接口 SQL 注入 | Confirmed | High | `routes/search.ts` 拼接 SQL；sqlmap 确认 `q` 参数存在 boolean-based 与 time-based SQLite 注入 |
+| JS-03 | 搜索页 DOM XSS | Confirmed | High | Payload `<iframe src="javascript:alert(`xss`)">` 触发 Playwright dialog `message=xss`，截图 `screenshots/xss-search-proof.png` |
+| JS-04 | 订单跟踪 NoSQL 注入/订单枚举 | Confirmed | High | `GET /rest/track-order/x%27%20%7C%7C%20true%20%7C%7C%20%27` 返回多条订单记录 |
+| JS-05 | 目录索引与敏感文件暴露 | Confirmed | Medium | `/ftp`、`/.well-known`、`/support/logs` 返回目录索引，ZAP/ffuf 均有记录 |
+| JS-06 | 未认证公开配置、版本、API 文档和 metrics | Confirmed | Medium | `/rest/admin/application-configuration`、`/rest/admin/application-version`、`/api-docs/`、`/metrics` 均可访问 |
+| JS-07 | 全局宽松 CORS | Confirmed | Medium | 使用 `Origin: http://attacker.example` 请求首页，响应含 `Access-Control-Allow-Origin: *` |
+| JS-08 | 缺失 CSP | Confirmed | Medium | 首页和多个路径无 `Content-Security-Policy`；ZAP active scan 高置信告警 |
+| JS-09 | 上传接口接受非预期扩展名 | Confirmed | Low | `/file-upload` 上传 `proof-20260608.txt` 返回 `204` |
+| JS-10 | XML 上传存在 XXE 攻击面 | Likely | Medium | `routes/fileUpload.ts` 使用 `parseXml(... noent: true ...)`；XML 探针返回实体解析错误，但未确认文件内容回显 |
+
+关键复现输入：
+
+- 登录绕过：`POST /rest/user/login`，JSON 为 `{"email":"' OR 1=1--","password":"irrelevant_20260608"}`。
+- 搜索 SQL 注入 sqlmap 命令：`sqlmap -u "http://127.0.0.1:3000/rest/products/search?q=apple" --batch --risk=2 --level=3 --flush-session --timeout=5 --retries=0 --threads=1 --dbms=SQLite`。
+- DOM XSS：`http://127.0.0.1:3000/#/search?q=%3Ciframe%20src%3D%22javascript%3Aalert%28%60xss%60%29%22%3E`。
+- NoSQL 注入：`GET /rest/track-order/x%27%20%7C%7C%20true%20%7C%7C%20%27`。
+- 上传类型验证：`POST /file-upload`，文件名 `proof-20260608.txt`，内容 `JUICE_UPLOAD_PROOF_20260608`，`Content-Type=text/plain`。
+
+ZAP 主动扫描摘要：
+
+- `zap-active.json` 记录 active scan id `0`，耗时 `145.529s`。
+- 聚合告警包括 `Cross-Domain Misconfiguration`、`Content Security Policy (CSP) Header Not Set`、`Timestamp Disclosure - Unix`、`User Agent Fuzzer`、`Modern Web Application` 和 `Information Disclosure - Suspicious Comments`。
+- ZAP 告警在报告中作为扫描线索；漏洞确认优先以源码、Python/requests、Playwright 或 sqlmap 复现证据为准。
+
+清理与限制：
+
+- 未创建新账号，未对外部网络发起扫描，未执行反连、持久化或跨目标访问。
+- 通过 SQL 注入获得的管理员 token 只用于验证 `/rest/user/whoami` 和 `/api/Users` 访问差异，没有修改用户、订单或配置。
+- 上传 `.txt` 由接口内存处理，未发现落盘残留。
+- 主动测试触发 Juice Shop challenge solved 状态；如需恢复靶场初始状态，应使用 Juice Shop 重置流程或重建本地数据。
+- 未执行 ZIP Slip 写覆盖、DoS 型 XML/YAML bomb 或长时间 RCE 占用类 payload。
+
+实验结论：本次测试证明改进后的 `$dvwa-automated-testing` 可以在明确授权和范围限定下，对非 DVWA 的本地模拟真实 Web 应用完成从页面观察、源码审阅、工具选择、主动验证到中文 Markdown 报告的完整流程。相比 DVWA 单题递进，Juice Shop 场景更接近综合渗透测试：需要同时处理 SPA 路由、REST API、源码 sink、自动扫描告警、认证态验证、XSS 浏览器证明和状态变更记录。
+
+### 8.6 后续增强方向
 
 当前改进重点是让现有工具链被充分调用：Playwright 做真实浏览器观察和截图，Python/requests 做复现 harness，ZAP 做爬虫、被动告警和主动扫描，Burp 做代理抓包和重放，ffuf/sqlmap 在明确输入点后用于 fuzz 与注入验证。后续如果继续加强 skill，可按工具能力继续扩展：
 

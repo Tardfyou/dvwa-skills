@@ -1,0 +1,10 @@
+{
+  "cleanup": [
+    {
+      "path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\hackable\\uploads\\d99a75736dcf8ec9d068b63faac18951.jpg",
+      "existed_before_cleanup": true,
+      "deleted": true,
+      "error": null
+    }
+  ]
+}

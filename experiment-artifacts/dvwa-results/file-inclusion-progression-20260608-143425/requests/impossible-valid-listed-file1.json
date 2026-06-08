@@ -1,0 +1,17 @@
+{
+  "method": "GET",
+  "url": "http://127.0.0.1/dvwa/vulnerabilities/fi/?page=file1.php",
+  "status_code": 200,
+  "elapsed_s": 0.039,
+  "request_fields": {
+    "page": "file1.php"
+  },
+  "response_len": 4702,
+  "markers": [
+    "file1"
+  ],
+  "marker_contexts": {
+    "file1": "ptography API DVWA Security PHP Info About Logout Vulnerability: File Inclusion File 1 Hello admin Your IP address is: 127.0.0.1 [ back ] More Information Wikipedia - File inclusion vulnerability WSTG - Local File Inclusion WSTG - Remote File Inclusion Username: adm"
+  },
+  "snippet": "Vulnerability: File Inclusion :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: File Inclusion File 1 Hello admin Your IP address is: 127.0.0.1 [ back ] More Information Wikipedia - File inclusion vulnerability WSTG - Local File Inclusion WSTG - Remote File Inclusion Username: admin Security Level: Security Level: impossible Locale: en SQLi DB: mysql Damn Vulner"
+}

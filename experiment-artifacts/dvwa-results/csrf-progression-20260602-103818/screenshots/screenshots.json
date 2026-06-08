@@ -1,0 +1,112 @@
+[
+  {
+    "difficulty": "low",
+    "name": "security-set",
+    "path": "screenshots\\low\\security-set.png"
+  },
+  {
+    "difficulty": "low",
+    "name": "module-page",
+    "path": "screenshots\\low\\module-page.png"
+  },
+  {
+    "difficulty": "low",
+    "name": "baseline-mismatch",
+    "path": "screenshots\\low\\baseline-mismatch.png"
+  },
+  {
+    "difficulty": "low",
+    "name": "proof-password-changed",
+    "path": "screenshots\\low\\proof-password-changed.png"
+  },
+  {
+    "difficulty": "low",
+    "name": "verify-temp-password",
+    "path": "screenshots\\low\\verify-temp-password.png"
+  },
+  {
+    "difficulty": "medium",
+    "name": "security-set",
+    "path": "screenshots\\medium\\security-set.png"
+  },
+  {
+    "difficulty": "medium",
+    "name": "module-page",
+    "path": "screenshots\\medium\\module-page.png"
+  },
+  {
+    "difficulty": "medium",
+    "name": "baseline-no-referer",
+    "path": "screenshots\\medium\\baseline-no-referer.png"
+  },
+  {
+    "difficulty": "medium",
+    "name": "proof-weak-referer",
+    "path": "screenshots\\medium\\proof-weak-referer.png"
+  },
+  {
+    "difficulty": "medium",
+    "name": "verify-temp-password",
+    "path": "screenshots\\medium\\verify-temp-password.png"
+  },
+  {
+    "difficulty": "high",
+    "name": "security-set",
+    "path": "screenshots\\high\\security-set.png"
+  },
+  {
+    "difficulty": "high",
+    "name": "module-page",
+    "path": "screenshots\\high\\module-page.png"
+  },
+  {
+    "difficulty": "high",
+    "name": "baseline-missing-token",
+    "path": "screenshots\\high\\baseline-missing-token.png"
+  },
+  {
+    "difficulty": "high",
+    "name": "token-aware-change",
+    "path": "screenshots\\high\\token-aware-change.png"
+  },
+  {
+    "difficulty": "high",
+    "name": "verify-temp-password",
+    "path": "screenshots\\high\\verify-temp-password.png"
+  },
+  {
+    "difficulty": "impossible",
+    "name": "security-set",
+    "path": "screenshots\\impossible\\security-set.png"
+  },
+  {
+    "difficulty": "impossible",
+    "name": "module-page",
+    "path": "screenshots\\impossible\\module-page.png"
+  },
+  {
+    "difficulty": "impossible",
+    "name": "baseline-missing-token",
+    "path": "screenshots\\impossible\\baseline-missing-token.png"
+  },
+  {
+    "difficulty": "impossible",
+    "name": "wrong-current-password",
+    "path": "screenshots\\impossible\\wrong-current-password.png"
+  },
+  {
+    "difficulty": "impossible",
+    "name": "legitimate-change-with-current-password",
+    "path": "screenshots\\impossible\\legitimate-change-with-current-password.png"
+  },
+  {
+    "difficulty": "impossible",
+    "name": "verify-temp-password",
+    "path": "screenshots\\impossible\\verify-temp-password.png"
+  },
+  {
+    "difficulty": "impossible",
+    "name": "verify-restored-password",
+    "path": "screenshots\\impossible\\verify-restored-password.png"
+  }
+]

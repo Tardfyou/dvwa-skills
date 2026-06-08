@@ -1,0 +1,14 @@
+{
+  "name": "robots.txt",
+  "url": "http://127.0.0.1:3000/robots.txt",
+  "status_code": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "response_len": 28,
+  "headers_subset": {
+    "Access-Control-Allow-Origin": "*",
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Content-Type-Options": "nosniff",
+    "Feature-Policy": "payment 'self'"
+  },
+  "snippet": "User-agent: * Disallow: /ftp"
+}

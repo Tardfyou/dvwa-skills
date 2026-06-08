@@ -1,0 +1,24 @@
+{
+  "name": "file-upload-xxe-local-lab-file",
+  "request": {
+    "method": "POST",
+    "url": "http://127.0.0.1:3000/file-upload",
+    "file": "proof-xxe-20260608.xml",
+    "entity": "file:///D:/WorkSpace/综合实践5/targets/juice-shop/ftp/legal.md"
+  },
+  "response": {
+    "status_code": 410,
+    "url": "http://127.0.0.1:3000/file-upload",
+    "elapsed_s": 0.006,
+    "content_type": "text/html; charset=utf-8",
+    "content_length": null,
+    "response_len": 4007,
+    "headers_subset": {
+      "Access-Control-Allow-Origin": "*",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-Content-Type-Options": "nosniff"
+    },
+    "snippet": "<html> <head> <meta charset='utf-8'> <title>Error: B2B customer complaints via file upload have been deprecated for security reasons: Entity &#39;xxe&#39; failed to parse</title> <style>* { margin: 0; padding: 0; outline: 0; } body { padding: 80px 100px; font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\"; background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9)); background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9); background-repeat: no-repeat; color: #555; -webkit-font-smoothing: antialiased; } h1, h2 { font-size: 22px; color: #343434; } h1 em, h2 em { padding: 0 5px; font-weight: normal; } h1 { font-size: 60px; } h2 { margin-top: 10px; } ul li { list-style: none; } #stacktrace { margin-left: 60px; } </style> </head> <body> <div id=\"wrapper\"> <h1>OWASP Juice Shop (Express ^4.22.1)</h1> <h2><em>410</em> Error: B2B customer complaints via file upload have been deprecated for security reasons: Entity &#39;xxe&#39; failed to parse</h2> <ul id=\"stack"
+  },
+  "extra": {}
+}

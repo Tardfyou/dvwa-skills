@@ -1,0 +1,13 @@
+{
+  "method": "GET",
+  "url": "http://127.0.0.1/dvwa/login.php",
+  "status_code": 200,
+  "elapsed_s": 0.034,
+  "request_fields": {},
+  "response_len": 1490,
+  "markers": [
+    "unknown"
+  ],
+  "marker_contexts": {},
+  "snippet": "Notice : Array to string conversion in D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\dvwa\\includes\\dvwaPage.inc.php on line 79 Login :: Damn Vulnerable Web Application (DVWA) Username Password Damn Vulnerable Web Application (DVWA)"
+}

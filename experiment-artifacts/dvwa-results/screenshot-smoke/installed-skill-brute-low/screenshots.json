@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-06-02T10:19:24+08:00",
+  "base_url": "http://127.0.0.1/dvwa/",
+  "difficulty": "low",
+  "module_path": "vulnerabilities/brute/",
+  "items": [
+    {
+      "label": "authenticated home",
+      "path": "dvwa-results\\screenshot-smoke\\installed-skill-brute-low\\authenticated-home.png",
+      "url": "http://127.0.0.1/dvwa/index.php",
+      "timestamp": "2026-06-02T10:19:22+08:00"
+    },
+    {
+      "label": "security low",
+      "path": "dvwa-results\\screenshot-smoke\\installed-skill-brute-low\\security-low.png",
+      "url": "http://127.0.0.1/dvwa/security.php",
+      "timestamp": "2026-06-02T10:19:24+08:00"
+    },
+    {
+      "label": "module low",
+      "path": "dvwa-results\\screenshot-smoke\\installed-skill-brute-low\\module-low.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/brute/",
+      "timestamp": "2026-06-02T10:19:24+08:00"
+    }
+  ]
+}

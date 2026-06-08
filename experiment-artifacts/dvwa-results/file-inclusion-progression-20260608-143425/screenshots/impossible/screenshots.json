@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-06-08T14:34:49+08:00",
+  "base_url": "http://127.0.0.1/dvwa/",
+  "difficulty": "impossible",
+  "module_path": "vulnerabilities/fi/",
+  "items": [
+    {
+      "label": "authenticated home",
+      "path": "dvwa-results\\file-inclusion-progression-20260608-143425\\screenshots\\impossible\\authenticated-home.png",
+      "url": "http://127.0.0.1/dvwa/index.php",
+      "timestamp": "2026-06-08T14:34:47+08:00"
+    },
+    {
+      "label": "security impossible",
+      "path": "dvwa-results\\file-inclusion-progression-20260608-143425\\screenshots\\impossible\\security-impossible.png",
+      "url": "http://127.0.0.1/dvwa/security.php",
+      "timestamp": "2026-06-08T14:34:49+08:00"
+    },
+    {
+      "label": "module impossible",
+      "path": "dvwa-results\\file-inclusion-progression-20260608-143425\\screenshots\\impossible\\module-impossible.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/fi/",
+      "timestamp": "2026-06-08T14:34:49+08:00"
+    }
+  ]
+}

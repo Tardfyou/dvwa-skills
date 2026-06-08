@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-06-02T10:23:25+08:00",
+  "base_url": "http://127.0.0.1/dvwa/",
+  "difficulty": "high",
+  "module_path": "vulnerabilities/exec/",
+  "items": [
+    {
+      "label": "authenticated home",
+      "path": "dvwa-results\\command-injection-progression-20260602-102141\\screenshots\\high\\authenticated-home.png",
+      "url": "http://127.0.0.1/dvwa/index.php",
+      "timestamp": "2026-06-02T10:23:23+08:00"
+    },
+    {
+      "label": "security high",
+      "path": "dvwa-results\\command-injection-progression-20260602-102141\\screenshots\\high\\security-high.png",
+      "url": "http://127.0.0.1/dvwa/security.php",
+      "timestamp": "2026-06-02T10:23:24+08:00"
+    },
+    {
+      "label": "module high",
+      "path": "dvwa-results\\command-injection-progression-20260602-102141\\screenshots\\high\\module-high.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/",
+      "timestamp": "2026-06-02T10:23:25+08:00"
+    }
+  ]
+}

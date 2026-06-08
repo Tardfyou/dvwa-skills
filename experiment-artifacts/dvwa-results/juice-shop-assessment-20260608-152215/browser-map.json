@@ -1,0 +1,1802 @@
+{
+  "target": "http://127.0.0.1:3000/",
+  "elapsed_s": 21.481,
+  "pages": [
+    {
+      "name": "home",
+      "url": "http://127.0.0.1:3000/#/",
+      "title": "OWASP Juice Shop",
+      "screenshot": "screenshots\\home.png",
+      "forms": [],
+      "links": [
+        {
+          "text": "But me wait!",
+          "href": "https://www.youtube.com/watch?v=9PnbKL3wuH4"
+        },
+        {
+          "text": "exit_to_app  Login",
+          "href": "http://127.0.0.1:3000/#/login"
+        },
+        {
+          "text": "feedback Customer Feedback",
+          "href": "http://127.0.0.1:3000/#/contact"
+        },
+        {
+          "text": "auto_awesome AI Chat Improved",
+          "href": "http://127.0.0.1:3000/#/chatbot"
+        },
+        {
+          "text": "business_center About Us",
+          "href": "http://127.0.0.1:3000/#/about"
+        },
+        {
+          "text": "camera Photo Wall",
+          "href": "http://127.0.0.1:3000/#/photo-wall"
+        },
+        {
+          "text": "Score Board",
+          "href": "http://127.0.0.1:3000/#/score-board"
+        },
+        {
+          "text": "GitHub",
+          "href": "http://127.0.0.1:3000/redirect?to=https://github.com/juice-shop/juice-shop"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "menu",
+          "type": "submit",
+          "aria": "Open Sidenav"
+        },
+        {
+          "text": "OWASP Juice Shop",
+          "type": "submit",
+          "aria": "Back to homepage"
+        },
+        {
+          "text": "search",
+          "type": "submit",
+          "aria": "Open search"
+        },
+        {
+          "text": "close",
+          "type": "submit",
+          "aria": "Close search"
+        },
+        {
+          "text": "account_circle\nAccount",
+          "type": "submit",
+          "aria": "Show/hide account menu"
+        },
+        {
+          "text": "shopping_cart\nYour Basket\n0",
+          "type": "submit",
+          "aria": "Show the shopping cart"
+        },
+        {
+          "text": "language\nEN",
+          "type": "submit",
+          "aria": "Language selection menu"
+        },
+        {
+          "text": "code\nJump to related coding challenge",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "X",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "Previous page",
+          "type": "button",
+          "aria": "Previous page"
+        },
+        {
+          "text": "Next page",
+          "type": "button",
+          "aria": "Next page"
+        },
+        {
+          "text": "Force page reload",
+          "type": "submit",
+          "aria": null
+        }
+      ]
+    },
+    {
+      "name": "login",
+      "url": "http://127.0.0.1:3000/#/login",
+      "title": "OWASP Juice Shop",
+      "screenshot": "screenshots\\login.png",
+      "forms": [],
+      "links": [
+        {
+          "text": "But me wait!",
+          "href": "https://www.youtube.com/watch?v=9PnbKL3wuH4"
+        },
+        {
+          "text": "exit_to_app  Login",
+          "href": "http://127.0.0.1:3000/#/login"
+        },
+        {
+          "text": "feedback Customer Feedback",
+          "href": "http://127.0.0.1:3000/#/contact"
+        },
+        {
+          "text": "auto_awesome AI Chat Improved",
+          "href": "http://127.0.0.1:3000/#/chatbot"
+        },
+        {
+          "text": "business_center About Us",
+          "href": "http://127.0.0.1:3000/#/about"
+        },
+        {
+          "text": "camera Photo Wall",
+          "href": "http://127.0.0.1:3000/#/photo-wall"
+        },
+        {
+          "text": "Score Board",
+          "href": "http://127.0.0.1:3000/#/score-board"
+        },
+        {
+          "text": "GitHub",
+          "href": "http://127.0.0.1:3000/redirect?to=https://github.com/juice-shop/juice-shop"
+        },
+        {
+          "text": "Forgot your password?",
+          "href": "http://127.0.0.1:3000/#/forgot-password"
+        },
+        {
+          "text": "Not yet a customer?",
+          "href": "http://127.0.0.1:3000/#/register"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "menu",
+          "type": "submit",
+          "aria": "Open Sidenav"
+        },
+        {
+          "text": "OWASP Juice Shop",
+          "type": "submit",
+          "aria": "Back to homepage"
+        },
+        {
+          "text": "search",
+          "type": "submit",
+          "aria": "Open search"
+        },
+        {
+          "text": "close",
+          "type": "submit",
+          "aria": "Close search"
+        },
+        {
+          "text": "account_circle\nAccount",
+          "type": "submit",
+          "aria": "Show/hide account menu"
+        },
+        {
+          "text": "shopping_cart\nYour Basket\n0",
+          "type": "submit",
+          "aria": "Show the shopping cart"
+        },
+        {
+          "text": "language\nEN",
+          "type": "submit",
+          "aria": "Language selection menu"
+        },
+        {
+          "text": "code\nJump to related coding challenge",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "X",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Button to display the password",
+          "type": "submit",
+          "aria": "Button to display the password"
+        },
+        {
+          "text": "exit_to_app\nLog in",
+          "type": "submit",
+          "aria": "Login"
+        },
+        {
+          "text": "Log in with Google",
+          "type": "submit",
+          "aria": "Login with Google"
+        }
+      ]
+    },
+    {
+      "name": "search",
+      "url": "http://127.0.0.1:3000/#/search",
+      "title": "OWASP Juice Shop",
+      "screenshot": "screenshots\\search.png",
+      "forms": [],
+      "links": [
+        {
+          "text": "But me wait!",
+          "href": "https://www.youtube.com/watch?v=9PnbKL3wuH4"
+        },
+        {
+          "text": "exit_to_app  Login",
+          "href": "http://127.0.0.1:3000/#/login"
+        },
+        {
+          "text": "feedback Customer Feedback",
+          "href": "http://127.0.0.1:3000/#/contact"
+        },
+        {
+          "text": "auto_awesome AI Chat Improved",
+          "href": "http://127.0.0.1:3000/#/chatbot"
+        },
+        {
+          "text": "business_center About Us",
+          "href": "http://127.0.0.1:3000/#/about"
+        },
+        {
+          "text": "camera Photo Wall",
+          "href": "http://127.0.0.1:3000/#/photo-wall"
+        },
+        {
+          "text": "Score Board",
+          "href": "http://127.0.0.1:3000/#/score-board"
+        },
+        {
+          "text": "GitHub",
+          "href": "http://127.0.0.1:3000/redirect?to=https://github.com/juice-shop/juice-shop"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "menu",
+          "type": "submit",
+          "aria": "Open Sidenav"
+        },
+        {
+          "text": "OWASP Juice Shop",
+          "type": "submit",
+          "aria": "Back to homepage"
+        },
+        {
+          "text": "search",
+          "type": "submit",
+          "aria": "Open search"
+        },
+        {
+          "text": "close",
+          "type": "submit",
+          "aria": "Close search"
+        },
+        {
+          "text": "account_circle\nAccount",
+          "type": "submit",
+          "aria": "Show/hide account menu"
+        },
+        {
+          "text": "shopping_cart\nYour Basket\n0",
+          "type": "submit",
+          "aria": "Show the shopping cart"
+        },
+        {
+          "text": "language\nEN",
+          "type": "submit",
+          "aria": "Language selection menu"
+        },
+        {
+          "text": "code\nJump to related coding challenge",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "X",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "add_shopping_cart\nAdd to Basket",
+          "type": "submit",
+          "aria": "Add to Basket"
+        },
+        {
+          "text": "Previous page",
+          "type": "button",
+          "aria": "Previous page"
+        },
+        {
+          "text": "Next page",
+          "type": "button",
+          "aria": "Next page"
+        }
+      ]
+    },
+    {
+      "name": "about",
+      "url": "http://127.0.0.1:3000/#/about",
+      "title": "OWASP Juice Shop",
+      "screenshot": "screenshots\\about.png",
+      "forms": [],
+      "links": [
+        {
+          "text": "But me wait!",
+          "href": "https://www.youtube.com/watch?v=9PnbKL3wuH4"
+        },
+        {
+          "text": "exit_to_app  Login",
+          "href": "http://127.0.0.1:3000/#/login"
+        },
+        {
+          "text": "feedback Customer Feedback",
+          "href": "http://127.0.0.1:3000/#/contact"
+        },
+        {
+          "text": "auto_awesome AI Chat Improved",
+          "href": "http://127.0.0.1:3000/#/chatbot"
+        },
+        {
+          "text": "business_center About Us",
+          "href": "http://127.0.0.1:3000/#/about"
+        },
+        {
+          "text": "camera Photo Wall",
+          "href": "http://127.0.0.1:3000/#/photo-wall"
+        },
+        {
+          "text": "Score Board",
+          "href": "http://127.0.0.1:3000/#/score-board"
+        },
+        {
+          "text": "GitHub",
+          "href": "http://127.0.0.1:3000/redirect?to=https://github.com/juice-shop/juice-shop"
+        },
+        {
+          "text": "Check out our boring terms of use if you are interested in such lame stuff.",
+          "href": "http://127.0.0.1:3000/ftp/legal.md"
+        },
+        {
+          "text": "BlueSky",
+          "href": "https://bsky.app/profile/owasp-juice.shop"
+        },
+        {
+          "text": "Mastodon",
+          "href": "https://fosstodon.org/@owasp_juiceshop"
+        },
+        {
+          "text": "Twitter",
+          "href": "https://twitter.com/owasp_juiceshop"
+        },
+        {
+          "text": "Facebook",
+          "href": "https://www.facebook.com/owasp.juiceshop"
+        },
+        {
+          "text": "Slack",
+          "href": "https://owasp.org/slack/invite"
+        },
+        {
+          "text": "Reddit",
+          "href": "https://www.reddit.com/r/owasp_juiceshop"
+        },
+        {
+          "text": "Press Kit",
+          "href": "https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop"
+        },
+        {
+          "text": "NFT",
+          "href": "https://opensea.io/collection/juice-shop"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "menu",
+          "type": "submit",
+          "aria": "Open Sidenav"
+        },
+        {
+          "text": "OWASP Juice Shop",
+          "type": "submit",
+          "aria": "Back to homepage"
+        },
+        {
+          "text": "search",
+          "type": "submit",
+          "aria": "Open search"
+        },
+        {
+          "text": "close",
+          "type": "submit",
+          "aria": "Close search"
+        },
+        {
+          "text": "account_circle\nAccount",
+          "type": "submit",
+          "aria": "Show/hide account menu"
+        },
+        {
+          "text": "shopping_cart\nYour Basket\n0",
+          "type": "submit",
+          "aria": "Show the shopping cart"
+        },
+        {
+          "text": "language\nEN",
+          "type": "submit",
+          "aria": "Language selection menu"
+        },
+        {
+          "text": "code\nJump to related coding challenge",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "X",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "BlueSky",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Mastodon",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Twitter",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Facebook",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Slack",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Reddit",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Press Kit",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "NFT",
+          "type": "submit",
+          "aria": null
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "url": "http://127.0.0.1:3000/#/contact",
+      "title": "OWASP Juice Shop",
+      "screenshot": "screenshots\\contact.png",
+      "forms": [],
+      "links": [
+        {
+          "text": "But me wait!",
+          "href": "https://www.youtube.com/watch?v=9PnbKL3wuH4"
+        },
+        {
+          "text": "exit_to_app  Login",
+          "href": "http://127.0.0.1:3000/#/login"
+        },
+        {
+          "text": "feedback Customer Feedback",
+          "href": "http://127.0.0.1:3000/#/contact"
+        },
+        {
+          "text": "auto_awesome AI Chat Improved",
+          "href": "http://127.0.0.1:3000/#/chatbot"
+        },
+        {
+          "text": "business_center About Us",
+          "href": "http://127.0.0.1:3000/#/about"
+        },
+        {
+          "text": "camera Photo Wall",
+          "href": "http://127.0.0.1:3000/#/photo-wall"
+        },
+        {
+          "text": "Score Board",
+          "href": "http://127.0.0.1:3000/#/score-board"
+        },
+        {
+          "text": "GitHub",
+          "href": "http://127.0.0.1:3000/redirect?to=https://github.com/juice-shop/juice-shop"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "menu",
+          "type": "submit",
+          "aria": "Open Sidenav"
+        },
+        {
+          "text": "OWASP Juice Shop",
+          "type": "submit",
+          "aria": "Back to homepage"
+        },
+        {
+          "text": "search",
+          "type": "submit",
+          "aria": "Open search"
+        },
+        {
+          "text": "close",
+          "type": "submit",
+          "aria": "Close search"
+        },
+        {
+          "text": "account_circle\nAccount",
+          "type": "submit",
+          "aria": "Show/hide account menu"
+        },
+        {
+          "text": "shopping_cart\nYour Basket\n0",
+          "type": "submit",
+          "aria": "Show the shopping cart"
+        },
+        {
+          "text": "language\nEN",
+          "type": "submit",
+          "aria": "Language selection menu"
+        },
+        {
+          "text": "code\nJump to related coding challenge",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "X",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "send\nSubmit",
+          "type": "submit",
+          "aria": "Button to send the review"
+        }
+      ]
+    },
+    {
+      "name": "score-board",
+      "url": "http://127.0.0.1:3000/#/score-board",
+      "title": "OWASP Juice Shop",
+      "screenshot": "screenshots\\score-board.png",
+      "forms": [],
+      "links": [
+        {
+          "text": "But me wait!",
+          "href": "https://www.youtube.com/watch?v=9PnbKL3wuH4"
+        },
+        {
+          "text": "exit_to_app  Login",
+          "href": "http://127.0.0.1:3000/#/login"
+        },
+        {
+          "text": "feedback Customer Feedback",
+          "href": "http://127.0.0.1:3000/#/contact"
+        },
+        {
+          "text": "auto_awesome AI Chat Improved",
+          "href": "http://127.0.0.1:3000/#/chatbot"
+        },
+        {
+          "text": "business_center About Us",
+          "href": "http://127.0.0.1:3000/#/about"
+        },
+        {
+          "text": "camera Photo Wall",
+          "href": "http://127.0.0.1:3000/#/photo-wall"
+        },
+        {
+          "text": "Score Board",
+          "href": "http://127.0.0.1:3000/#/score-board"
+        },
+        {
+          "text": "GitHub",
+          "href": "http://127.0.0.1:3000/redirect?to=https://github.com/juice-shop/juice-shop"
+        },
+        {
+          "text": "security concerns",
+          "href": "https://pwning.owasp-juice.shop/companion-guide/latest/part1/challenges.html#_potentially_dangerous_challenges"
+        },
+        {
+          "text": "policy_outline",
+          "href": "https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html"
+        },
+        {
+          "text": "policy_outline",
+          "href": "https://cheatsheetseries.owasp.org/cheatsheets/Error_Handling_Cheat_Sheet.html"
+        },
+        {
+          "text": "popular monitoring system",
+          "href": "https://github.com/prometheus/prometheus"
+        },
+        {
+          "text": "policy_outline",
+          "href": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+        },
+        {
+          "text": "extension_offRequires LLM API",
+          "href": "https://howto-llm.owasp-juice.shop/"
+        },
+        {
+          "text": "extension_offRequires LLM API",
+          "href": "https://howto-llm.owasp-juice.shop/"
+        },
+        {
+          "text": "policy_outline",
+          "href": "https://cheatsheetseries.owasp.org/cheatsheets/Web_Service_Security_Cheat_Sheet.html"
+        },
+        {
+          "text": "Forgot Password",
+          "href": "http://127.0.0.1:3000/#/forgot-password"
+        },
+        {
+          "text": "Forgot Password",
+          "href": "http://127.0.0.1:3000/#/forgot-password"
+        },
+        {
+          "text": "Inform the shop",
+          "href": "http://127.0.0.1:3000/#/contact"
+        },
+        {
+          "text": "Forgot Password",
+          "href": "http://127.0.0.1:3000/#/forgot-password"
+        },
+        {
+          "text": "another origin",
+          "href": "http://htmledit.squarefree.com/"
+        },
+        {
+          "text": "extension_offRequires LLM API",
+          "href": "https://howto-llm.owasp-juice.shop/"
+        },
+        {
+          "text": "extension_offRequires Alchemy API Key",
+          "href": "https://howto-web3.owasp-juice.shop/"
+        },
+        {
+          "text": "OWASP SSL Advanced Forensic Tool (O-Saft)",
+          "href": "http://127.0.0.1:3000/#/search?q=OWASP%20SSL%20Advanced%20Forensic%20Tool%20(O-Saft)"
+        },
+        {
+          "text": "Forgot Password",
+          "href": "http://127.0.0.1:3000/#/forgot-password"
+        },
+        {
+          "text": "Inform the shop",
+          "href": "http://127.0.0.1:3000/#/contact"
+        },
+        {
+          "text": "policy_outline",
+          "href": "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html"
+        },
+        {
+          "text": "easter egg",
+          "href": "https://en.wikipedia.org/wiki/Easter_egg_(media)"
+        },
+        {
+          "text": "inform the shop",
+          "href": "http://127.0.0.1:3000/#/contact"
+        },
+        {
+          "text": "Inform the shop",
+          "href": "http://127.0.0.1:3000/#/contact"
+        },
+        {
+          "text": "SIEM signature",
+          "href": "https://github.com/Neo23x0/sigma"
+        },
+        {
+          "text": "Poison Null Byte",
+          "href": "https://hakipedia.com/index.php/Poison_Null_Byte"
+        },
+        {
+          "text": "Forgot Password",
+          "href": "http://127.0.0.1:3000/#/forgot-password"
+        },
+        {
+          "text": "Forgot Password",
+          "href": "http://127.0.0.1:3000/#/forgot-password"
+        },
+        {
+          "text": "Rat out",
+          "href": "http://127.0.0.1:3000/#/contact"
+        },
+        {
+          "text": "Inform the shop",
+          "href": "http://127.0.0.1:3000/#/contact"
+        },
+        {
+          "text": "cute cross-domain kittens",
+          "href": "https://cataas.com/cat"
+        },
+        {
+          "text": "Inform the shop",
+          "href": "http://127.0.0.1:3000/#/contact"
+        },
+        {
+          "text": "Inform the shop",
+          "href": "http://127.0.0.1:3000/#/contact"
+        },
+        {
+          "text": "policy_outline",
+          "href": "https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html"
+        },
+        {
+          "text": "Forgot Password",
+          "href": "http://127.0.0.1:3000/#/forgot-password"
+        },
+        {
+          "text": "Forgot Password",
+          "href": "http://127.0.0.1:3000/#/forgot-password"
+        },
+        {
+          "text": "Inform the development team",
+          "href": "http://127.0.0.1:3000/#/contact"
+        },
+        {
+          "text": "Legal Information",
+          "href": "http://127.0.0.1:3000/ftp/legal.md"
+        },
+        {
+          "text": "₿ Unlock Premium Challenge",
+          "href": "https://blockchain.info/address/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm"
+        },
+        {
+          "text": "extension_offRequires Alchemy API Key",
+          "href": "https://howto-web3.owasp-juice.shop/"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "menu",
+          "type": "submit",
+          "aria": "Open Sidenav"
+        },
+        {
+          "text": "OWASP Juice Shop",
+          "type": "submit",
+          "aria": "Back to homepage"
+        },
+        {
+          "text": "search",
+          "type": "submit",
+          "aria": "Open search"
+        },
+        {
+          "text": "close",
+          "type": "submit",
+          "aria": "Close search"
+        },
+        {
+          "text": "account_circle\nAccount",
+          "type": "submit",
+          "aria": "Show/hide account menu"
+        },
+        {
+          "text": "shopping_cart\nYour Basket\n0",
+          "type": "submit",
+          "aria": "Show the shopping cart"
+        },
+        {
+          "text": "language\nEN",
+          "type": "submit",
+          "aria": "Language selection menu"
+        },
+        {
+          "text": "code\nJump to related coding challenge",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "X",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "reset all filters",
+          "type": "submit",
+          "aria": "reset all filters"
+        },
+        {
+          "text": "settings",
+          "type": "submit",
+          "aria": "Open additional settings dialog"
+        },
+        {
+          "text": "All",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Broken Access Control",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "XSS",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Observability Failures",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Improper Input Validation",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Unvalidated Redirects",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Vulnerable Components",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Broken Authentication",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Security through Obscurity",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Insecure Deserialization",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Broken Anti Automation",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Injection",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Sensitive Data Exposure",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Security Misconfiguration",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Cryptographic Issues",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Miscellaneous",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "XXE",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "Hide disabled challenges",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "code",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "school_outline",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "code",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "school_outline",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "lightbulb_outlined\n0/2",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "code",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "school_outline",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "lightbulb_outlined\n0/3",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "school_outline",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "lightbulb_outlined\n0/4",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "code",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "lightbulb_outlined\n0/2",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "lightbulb_outlined\n0/4",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "code",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "lightbulb_outlined\n0/3",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "lightbulb_outlined\n0/3",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "lightbulb_outlined\n0/3",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "code",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "lightbulb_outlined\n0/3",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "lightbulb_outlined\n0/4",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "code",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "lightbulb_outlined\n0/1",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "lightbulb_outlined\n0/1",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "school_outline",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "lightbulb_outlined\n0/2",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "school_outline",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "lightbulb_outlined\n0/1",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "code",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "school_outline",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "lightbulb_outlined\n0/5",
+          "type": "submit",
+          "aria": null
+        }
+      ]
+    },
+    {
+      "name": "privacy-security",
+      "url": "http://127.0.0.1:3000/#/privacy-security",
+      "title": "OWASP Juice Shop",
+      "screenshot": "screenshots\\privacy-security.png",
+      "forms": [],
+      "links": [
+        {
+          "text": "But me wait!",
+          "href": "https://www.youtube.com/watch?v=9PnbKL3wuH4"
+        },
+        {
+          "text": "exit_to_app  Login",
+          "href": "http://127.0.0.1:3000/#/login"
+        },
+        {
+          "text": "feedback Customer Feedback",
+          "href": "http://127.0.0.1:3000/#/contact"
+        },
+        {
+          "text": "auto_awesome AI Chat Improved",
+          "href": "http://127.0.0.1:3000/#/chatbot"
+        },
+        {
+          "text": "business_center About Us",
+          "href": "http://127.0.0.1:3000/#/about"
+        },
+        {
+          "text": "camera Photo Wall",
+          "href": "http://127.0.0.1:3000/#/photo-wall"
+        },
+        {
+          "text": "Score Board",
+          "href": "http://127.0.0.1:3000/#/score-board"
+        },
+        {
+          "text": "GitHub",
+          "href": "http://127.0.0.1:3000/redirect?to=https://github.com/juice-shop/juice-shop"
+        }
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "menu",
+          "type": "submit",
+          "aria": "Open Sidenav"
+        },
+        {
+          "text": "OWASP Juice Shop",
+          "type": "submit",
+          "aria": "Back to homepage"
+        },
+        {
+          "text": "search",
+          "type": "submit",
+          "aria": "Open search"
+        },
+        {
+          "text": "close",
+          "type": "submit",
+          "aria": "Close search"
+        },
+        {
+          "text": "account_circle\nAccount",
+          "type": "submit",
+          "aria": "Show/hide account menu"
+        },
+        {
+          "text": "shopping_cart\nYour Basket\n0",
+          "type": "submit",
+          "aria": "Show the shopping cart"
+        },
+        {
+          "text": "language\nEN",
+          "type": "submit",
+          "aria": "Language selection menu"
+        },
+        {
+          "text": "code\nJump to related coding challenge",
+          "type": "submit",
+          "aria": null
+        },
+        {
+          "text": "X",
+          "type": "submit",
+          "aria": null
+        }
+      ]
+    }
+  ],
+  "same_origin_network": [
+    {
+      "url": "http://127.0.0.1:3000/",
+      "status": 200,
+      "method": "GET",
+      "type": "document"
+    },
+    {
+      "url": "http://127.0.0.1:3000/chunk-KD3CNUZG.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/chunk-PX7UKXVL.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/chunk-Y3BEW76R.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/chunk-B3RFAYKZ.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/chunk-R7LX7FKI.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/chunk-EMJTEAHL.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/chunk-7U6P4YGV.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/chunk-UNFVUBM2.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/scripts.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/polyfills.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/styles.css",
+      "status": 200,
+      "method": "GET",
+      "type": "stylesheet"
+    },
+    {
+      "url": "http://127.0.0.1:3000/chunk-KI34UYIE.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/chunk-6RWMKLEX.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/main.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/chunk-NUMHA4AJ.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/chunk-QPSST66Y.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/socket.io/?EIO=4&transport=polling&t=PwcD5WD",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/i18n/en.json",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/admin/application-version",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/admin/application-version",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/admin/application-configuration",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/admin/application-configuration",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/JuiceShop_Logo.png",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/admin/application-configuration",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/admin/application-configuration",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/socket.io/?EIO=4&transport=polling&t=PwcD5X9&sid=v9aiU7pQ8JV3Z_aFAAAI",
+      "status": 200,
+      "method": "POST",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/socket.io/?EIO=4&transport=polling&t=PwcD5XA&sid=v9aiU7pQ8JV3Z_aFAAAI",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/media/material-icons-LEZCGFVT.woff2",
+      "status": 200,
+      "method": "GET",
+      "type": "font"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/admin/application-configuration",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/continue-code",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/languages",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/confetti-22GFNPW3.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/admin/application-configuration",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/products/search?q=",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/api/Challenges/?name=Score%20Board",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/api/Quantitys/",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/api/Challenges/?name=Score%20Board",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/products/apple_juice.jpg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/products/apple_pressings.jpg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/products/banana_juice.jpg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/products/basil_smoothie.png",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/products/artwork2.jpg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/products/berry_juice.png",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/products/braga.jpg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/products/carrot_juice.jpeg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/products/dragonfruit_juice.png",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/products/eggfruit_juice.jpg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/products/elderflower_cordial.jpg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/products/fruit_press.jpg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/products/grape_juice.png",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/products/green_smoothie.jpg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/products/permafrost.jpg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/products/lemon_juice.jpg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/admin/application-configuration",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/products/search?q=",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/api/Quantitys/",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/about.component-H5G4I6H3.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/admin/application-configuration",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/api/Feedbacks/",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/carousel/1.jpg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/carousel/2.jpg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/carousel/3.jpg",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/user/whoami?fields=id,email",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/captcha/",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/rest/admin/application-configuration",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/api/Challenges/?sort=name",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/api/Hints/",
+      "status": 200,
+      "method": "GET",
+      "type": "xhr"
+    },
+    {
+      "url": "http://127.0.0.1:3000/assets/public/images/padding/1px.png",
+      "status": 200,
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "http://127.0.0.1:3000/hacking-instructor-TNP7OAEF.js",
+      "status": 200,
+      "method": "GET",
+      "type": "script"
+    }
+  ],
+  "cookies": [
+    {
+      "name": "continueCode",
+      "value": "YLXQN5WMm9r3ovnRE7GlZcVI3CZSMMh7PHWYcnMUM6AJjK6zq8xVyka2g1le",
+      "domain": "127.0.0.1",
+      "path": "/",
+      "expires": 1812440908,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "language",
+      "value": "en",
+      "domain": "127.0.0.1",
+      "path": "/",
+      "expires": 1812440908,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "welcomebanner_status",
+      "value": "dismiss",
+      "domain": "127.0.0.1",
+      "path": "/",
+      "expires": 1812440909,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ]
+}

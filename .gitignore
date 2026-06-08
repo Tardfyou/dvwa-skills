@@ -4,3 +4,7 @@ references/local-tool-install-status.generated.json
 scripts/__pycache__/
 **/__pycache__/
 *.pyc
+!experiment-artifacts/
+!experiment-artifacts/**
+**/__pycache__/
+*.pyc

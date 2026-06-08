@@ -1,0 +1,14 @@
+{
+  "name": "api-Products",
+  "url": "http://127.0.0.1:3000/api/Products",
+  "status_code": 200,
+  "content_type": "application/json; charset=utf-8",
+  "response_len": 16026,
+  "headers_subset": {
+    "Access-Control-Allow-Origin": "*",
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Content-Type-Options": "nosniff",
+    "Feature-Policy": "payment 'self'"
+  },
+  "snippet": "{\"status\":\"success\",\"data\":[{\"id\":1,\"name\":\"Apple Juice (1000ml)\",\"description\":\"The all-time classic.\",\"price\":1.99,\"deluxePrice\":0.99,\"image\":\"apple_juice.jpg\",\"createdAt\":\"2026-06-08T07:03:07.700Z\",\"updatedAt\":\"2026-06-08T07:03:07.700Z\",\"deletedAt\":null},{\"id\":2,\"name\":\"Orange Juice (1000ml)\",\"description\":\"Made from oranges hand-picked by Uncle Dittmeyer.\",\"price\":2.99,\"deluxePrice\":2.49,\"image\":\"orange_juice.jpg\",\"createdAt\":\"2026-06-08T07:03:07.700Z\",\"updatedAt\":\"2026-06-08T07:03:07.700Z\",\"deletedAt\":null},{\"id\":3,\"name\":\"Eggfruit Juice (500ml)\",\"description\":\"Now with even more exotic flavour.\",\"price\":8.99,\"deluxePrice\":8.99,\"image\":\"eggfruit_juice.jpg\",\"createdAt\":\"2026-06-08T07:03:07.701Z\",\"updatedAt\":\"2026-06-08T07:03:07.701Z\",\"deletedAt\":null},{\"id\":4,\"name\":\"Raspberry Juice (1000ml)\",\"description\":\"Made from blended Raspberry Pi, water and sugar.\",\"price\":4.99,\"deluxePrice\":"
+}

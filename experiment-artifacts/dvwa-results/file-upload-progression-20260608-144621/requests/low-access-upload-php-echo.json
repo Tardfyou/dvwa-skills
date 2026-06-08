@@ -1,0 +1,13 @@
+{
+  "method": "GET",
+  "url": "http://127.0.0.1/dvwa/hackable/uploads/dvwa_upload_low_20260608.php",
+  "status_code": 200,
+  "elapsed_s": 0.007,
+  "content_type": "text/html",
+  "response_len": 26,
+  "marker_present": true,
+  "php_tag_present": false,
+  "executed_echo_only": true,
+  "first_bytes_hex": "445657415f55504c4f41445f50524f4f465f3230323630363038",
+  "text_preview": "DVWA_UPLOAD_PROOF_20260608"
+}

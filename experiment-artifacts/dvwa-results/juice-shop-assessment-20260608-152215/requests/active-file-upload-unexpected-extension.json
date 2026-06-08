@@ -1,0 +1,24 @@
+{
+  "name": "file-upload-unexpected-extension",
+  "request": {
+    "method": "POST",
+    "url": "http://127.0.0.1:3000/file-upload",
+    "file": "proof-20260608.txt",
+    "content_type": "text/plain"
+  },
+  "response": {
+    "status_code": 204,
+    "url": "http://127.0.0.1:3000/file-upload",
+    "elapsed_s": 0.007,
+    "content_type": "",
+    "content_length": null,
+    "response_len": 0,
+    "headers_subset": {
+      "Access-Control-Allow-Origin": "*",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-Content-Type-Options": "nosniff"
+    },
+    "snippet": ""
+  },
+  "extra": {}
+}

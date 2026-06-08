@@ -1,0 +1,14 @@
+{
+  "name": "rest-languages",
+  "url": "http://127.0.0.1:3000/rest/languages",
+  "status_code": 200,
+  "content_type": "application/json; charset=utf-8",
+  "response_len": 4215,
+  "headers_subset": {
+    "Access-Control-Allow-Origin": "*",
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Content-Type-Options": "nosniff",
+    "Feature-Policy": "payment 'self'"
+  },
+  "snippet": "[{\"key\":\"zh_HK\",\"lang\":\"繁體中文\",\"icons\":[\"hk\"],\"shortKey\":\"HK\",\"percentage\":12,\"gauge\":\"empty\"},{\"key\":\"zh_TW\",\"lang\":\"繁體中文\",\"icons\":[\"tw\"],\"shortKey\":\"TW\",\"percentage\":40,\"gauge\":\"quarter\"},{\"key\":\"ja_JP\",\"lang\":\"日本語\",\"icons\":[\"jp\"],\"shortKey\":\"JA\",\"percentage\":48,\"gauge\":\"half\"},{\"key\":\"zh_CN\",\"lang\":\"中文\",\"icons\":[\"cn\"],\"shortKey\":\"CN\",\"percentage\":50,\"gauge\":\"half\"},{\"key\":\"az_AZ\",\"lang\":\"Azərbaycanca\",\"icons\":[\"az\"],\"shortKey\":\"AZ\",\"percentage\":36,\"gauge\":\"quarter\"},{\"key\":\"id_ID\",\"lang\":\"Bahasa Indonesia\",\"icons\":[\"id\"],\"shortKey\":\"ID\",\"percentage\":14,\"gauge\":\"empty\"},{\"key\":\"ca_ES\",\"lang\":\"Catalan\",\"icons\":[\"es-ct\"],\"shortKey\":\"CA\",\"percentage\":8,\"gauge\":\"empty\"},{\"key\":\"cs_CZ\",\"lang\":\"Česky\",\"icons\":[\"cz\"],\"shortKey\":\"CS\",\"percentage\":38,\"gauge\":\"quarter\"},{\"key\":\"da_DK\",\"lang\":\"Dansk\",\"icons\":[\"dk\"],\"shortKey\":\"DA\",\"percentage\":38,\"gauge\":\"quarter\"},{\"key\":\"de_DE\",\"lang\":\"Deutsch\","
+}

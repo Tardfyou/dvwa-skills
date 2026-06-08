@@ -1,0 +1,160 @@
+{
+  "target": "http://127.0.0.1:3000/",
+  "elapsed_s": 0.17,
+  "results": [
+    {
+      "name": "home",
+      "url": "http://127.0.0.1:3000/",
+      "status_code": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "response_len": 9936,
+      "headers_subset": {
+        "Access-Control-Allow-Origin": "*",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Feature-Policy": "payment 'self'"
+      },
+      "snippet": "<!-- ~ Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors. ~ SPDX-License-Identifier: MIT --> <!doctype html> <html lang=\"en\" data-beasties-container> <head> <meta charset=\"utf-8\"> <title>OWASP Juice Shop</title> <meta name=\"description\" content=\"Probably the most modern and sophisticated insecure web application\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"> <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin> <style>@font-face{font-family:'VT323';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/vt323/v18/pxiKyp0ihIEF2isQFJXGdg.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-fac"
+    },
+    {
+      "name": "robots.txt",
+      "url": "http://127.0.0.1:3000/robots.txt",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "response_len": 28,
+      "headers_subset": {
+        "Access-Control-Allow-Origin": "*",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Feature-Policy": "payment 'self'"
+      },
+      "snippet": "User-agent: * Disallow: /ftp"
+    },
+    {
+      "name": "ftp",
+      "url": "http://127.0.0.1:3000/ftp",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "response_len": 11274,
+      "headers_subset": {
+        "Access-Control-Allow-Origin": "*",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Feature-Policy": "payment 'self'"
+      },
+      "snippet": "<!DOCTYPE html> <html> <head> <meta charset='utf-8'> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\" /> <title>listing directory /ftp</title> <style>* { margin: 0; padding: 0; outline: 0; } body { padding: 80px 100px; font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\"; background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9)); background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9); background-repeat: no-repeat; color: #555; -webkit-font-smoothing: antialiased; } h1, h2, h3 { font-size: 22px; color: #343434; } h1 em, h2 em { padding: 0 5px; font-weight: normal; } h1 { font-size: 60px; } h2 { margin-top: 10px; } h3 { margin: 5px 0 10px 0; padding-bottom: 5px; border-bottom: 1px solid #eee; font-size: 18px; } ul li { list-style: none; } ul li:hover { cursor: pointer; color: #2e2e2e; } ul li .path"
+    },
+    {
+      "name": ".well-known",
+      "url": "http://127.0.0.1:3000/.well-known",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "response_len": 8897,
+      "headers_subset": {
+        "Access-Control-Allow-Origin": "*",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Feature-Policy": "payment 'self'"
+      },
+      "snippet": "<!DOCTYPE html> <html> <head> <meta charset='utf-8'> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\" /> <title>listing directory /.well-known</title> <style>* { margin: 0; padding: 0; outline: 0; } body { padding: 80px 100px; font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\"; background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9)); background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9); background-repeat: no-repeat; color: #555; -webkit-font-smoothing: antialiased; } h1, h2, h3 { font-size: 22px; color: #343434; } h1 em, h2 em { padding: 0 5px; font-weight: normal; } h1 { font-size: 60px; } h2 { margin-top: 10px; } h3 { margin: 5px 0 10px 0; padding-bottom: 5px; border-bottom: 1px solid #eee; font-size: 18px; } ul li { list-style: none; } ul li:hover { cursor: pointer; color: #2e2e2e; } ul "
+    },
+    {
+      "name": "api-docs",
+      "url": "http://127.0.0.1:3000/api-docs/",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "response_len": 3106,
+      "headers_subset": {
+        "Access-Control-Allow-Origin": "*",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Feature-Policy": "payment 'self'"
+      },
+      "snippet": "<!-- HTML for static distribution bundle build --> <!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"UTF-8\"> <title>Swagger UI</title> <link rel=\"stylesheet\" type=\"text/css\" href=\"./swagger-ui.css\" > <link rel=\"icon\" type=\"image/png\" href=\"./favicon-32x32.png\" sizes=\"32x32\" /><link rel=\"icon\" type=\"image/png\" href=\"./favicon-16x16.png\" sizes=\"16x16\" /> <style> html { box-sizing: border-box; overflow: -moz-scrollbars-vertical; overflow-y: scroll; } *, *:before, *:after { box-sizing: inherit; } body { margin:0; background: #fafafa; } </style> </head> <body> <svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" style=\"position:absolute;width:0;height:0\"> <defs> <symbol viewBox=\"0 0 20 20\" id=\"unlocked\"> <path d=\"M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199V17c0 ."
+    },
+    {
+      "name": "rest-products-search_q-apple",
+      "url": "http://127.0.0.1:3000/rest/products/search?q=apple",
+      "status_code": 200,
+      "content_type": "application/json; charset=utf-8",
+      "response_len": 921,
+      "headers_subset": {
+        "Access-Control-Allow-Origin": "*",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Feature-Policy": "payment 'self'"
+      },
+      "snippet": "{\"status\":\"success\",\"data\":[{\"id\":1,\"name\":\"Apple Juice (1000ml)\",\"description\":\"The all-time classic.\",\"price\":1.99,\"deluxePrice\":0.99,\"image\":\"apple_juice.jpg\",\"createdAt\":\"2026-06-08 07:03:07.700 +00:00\",\"updatedAt\":\"2026-06-08 07:03:07.700 +00:00\",\"deletedAt\":null},{\"id\":24,\"name\":\"Apple Pomace\",\"description\":\"Finest pressings of apples. Allergy disclaimer: Might contain traces of worms. Can be <a href=\\\"/#recycle\\\">sent back to us</a> for recycling.\",\"price\":0.89,\"deluxePrice\":0.89,\"image\":\"apple_pressings.jpg\",\"createdAt\":\"2026-06-08 07:03:07.701 +00:00\",\"updatedAt\":\"2026-06-08 07:03:07.701 +00:00\",\"deletedAt\":null},{\"id\":47,\"name\":\"Pineapple Juice (1000ml)\",\"description\":\"Tropical refreshment from the finest sun-ripened pineapples.\",\"price\":2.99,\"deluxePrice\":2.99,\"image\":\"pineapple_juice.png\",\"createdAt\":\"2026-06-08 07:03:07.701 +00:00\",\"updatedAt\":\"2026-06-08 07:03:07.701 +00:00"
+    },
+    {
+      "name": "rest-admin-application-version",
+      "url": "http://127.0.0.1:3000/rest/admin/application-version",
+      "status_code": 200,
+      "content_type": "application/json; charset=utf-8",
+      "response_len": 20,
+      "headers_subset": {
+        "Access-Control-Allow-Origin": "*",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Feature-Policy": "payment 'self'"
+      },
+      "snippet": "{\"version\":\"20.0.0\"}"
+    },
+    {
+      "name": "rest-admin-application-configuration",
+      "url": "http://127.0.0.1:3000/rest/admin/application-configuration",
+      "status_code": 200,
+      "content_type": "application/json; charset=utf-8",
+      "response_len": 23513,
+      "headers_subset": {
+        "Access-Control-Allow-Origin": "*",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Feature-Policy": "payment 'self'"
+      },
+      "snippet": "{\"config\":{\"server\":{\"port\":3000,\"basePath\":\"\",\"baseUrl\":\"http://localhost:3000\"},\"application\":{\"domain\":\"juice-sh.op\",\"name\":\"OWASP Juice Shop\",\"logo\":\"JuiceShop_Logo.png\",\"favicon\":\"favicon_js.ico\",\"theme\":\"bluegrey-lightgreen\",\"showVersionNumber\":true,\"showGitHubLinks\":true,\"localBackupEnabled\":true,\"numberOfRandomFakeUsers\":0,\"altcoinName\":\"Juicycoin\",\"privacyContactEmail\":\"donotreply@owasp-juice.shop\",\"customMetricsPrefix\":\"juiceshop\",\"chatBot\":{\"name\":\"Juicy the Smart Assistant\",\"avatar\":\"JuicyChatBot.png\",\"model\":\"gemma4:e4b\",\"llmMaxRetries\":2,\"sampleQuestions\":[\"CHATBOT_PROMPT_RECOMMENDATION_SUMMER_PARTY\",\"CHATBOT_PROMPT_RECOMMENDATION_POPULAR\",\"CHATBOT_PROMPT_RECOMMENDATION_SUGAR_FREE\",\"CHATBOT_PROMPT_RECOMMENDATION_START_DAY\",\"CHATBOT_PROMPT_RECOMMENDATION_SEASONAL\"]},\"social\":{\"blueSkyUrl\":\"https://bsky.app/profile/owasp-juice.shop\",\"mastodonUrl\":\"https://fosstodon.org/@owasp"
+    },
+    {
+      "name": "rest-user-whoami",
+      "url": "http://127.0.0.1:3000/rest/user/whoami",
+      "status_code": 200,
+      "content_type": "application/json; charset=utf-8",
+      "response_len": 11,
+      "headers_subset": {
+        "Access-Control-Allow-Origin": "*",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Feature-Policy": "payment 'self'"
+      },
+      "snippet": "{\"user\":{}}"
+    },
+    {
+      "name": "api-Products",
+      "url": "http://127.0.0.1:3000/api/Products",
+      "status_code": 200,
+      "content_type": "application/json; charset=utf-8",
+      "response_len": 16026,
+      "headers_subset": {
+        "Access-Control-Allow-Origin": "*",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Feature-Policy": "payment 'self'"
+      },
+      "snippet": "{\"status\":\"success\",\"data\":[{\"id\":1,\"name\":\"Apple Juice (1000ml)\",\"description\":\"The all-time classic.\",\"price\":1.99,\"deluxePrice\":0.99,\"image\":\"apple_juice.jpg\",\"createdAt\":\"2026-06-08T07:03:07.700Z\",\"updatedAt\":\"2026-06-08T07:03:07.700Z\",\"deletedAt\":null},{\"id\":2,\"name\":\"Orange Juice (1000ml)\",\"description\":\"Made from oranges hand-picked by Uncle Dittmeyer.\",\"price\":2.99,\"deluxePrice\":2.49,\"image\":\"orange_juice.jpg\",\"createdAt\":\"2026-06-08T07:03:07.700Z\",\"updatedAt\":\"2026-06-08T07:03:07.700Z\",\"deletedAt\":null},{\"id\":3,\"name\":\"Eggfruit Juice (500ml)\",\"description\":\"Now with even more exotic flavour.\",\"price\":8.99,\"deluxePrice\":8.99,\"image\":\"eggfruit_juice.jpg\",\"createdAt\":\"2026-06-08T07:03:07.701Z\",\"updatedAt\":\"2026-06-08T07:03:07.701Z\",\"deletedAt\":null},{\"id\":4,\"name\":\"Raspberry Juice (1000ml)\",\"description\":\"Made from blended Raspberry Pi, water and sugar.\",\"price\":4.99,\"deluxePrice\":"
+    },
+    {
+      "name": "rest-languages",
+      "url": "http://127.0.0.1:3000/rest/languages",
+      "status_code": 200,
+      "content_type": "application/json; charset=utf-8",
+      "response_len": 4215,
+      "headers_subset": {
+        "Access-Control-Allow-Origin": "*",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Feature-Policy": "payment 'self'"
+      },
+      "snippet": "[{\"key\":\"zh_HK\",\"lang\":\"繁體中文\",\"icons\":[\"hk\"],\"shortKey\":\"HK\",\"percentage\":12,\"gauge\":\"empty\"},{\"key\":\"zh_TW\",\"lang\":\"繁體中文\",\"icons\":[\"tw\"],\"shortKey\":\"TW\",\"percentage\":40,\"gauge\":\"quarter\"},{\"key\":\"ja_JP\",\"lang\":\"日本語\",\"icons\":[\"jp\"],\"shortKey\":\"JA\",\"percentage\":48,\"gauge\":\"half\"},{\"key\":\"zh_CN\",\"lang\":\"中文\",\"icons\":[\"cn\"],\"shortKey\":\"CN\",\"percentage\":50,\"gauge\":\"half\"},{\"key\":\"az_AZ\",\"lang\":\"Azərbaycanca\",\"icons\":[\"az\"],\"shortKey\":\"AZ\",\"percentage\":36,\"gauge\":\"quarter\"},{\"key\":\"id_ID\",\"lang\":\"Bahasa Indonesia\",\"icons\":[\"id\"],\"shortKey\":\"ID\",\"percentage\":14,\"gauge\":\"empty\"},{\"key\":\"ca_ES\",\"lang\":\"Catalan\",\"icons\":[\"es-ct\"],\"shortKey\":\"CA\",\"percentage\":8,\"gauge\":\"empty\"},{\"key\":\"cs_CZ\",\"lang\":\"Česky\",\"icons\":[\"cz\"],\"shortKey\":\"CS\",\"percentage\":38,\"gauge\":\"quarter\"},{\"key\":\"da_DK\",\"lang\":\"Dansk\",\"icons\":[\"dk\"],\"shortKey\":\"DA\",\"percentage\":38,\"gauge\":\"quarter\"},{\"key\":\"de_DE\",\"lang\":\"Deutsch\","
+    }
+  ]
+}

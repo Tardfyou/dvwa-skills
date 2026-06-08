@@ -1,0 +1,22 @@
+{
+  "name": "public-admin-config",
+  "request": {
+    "method": "GET",
+    "url": "http://127.0.0.1:3000/rest/admin/application-configuration"
+  },
+  "response": {
+    "status_code": 200,
+    "url": "http://127.0.0.1:3000/rest/admin/application-configuration",
+    "elapsed_s": 0.005,
+    "content_type": "application/json; charset=utf-8",
+    "content_length": null,
+    "response_len": 23513,
+    "headers_subset": {
+      "Access-Control-Allow-Origin": "*",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-Content-Type-Options": "nosniff"
+    },
+    "snippet": "{\"config\":{\"server\":{\"port\":3000,\"basePath\":\"\",\"baseUrl\":\"http://localhost:3000\"},\"application\":{\"domain\":\"juice-sh.op\",\"name\":\"OWASP Juice Shop\",\"logo\":\"JuiceShop_Logo.png\",\"favicon\":\"favicon_js.ico\",\"theme\":\"bluegrey-lightgreen\",\"showVersionNumber\":true,\"showGitHubLinks\":true,\"localBackupEnabled\":true,\"numberOfRandomFakeUsers\":0,\"altcoinName\":\"Juicycoin\",\"privacyContactEmail\":\"donotreply@owasp-juice.shop\",\"customMetricsPrefix\":\"juiceshop\",\"chatBot\":{\"name\":\"Juicy the Smart Assistant\",\"avatar\":\"JuicyChatBot.png\",\"model\":\"gemma4:e4b\",\"llmMaxRetries\":2,\"sampleQuestions\":[\"CHATBOT_PROMPT_RECOMMENDATION_SUMMER_PARTY\",\"CHATBOT_PROMPT_RECOMMENDATION_POPULAR\",\"CHATBOT_PROMPT_RECOMMENDATION_SUGAR_FREE\",\"CHATBOT_PROMPT_RECOMMENDATION_START_DAY\",\"CHATBOT_PROMPT_RECOMMENDATION_SEASONAL\"]},\"social\":{\"blueSkyUrl\":\"https://bsky.app/profile/owasp-juice.shop\",\"mastodonUrl\":\"https://fosstodon.org/@owasp_juiceshop\",\"twitterUrl\":\"https://twitter.com/owasp_juiceshop\",\"facebookUrl\":\"https://www.facebook.c"
+  },
+  "extra": {}
+}

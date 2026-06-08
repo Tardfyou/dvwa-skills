@@ -1,0 +1,26 @@
+[
+  {
+    "name": "ftp-listing",
+    "url": "http://127.0.0.1:3000/ftp",
+    "screenshot": "screenshots\\ftp-listing.png",
+    "title": "listing directory /ftp"
+  },
+  {
+    "name": "well-known-listing",
+    "url": "http://127.0.0.1:3000/.well-known",
+    "screenshot": "screenshots\\well-known-listing.png",
+    "title": "listing directory /.well-known"
+  },
+  {
+    "name": "api-docs",
+    "url": "http://127.0.0.1:3000/api-docs/",
+    "screenshot": "screenshots\\api-docs.png",
+    "title": "Swagger UI"
+  },
+  {
+    "name": "metrics",
+    "url": "http://127.0.0.1:3000/metrics",
+    "screenshot": "screenshots\\metrics.png",
+    "title": ""
+  }
+]

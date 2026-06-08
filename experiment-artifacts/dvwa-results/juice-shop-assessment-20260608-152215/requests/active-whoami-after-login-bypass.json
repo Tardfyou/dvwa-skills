@@ -1,0 +1,23 @@
+{
+  "name": "whoami-after-login-bypass",
+  "request": {
+    "method": "GET",
+    "url": "http://127.0.0.1:3000/rest/user/whoami",
+    "auth": "Bearer/cookie token from login-sqli-bypass"
+  },
+  "response": {
+    "status_code": 200,
+    "url": "http://127.0.0.1:3000/rest/user/whoami",
+    "elapsed_s": 0.005,
+    "content_type": "application/json; charset=utf-8",
+    "content_length": "125",
+    "response_len": 125,
+    "headers_subset": {
+      "Access-Control-Allow-Origin": "*",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-Content-Type-Options": "nosniff"
+    },
+    "snippet": "{\"user\":{\"id\":1,\"email\":\"admin@juice-sh.op\",\"lastLoginIp\":\"\",\"profileImage\":\"assets/public/images/uploads/defaultAdmin.png\"}}"
+  },
+  "extra": {}
+}

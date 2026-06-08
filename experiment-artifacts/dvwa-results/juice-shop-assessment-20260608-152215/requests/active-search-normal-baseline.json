@@ -1,0 +1,22 @@
+{
+  "name": "search-normal-baseline",
+  "request": {
+    "method": "GET",
+    "url": "http://127.0.0.1:3000/rest/products/search?q=apple"
+  },
+  "response": {
+    "status_code": 200,
+    "url": "http://127.0.0.1:3000/rest/products/search?q=apple",
+    "elapsed_s": 0.021,
+    "content_type": "application/json; charset=utf-8",
+    "content_length": "921",
+    "response_len": 921,
+    "headers_subset": {
+      "Access-Control-Allow-Origin": "*",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-Content-Type-Options": "nosniff"
+    },
+    "snippet": "{\"status\":\"success\",\"data\":[{\"id\":1,\"name\":\"Apple Juice (1000ml)\",\"description\":\"The all-time classic.\",\"price\":1.99,\"deluxePrice\":0.99,\"image\":\"apple_juice.jpg\",\"createdAt\":\"2026-06-08 07:03:07.700 +00:00\",\"updatedAt\":\"2026-06-08 07:03:07.700 +00:00\",\"deletedAt\":null},{\"id\":24,\"name\":\"Apple Pomace\",\"description\":\"Finest pressings of apples. Allergy disclaimer: Might contain traces of worms. Can be <a href=\\\"/#recycle\\\">sent back to us</a> for recycling.\",\"price\":0.89,\"deluxePrice\":0.89,\"image\":\"apple_pressings.jpg\",\"createdAt\":\"2026-06-08 07:03:07.701 +00:00\",\"updatedAt\":\"2026-06-08 07:03:07.701 +00:00\",\"deletedAt\":null},{\"id\":47,\"name\":\"Pineapple Juice (1000ml)\",\"description\":\"Tropical refreshment from the finest sun-ripened pineapples.\",\"price\":2.99,\"deluxePrice\":2.99,\"image\":\"pineapple_juice.png\",\"createdAt\":\"2026-06-08 07:03:07.701 +00:00\",\"updatedAt\":\"2026-06-08 07:03:07.701 +00:00\",\"deletedAt\":null}]}"
+  },
+  "extra": {}
+}

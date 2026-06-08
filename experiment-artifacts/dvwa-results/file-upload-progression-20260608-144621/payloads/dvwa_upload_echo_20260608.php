@@ -1,0 +1,1 @@
+<?php echo "DVWA_UPLOAD_PROOF_20260608"; ?>

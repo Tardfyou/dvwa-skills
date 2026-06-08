@@ -1,0 +1,510 @@
+{
+  "target": "http://127.0.0.1/dvwa/",
+  "module": "File Upload",
+  "run_started": "2026-06-08T14:48:49+08:00",
+  "run_finished": "2026-06-08T14:48:50+08:00",
+  "elapsed_s": 0.988,
+  "stop_after": "impossible",
+  "total_requests": 34,
+  "results": [
+    {
+      "difficulty": "low",
+      "status": "solved_vulnerable_php_execution",
+      "stop_reason": "uploaded .php returned echo marker without PHP source tag",
+      "proof": {
+        "access_url": "http://127.0.0.1/dvwa/hackable/uploads/dvwa_upload_low_20260608.php",
+        "marker": "DVWA_UPLOAD_PROOF_20260608",
+        "executed_echo_only": true
+      },
+      "form": {
+        "method": "POST",
+        "action": "#",
+        "enctype": "multipart/form-data",
+        "fields": [
+          {
+            "name": "MAX_FILE_SIZE",
+            "type": "hidden",
+            "value": "100000"
+          },
+          {
+            "name": "uploaded",
+            "type": "file",
+            "value": null
+          },
+          {
+            "name": "Upload",
+            "type": "submit",
+            "value": "Upload"
+          }
+        ]
+      },
+      "source": {
+        "path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\vulnerabilities\\upload\\source\\low.php",
+        "size_bytes": 511,
+        "sha256": "a958136c538b253829ffbb8d8e6e7daee5061b31a531c4b9bcc99e8d2099503f",
+        "mtime": "2026-05-14T09:06:45+08:00"
+      },
+      "attempts": [
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/upload/",
+          "status_code": 200,
+          "elapsed_s": 0.026,
+          "response_len": 4660,
+          "request_fields": {
+            "Upload": "Upload",
+            "user_token_present": false
+          },
+          "filename": "dvwa_upload_low_20260608.php",
+          "content_type": "application/x-php",
+          "payload_path": "dvwa-results\\file-upload-progression-20260608-144621\\payloads\\dvwa_upload_echo_20260608.php",
+          "markers": [
+            "upload_success",
+            "csrf_text"
+          ],
+          "marker_contexts": {
+            "upload_success": "ile Upload Choose an image to upload: ../../hackable/uploads/dvwa_upload_low_20260608.php succesfully uploaded! More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat/ Username: admin Security Level: Secur",
+            "csrf_text": "e Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Op"
+          },
+          "uploaded_path": "../../hackable/uploads/dvwa_upload_low_20260608.php",
+          "access_url": "http://127.0.0.1/dvwa/hackable/uploads/dvwa_upload_low_20260608.php",
+          "filesystem_path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\hackable\\uploads\\dvwa_upload_low_20260608.php",
+          "snippet": "Vulnerability: File Upload :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: File Upload Choose an image to upload: ../../hackable/uploads/dvwa_upload_low_20260608.php succesfully uploaded! More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat/ Username: admin Security Level: Security Level: low Locale: en SQLi DB: mysql Damn Vulnerable Web Application (DVWA)",
+          "purpose": "php_execution_proof"
+        }
+      ],
+      "access_checks": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1/dvwa/hackable/uploads/dvwa_upload_low_20260608.php",
+          "status_code": 200,
+          "elapsed_s": 0.007,
+          "content_type": "text/html",
+          "response_len": 26,
+          "marker_present": true,
+          "php_tag_present": false,
+          "executed_echo_only": true,
+          "first_bytes_hex": "445657415f55504c4f41445f50524f4f465f3230323630363038",
+          "text_preview": "DVWA_UPLOAD_PROOF_20260608",
+          "purpose": "php_execution_proof",
+          "uploaded_path": "../../hackable/uploads/dvwa_upload_low_20260608.php"
+        }
+      ],
+      "cleanup": [
+        {
+          "path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\hackable\\uploads\\dvwa_upload_low_20260608.php",
+          "existed_before_cleanup": true,
+          "deleted": true,
+          "error": null
+        }
+      ],
+      "request_count": 6,
+      "level_elapsed_s": 0.164
+    },
+    {
+      "difficulty": "medium",
+      "status": "solved_vulnerable_php_execution",
+      "stop_reason": "uploaded .php returned echo marker without PHP source tag",
+      "proof": {
+        "access_url": "http://127.0.0.1/dvwa/hackable/uploads/dvwa_upload_medium_20260608.php",
+        "marker": "DVWA_UPLOAD_PROOF_20260608",
+        "executed_echo_only": true
+      },
+      "form": {
+        "method": "POST",
+        "action": "#",
+        "enctype": "multipart/form-data",
+        "fields": [
+          {
+            "name": "MAX_FILE_SIZE",
+            "type": "hidden",
+            "value": "100000"
+          },
+          {
+            "name": "uploaded",
+            "type": "file",
+            "value": null
+          },
+          {
+            "name": "Upload",
+            "type": "submit",
+            "value": "Upload"
+          }
+        ]
+      },
+      "source": {
+        "path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\vulnerabilities\\upload\\source\\medium.php",
+        "size_bytes": 965,
+        "sha256": "3ad92d2c7effadbb079f8527ec46a152afd4a3fb3e21ed03ac5cfe2bd8175781",
+        "mtime": "2026-05-14T09:06:45+08:00"
+      },
+      "attempts": [
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/upload/",
+          "status_code": 200,
+          "elapsed_s": 0.032,
+          "response_len": 4663,
+          "request_fields": {
+            "Upload": "Upload",
+            "user_token_present": false
+          },
+          "filename": "dvwa_upload_medium_plain_20260608.php",
+          "content_type": "text/plain",
+          "payload_path": "dvwa-results\\file-upload-progression-20260608-144621\\payloads\\dvwa_upload_echo_20260608.php",
+          "markers": [
+            "upload_failed",
+            "jpeg_png_only",
+            "csrf_text"
+          ],
+          "marker_contexts": {
+            "upload_failed": "DVWA Security PHP Info About Logout Vulnerability: File Upload Choose an image to upload: Your image was not uploaded. We can only accept JPEG or PNG images. More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat",
+            "jpeg_png_only": "Logout Vulnerability: File Upload Choose an image to upload: Your image was not uploaded. We can only accept JPEG or PNG images. More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat/ Username: admin Security Level: Secur",
+            "csrf_text": "e Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Op"
+          },
+          "uploaded_path": null,
+          "access_url": null,
+          "filesystem_path": null,
+          "snippet": "Vulnerability: File Upload :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: File Upload Choose an image to upload: Your image was not uploaded. We can only accept JPEG or PNG images. More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat/ Username: admin Security Level: Security Level: medium Locale: en SQLi DB: mysql Damn Vulnerable Web Application (DVWA)",
+          "purpose": "blocked_probe"
+        },
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/upload/",
+          "status_code": 200,
+          "elapsed_s": 0.039,
+          "response_len": 4672,
+          "request_fields": {
+            "Upload": "Upload",
+            "user_token_present": false
+          },
+          "filename": "dvwa_upload_medium_20260608.php",
+          "content_type": "image/jpeg",
+          "payload_path": "dvwa-results\\file-upload-progression-20260608-144621\\payloads\\dvwa_upload_echo_20260608.php",
+          "markers": [
+            "upload_success",
+            "csrf_text"
+          ],
+          "marker_contexts": {
+            "upload_success": " Upload Choose an image to upload: ../../hackable/uploads/dvwa_upload_medium_20260608.php succesfully uploaded! More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat/ Username: admin Security Level: Secur",
+            "csrf_text": "e Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Op"
+          },
+          "uploaded_path": "../../hackable/uploads/dvwa_upload_medium_20260608.php",
+          "access_url": "http://127.0.0.1/dvwa/hackable/uploads/dvwa_upload_medium_20260608.php",
+          "filesystem_path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\hackable\\uploads\\dvwa_upload_medium_20260608.php",
+          "snippet": "Vulnerability: File Upload :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: File Upload Choose an image to upload: ../../hackable/uploads/dvwa_upload_medium_20260608.php succesfully uploaded! More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat/ Username: admin Security Level: Security Level: medium Locale: en SQLi DB: mysql Damn Vulnerable Web Application (DVWA)",
+          "purpose": "php_execution_proof"
+        }
+      ],
+      "access_checks": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1/dvwa/hackable/uploads/dvwa_upload_medium_20260608.php",
+          "status_code": 200,
+          "elapsed_s": 0.006,
+          "content_type": "text/html",
+          "response_len": 26,
+          "marker_present": true,
+          "php_tag_present": false,
+          "executed_echo_only": true,
+          "first_bytes_hex": "445657415f55504c4f41445f50524f4f465f3230323630363038",
+          "text_preview": "DVWA_UPLOAD_PROOF_20260608",
+          "purpose": "php_execution_proof",
+          "uploaded_path": "../../hackable/uploads/dvwa_upload_medium_20260608.php"
+        }
+      ],
+      "cleanup": [
+        {
+          "path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\hackable\\uploads\\dvwa_upload_medium_20260608.php",
+          "existed_before_cleanup": true,
+          "deleted": true,
+          "error": null
+        }
+      ],
+      "request_count": 8,
+      "level_elapsed_s": 0.264
+    },
+    {
+      "difficulty": "high",
+      "status": "limited_vulnerable_stored_polyglot_no_php_execution",
+      "stop_reason": "polyglot .php.jpg stored in web-accessible path, but PHP was not executed on direct access",
+      "proof": {
+        "access_url": "http://127.0.0.1/dvwa/hackable/uploads/dvwa_upload_high_20260608.php.jpg",
+        "marker_present": true,
+        "php_tag_present": true,
+        "executed_echo_only": false
+      },
+      "form": {
+        "method": "POST",
+        "action": "#",
+        "enctype": "multipart/form-data",
+        "fields": [
+          {
+            "name": "MAX_FILE_SIZE",
+            "type": "hidden",
+            "value": "100000"
+          },
+          {
+            "name": "uploaded",
+            "type": "file",
+            "value": null
+          },
+          {
+            "name": "Upload",
+            "type": "submit",
+            "value": "Upload"
+          }
+        ]
+      },
+      "source": {
+        "path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\vulnerabilities\\upload\\source\\high.php",
+        "size_bytes": 1117,
+        "sha256": "6e072f79ebde0d265c85306f4b761304e1977ca41f6b2e384b6a8b71b3104594",
+        "mtime": "2026-05-14T09:06:45+08:00"
+      },
+      "attempts": [
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/upload/",
+          "status_code": 200,
+          "elapsed_s": 0.046,
+          "response_len": 4657,
+          "request_fields": {
+            "Upload": "Upload",
+            "user_token_present": false
+          },
+          "filename": "dvwa_upload_high_20260608.php",
+          "content_type": "image/jpeg",
+          "payload_path": "dvwa-results\\file-upload-progression-20260608-144621\\payloads\\dvwa_upload_echo_20260608.php",
+          "markers": [
+            "upload_failed",
+            "jpeg_png_only",
+            "csrf_text"
+          ],
+          "marker_contexts": {
+            "upload_failed": "DVWA Security PHP Info About Logout Vulnerability: File Upload Choose an image to upload: Your image was not uploaded. We can only accept JPEG or PNG images. More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat",
+            "jpeg_png_only": "Logout Vulnerability: File Upload Choose an image to upload: Your image was not uploaded. We can only accept JPEG or PNG images. More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat/ Username: admin Security Level: Secur",
+            "csrf_text": "e Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Op"
+          },
+          "uploaded_path": null,
+          "access_url": null,
+          "filesystem_path": null,
+          "snippet": "Vulnerability: File Upload :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: File Upload Choose an image to upload: Your image was not uploaded. We can only accept JPEG or PNG images. More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat/ Username: admin Security Level: Security Level: high Locale: en SQLi DB: mysql Damn Vulnerable Web Application (DVWA)",
+          "purpose": "blocked_probe"
+        },
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/upload/",
+          "status_code": 200,
+          "elapsed_s": 0.029,
+          "response_len": 4657,
+          "request_fields": {
+            "Upload": "Upload",
+            "user_token_present": false
+          },
+          "filename": "dvwa_upload_high_invalid_20260608.jpg",
+          "content_type": "image/jpeg",
+          "payload_path": "dvwa-results\\file-upload-progression-20260608-144621\\payloads\\dvwa_upload_echo_20260608.php",
+          "markers": [
+            "upload_failed",
+            "jpeg_png_only",
+            "csrf_text"
+          ],
+          "marker_contexts": {
+            "upload_failed": "DVWA Security PHP Info About Logout Vulnerability: File Upload Choose an image to upload: Your image was not uploaded. We can only accept JPEG or PNG images. More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat",
+            "jpeg_png_only": "Logout Vulnerability: File Upload Choose an image to upload: Your image was not uploaded. We can only accept JPEG or PNG images. More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat/ Username: admin Security Level: Secur",
+            "csrf_text": "e Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Op"
+          },
+          "uploaded_path": null,
+          "access_url": null,
+          "filesystem_path": null,
+          "snippet": "Vulnerability: File Upload :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: File Upload Choose an image to upload: Your image was not uploaded. We can only accept JPEG or PNG images. More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat/ Username: admin Security Level: Security Level: high Locale: en SQLi DB: mysql Damn Vulnerable Web Application (DVWA)",
+          "purpose": "blocked_probe"
+        },
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/upload/",
+          "status_code": 200,
+          "elapsed_s": 0.029,
+          "response_len": 4668,
+          "request_fields": {
+            "Upload": "Upload",
+            "user_token_present": false
+          },
+          "filename": "dvwa_upload_high_20260608.php.jpg",
+          "content_type": "image/jpeg",
+          "payload_path": "dvwa-results\\file-upload-progression-20260608-144621\\payloads\\dvwa_upload_polyglot_20260608.php.jpg",
+          "markers": [
+            "upload_success",
+            "csrf_text"
+          ],
+          "marker_contexts": {
+            "upload_success": "pload Choose an image to upload: ../../hackable/uploads/dvwa_upload_high_20260608.php.jpg succesfully uploaded! More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat/ Username: admin Security Level: Secur",
+            "csrf_text": "e Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Op"
+          },
+          "uploaded_path": "../../hackable/uploads/dvwa_upload_high_20260608.php.jpg",
+          "access_url": "http://127.0.0.1/dvwa/hackable/uploads/dvwa_upload_high_20260608.php.jpg",
+          "filesystem_path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\hackable\\uploads\\dvwa_upload_high_20260608.php.jpg",
+          "snippet": "Vulnerability: File Upload :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: File Upload Choose an image to upload: ../../hackable/uploads/dvwa_upload_high_20260608.php.jpg succesfully uploaded! More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat/ Username: admin Security Level: Security Level: high Locale: en SQLi DB: mysql Damn Vulnerable Web Application (DVWA)",
+          "purpose": "stored_polyglot_probe"
+        }
+      ],
+      "access_checks": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1/dvwa/hackable/uploads/dvwa_upload_high_20260608.php.jpg",
+          "status_code": 200,
+          "elapsed_s": 0.003,
+          "content_type": "image/jpeg",
+          "response_len": 3588,
+          "marker_present": true,
+          "php_tag_present": true,
+          "executed_echo_only": false,
+          "first_bytes_hex": "ffd8ffe000104a46494600010100000100010000ffdb00430005030404040305",
+          "text_preview": "ÿØÿà\u0000\u0010JFIF\u0000\u0001\u0001\u0000\u0000\u0001\u0000\u0001\u0000\u0000ÿÛ\u0000C\u0000\u0005\u0003\u0004\u0004\u0004\u0003\u0005\u0004\u0004\u0004\u0005\u0005\u0005\u0006\u0007\f\b\u0007\u0007\u0007\u0007\u000f\u000b\u000b\t\f\u0011\u000f\u0012\u0012\u0011\u000f\u0011\u0011\u0013\u0016\u001c\u0017\u0013\u0014\u001a\u0015\u0011\u0011\u0018!\u0018\u001a\u001d\u001d\u001f\u001f\u001f\u0013\u0017\"$\"\u001e$\u001c\u001e\u001f\u001eÿÛ\u0000C\u0001\u0005\u0005\u0005\u0007\u0006\u0007\u000e\b\b\u000e\u001e\u0014\u0011\u0014\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001e\u001eÿÀ\u0000\u0011\b\u0000C\u0000d\u0003\u0001\"\u0000\u0002\u0011\u0001\u0003\u0011\u0001ÿÄ\u0000\u001f\u0000\u0000\u0001\u0005\u0001\u0001\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000bÿÄ\u0000µ\u0010\u0000\u0002\u0001\u0003\u0003\u0002\u0004\u0003\u0005\u0005\u0004\u0004\u0000\u0000\u0001}\u0001\u0002\u0003\u0000\u0004\u0011\u0005\u0012!1A\u0006\u0013Qa\u0007\"q\u00142¡\b#B±Á\u0015RÑð$3br\t\n\u0016\u0017\u0018\u0019\u001a%&'()*456789:CDEFGHIJSTUV",
+          "purpose": "stored_polyglot_probe",
+          "uploaded_path": "../../hackable/uploads/dvwa_upload_high_20260608.php.jpg"
+        }
+      ],
+      "cleanup": [
+        {
+          "path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\hackable\\uploads\\dvwa_upload_high_20260608.php.jpg",
+          "existed_before_cleanup": true,
+          "deleted": true,
+          "error": null
+        }
+      ],
+      "request_count": 10,
+      "level_elapsed_s": 0.286
+    },
+    {
+      "difficulty": "impossible",
+      "status": "defended_not_vulnerable",
+      "stop_reason": "extension/MIME/image validation plus re-encoding stripped PHP marker and randomized filename",
+      "proof": {
+        "reencoded_access_url": "http://127.0.0.1/dvwa/hackable/uploads/d99a75736dcf8ec9d068b63faac18951.jpg",
+        "marker_present": false,
+        "php_tag_present": false
+      },
+      "form": {
+        "method": "POST",
+        "action": "#",
+        "enctype": "multipart/form-data",
+        "fields": [
+          {
+            "name": "MAX_FILE_SIZE",
+            "type": "hidden",
+            "value": "100000"
+          },
+          {
+            "name": "uploaded",
+            "type": "file",
+            "value": null
+          },
+          {
+            "name": "Upload",
+            "type": "submit",
+            "value": "Upload"
+          },
+          {
+            "name": "user_token",
+            "type": "hidden",
+            "value": "123f43e74c864b0498cdc09dd0d02a64"
+          }
+        ]
+      },
+      "source": {
+        "path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\vulnerabilities\\upload\\source\\impossible.php",
+        "size_bytes": 2271,
+        "sha256": "82bf663396331b36ccdafdb628a71bec5d82d7f4e7652295b37b5e538781abf6",
+        "mtime": "2026-05-14T09:06:45+08:00"
+      },
+      "attempts": [
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/upload/",
+          "status_code": 200,
+          "elapsed_s": 0.013,
+          "response_len": 4760,
+          "request_fields": {
+            "Upload": "Upload",
+            "user_token_present": true
+          },
+          "filename": "dvwa_upload_impossible_20260608.php",
+          "content_type": "image/jpeg",
+          "payload_path": "dvwa-results\\file-upload-progression-20260608-144621\\payloads\\dvwa_upload_echo_20260608.php",
+          "markers": [
+            "upload_failed",
+            "jpeg_png_only",
+            "csrf_text"
+          ],
+          "marker_contexts": {
+            "upload_failed": "DVWA Security PHP Info About Logout Vulnerability: File Upload Choose an image to upload: Your image was not uploaded. We can only accept JPEG or PNG images. More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat",
+            "jpeg_png_only": "Logout Vulnerability: File Upload Choose an image to upload: Your image was not uploaded. We can only accept JPEG or PNG images. More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat/ Username: admin Security Level: Secur",
+            "csrf_text": "e Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Op"
+          },
+          "uploaded_path": null,
+          "access_url": null,
+          "filesystem_path": null,
+          "snippet": "Vulnerability: File Upload :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: File Upload Choose an image to upload: Your image was not uploaded. We can only accept JPEG or PNG images. More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat/ Username: admin Security Level: Security Level: impossible Locale: en SQLi DB: mysql Damn Vulnerable Web Application (DVWA)",
+          "purpose": "blocked_probe"
+        },
+        {
+          "method": "POST",
+          "url": "http://127.0.0.1/dvwa/vulnerabilities/upload/",
+          "status_code": 200,
+          "elapsed_s": 0.009,
+          "response_len": 4825,
+          "request_fields": {
+            "Upload": "Upload",
+            "user_token_present": true
+          },
+          "filename": "dvwa_upload_impossible_20260608.php.jpg",
+          "content_type": "image/jpeg",
+          "payload_path": "dvwa-results\\file-upload-progression-20260608-144621\\payloads\\dvwa_upload_polyglot_20260608.php.jpg",
+          "markers": [
+            "upload_success",
+            "csrf_text"
+          ],
+          "marker_contexts": {
+            "upload_success": "ulnerability: File Upload Choose an image to upload: d99a75736dcf8ec9d068b63faac18951.jpg succesfully uploaded! More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat/ Username: admin Security Level: Secur",
+            "csrf_text": "e Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Op"
+          },
+          "uploaded_path": "d99a75736dcf8ec9d068b63faac18951.jpg",
+          "access_url": "http://127.0.0.1/dvwa/hackable/uploads/d99a75736dcf8ec9d068b63faac18951.jpg",
+          "filesystem_path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\hackable\\uploads\\d99a75736dcf8ec9d068b63faac18951.jpg",
+          "snippet": "Vulnerability: File Upload :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout Vulnerability: File Upload Choose an image to upload: d99a75736dcf8ec9d068b63faac18951.jpg succesfully uploaded! More Information https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload https://www.acunetix.com/websitesecurity/upload-forms-threat/ Username: admin Security Level: Security Level: impossible Locale: en SQLi DB: mysql Damn Vulnerable Web Application (DVWA)",
+          "purpose": "defense_probe"
+        }
+      ],
+      "access_checks": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1/dvwa/hackable/uploads/d99a75736dcf8ec9d068b63faac18951.jpg",
+          "status_code": 200,
+          "elapsed_s": 0.003,
+          "content_type": "image/jpeg",
+          "response_len": 7821,
+          "marker_present": false,
+          "php_tag_present": false,
+          "executed_echo_only": false,
+          "first_bytes_hex": "ffd8ffe000104a46494600010100000100010000fffe003c43524541544f523a",
+          "text_preview": "ÿØÿà\u0000\u0010JFIF\u0000\u0001\u0001\u0000\u0000\u0001\u0000\u0001\u0000\u0000ÿþ\u0000<CREATOR: gd-jpeg v1.0 (using IJG JPEG v80), quality = 100\nÿÛ\u0000C\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001ÿÛ\u0000C\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001ÿÀ\u0000\u0011\b\u0000C\u0000d\u0003\u0001\"\u0000\u0002\u0011\u0001\u0003\u0011\u0001ÿÄ\u0000\u001f\u0000\u0000\u0001\u0005\u0001\u0001\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000bÿÄ\u0000µ\u0010\u0000\u0002\u0001\u0003\u0003\u0002\u0004\u0003\u0005\u0005\u0004\u0004\u0000\u0000\u0001}\u0001\u0002\u0003\u0000\u0004\u0011\u0005",
+          "purpose": "defense_probe",
+          "uploaded_path": "d99a75736dcf8ec9d068b63faac18951.jpg"
+        }
+      ],
+      "cleanup": [
+        {
+          "path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\hackable\\uploads\\d99a75736dcf8ec9d068b63faac18951.jpg",
+          "existed_before_cleanup": true,
+          "deleted": true,
+          "error": null
+        }
+      ],
+      "request_count": 8,
+      "level_elapsed_s": 0.185
+    }
+  ],
+  "operation_log": "dvwa-results\\file-upload-progression-20260608-144621\\operation-log.jsonl"
+}

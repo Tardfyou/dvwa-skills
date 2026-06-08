@@ -1,0 +1,14 @@
+{
+  "name": "rest-admin-application-version",
+  "url": "http://127.0.0.1:3000/rest/admin/application-version",
+  "status_code": 200,
+  "content_type": "application/json; charset=utf-8",
+  "response_len": 20,
+  "headers_subset": {
+    "Access-Control-Allow-Origin": "*",
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Content-Type-Options": "nosniff",
+    "Feature-Policy": "payment 'self'"
+  },
+  "snippet": "{\"version\":\"20.0.0\"}"
+}

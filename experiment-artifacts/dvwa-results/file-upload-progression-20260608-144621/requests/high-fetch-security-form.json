@@ -1,0 +1,7 @@
+{
+  "method": "GET",
+  "url": "http://127.0.0.1/dvwa/security.php",
+  "status_code": 200,
+  "elapsed_s": 0.006,
+  "response_len": 5274
+}

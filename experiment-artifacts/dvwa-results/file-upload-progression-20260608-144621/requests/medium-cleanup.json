@@ -1,0 +1,10 @@
+{
+  "cleanup": [
+    {
+      "path": "D:\\phpStudy\\PHPTutorial\\WWW\\DVWA\\hackable\\uploads\\dvwa_upload_medium_20260608.php",
+      "existed_before_cleanup": true,
+      "deleted": true,
+      "error": null
+    }
+  ]
+}

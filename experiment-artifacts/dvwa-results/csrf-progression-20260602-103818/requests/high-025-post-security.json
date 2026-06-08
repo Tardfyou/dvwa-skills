@@ -1,0 +1,25 @@
+{
+  "difficulty": "high",
+  "label": "post-security",
+  "method": "POST",
+  "url": "http://127.0.0.1/dvwa/security.php",
+  "final_url": "http://127.0.0.1/dvwa/security.php",
+  "status_code": 200,
+  "request_headers": {
+    "User-Agent": "python-requests/2.32.3",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive"
+  },
+  "params": null,
+  "data": {
+    "security": "high",
+    "seclev_submit": "Submit",
+    "user_token": "c8ecc1576de9f99cec28e5ea39ab44f3"
+  },
+  "json": null,
+  "response_length": 5354,
+  "response_markers": [],
+  "response_snippet": "DVWA Security :: Damn Vulnerable Web Application (DVWA) Home Instructions Setup / Reset DB Brute Force Command Injection CSRF File Inclusion File Upload Insecure CAPTCHA SQL Injection SQL Injection (Blind) Weak Session IDs XSS (DOM) XSS (Reflected) XSS (Stored) CSP Bypass JavaScript Attacks Authorisation Bypass Open HTTP Redirect Cryptography API DVWA Security PHP Info About Logout DVWA Security Security Level Security level is currently: high . You can set the security level to low, medium, high or impossible. The security level changes the vulnerability level of DVWA: Low - This security lev",
+  "duration_s": 0.024
+}

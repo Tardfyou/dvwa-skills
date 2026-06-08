@@ -24,6 +24,23 @@ DVWA is a deliberately vulnerable training target. The workflows, harness guidan
 
 For new web targets, the intended behavior is agent-led assessment. Codex should not rely on a fixed helper script as the primary workflow. Helper scripts are optional evidence collectors or smoke tests after scope, observations, and hypotheses exist.
 
+## Experiment Artifacts And Final Report
+
+This repository includes the current experiment archive:
+
+- `DVWA全自动攻击.md`: consolidated DVWA skill experiment report.
+- `experiment-artifacts/dvwa-results/`: copied DVWA and OWASP Juice Shop run outputs, including Markdown reports, screenshots, request evidence, generated harnesses, ZAP output, ffuf/sqlmap output, and operation logs.
+- `final-reports/AI在网络安全中的应用研究/AI在网络安全中的应用研究.pdf`: final integrated PDF report.
+- `final-reports/AI在网络安全中的应用研究/AI在网络安全中的应用研究.md`: Markdown source for the final integrated report.
+- `scripts/build_ai_security_pdf.py`: reproducible builder for the integrated Markdown/HTML/PDF report.
+
+To regenerate the final report from the archived files:
+
+```powershell
+cd <path-to>\dvwa-skills
+py -3.11 .\scripts\build_ai_security_pdf.py
+```
+
 ## Quick Start
 
 ```powershell

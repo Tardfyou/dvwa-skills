@@ -1,0 +1,22 @@
+{
+  "name": "public-admin-version",
+  "request": {
+    "method": "GET",
+    "url": "http://127.0.0.1:3000/rest/admin/application-version"
+  },
+  "response": {
+    "status_code": 200,
+    "url": "http://127.0.0.1:3000/rest/admin/application-version",
+    "elapsed_s": 0.002,
+    "content_type": "application/json; charset=utf-8",
+    "content_length": "20",
+    "response_len": 20,
+    "headers_subset": {
+      "Access-Control-Allow-Origin": "*",
+      "X-Frame-Options": "SAMEORIGIN",
+      "X-Content-Type-Options": "nosniff"
+    },
+    "snippet": "{\"version\":\"20.0.0\"}"
+  },
+  "extra": {}
+}
