@@ -8,6 +8,7 @@ Use this file when a DVWA, web-lab, or CTF task asks Codex to combine security t
 | --- | --- | --- | --- |
 | Python/requests harness | All request-level modules | Generate a small task-specific script after inspecting page/source; run with `py -3.11` on Windows | Install `requests`; provide URL/credentials |
 | Playwright browser automation | All modules needing screenshots or DOM proof | Capture authenticated login/security/module/proof screenshots and browser-visible evidence | Install `playwright` and Chromium |
+| Authorized web inventory helper | New authorized web apps and simulated-real labs | Optional first-pass same-origin inventory, screenshots, security-header review, API hints, and ZAP passive-alert collection after the agent plan exists | Install `requests`, `beautifulsoup4`, `playwright`; optionally start ZAP on `127.0.0.1:8090` |
 | Bundled Brute Force helper | Brute Force regression | Use `scripts/dvwa_runner.py` as a reference helper or smoke test | Install `requests`; provide URL/credentials |
 | Burp Suite Proxy | All web modules | Send browser, generated harness, or helper traffic through `127.0.0.1:8080` | Start Burp and proxy listener |
 | Burp Repeater | All request-level modules | Provide raw request artifacts and replay instructions | Manually send selected request if no MCP |
@@ -33,6 +34,19 @@ When the user asks to solve DVWA Brute Force, Codex should:
 8. Run the generated test plan incrementally.
 9. Use `scripts/dvwa_runner.py --mode walkthrough` only for comparison or regression after the agent-led test path exists.
 10. Produce a readable Markdown report with difficulty progression, automatic Playwright screenshots or failed screenshot command/error notes, operation log, timing, generated test logic, credential result, vulnerability status, request count, evidence, and stop reason.
+
+## Authorized Web Assessment Contract
+
+When the user asks for an authorized web assessment of a new target, Codex should:
+
+1. Load `references/authorized-web-assessment.md`.
+2. Confirm authorization, scope, credentials, allowed test intensity, output language, and report output directory.
+3. Explore the site with Playwright/browser tooling before running any scanner or helper.
+4. Build a route/form/API/cookie/storage/security-header inventory from observed evidence.
+5. Use ZAP spider/passive alerts only as leads by default. Do not run active scan without explicit authorization and a bounded plan.
+6. Generate targeted Playwright or Python/requests harnesses only for supported hypotheses.
+7. Use `scripts/authorized_web_assessment.py` only as an optional inventory helper, not as the primary workflow.
+8. Produce a Markdown penetration testing report with screenshots, methodology, findings, severity, evidence, reproduction steps, remediation, operation timeline, artifacts, limitations, and next verification steps.
 
 ## MCP Behavior
 

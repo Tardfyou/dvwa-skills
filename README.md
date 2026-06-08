@@ -1,6 +1,6 @@
 # dvwa-skills
 
-`dvwa-skills` is a Codex skill for authorized Windows web-lab and CTF-style solving workflows, using DVWA as the first reference environment.
+`dvwa-skills` is a Codex skill for authorized Windows web-lab, CTF-style, and simulated-real web assessment workflows, using DVWA as the first reference environment.
 
 It provides:
 
@@ -14,12 +14,15 @@ It provides:
 - readable Markdown walkthrough reports plus supporting JSON metadata
 - Windows tool setup/uninstall scripts
 - optional Burp Suite, ZAP, ffuf, sqlmap, IDA, and Burp MCP integration notes
+- authorized web assessment mode for local targets such as OWASP Juice Shop, where Codex explores the app, chooses tools from evidence, verifies findings, and writes a detailed Markdown penetration testing report
 
 ## Scope
 
-Use this only against DVWA or another clearly authorized local web lab/CTF target.
+Use this only against DVWA, another clearly authorized local web lab/CTF target, or an explicitly authorized simulated-real web application.
 
 DVWA is a deliberately vulnerable training target. The workflows, harness guidance, and payload examples in this repository are intended for local security education and controlled testing.
+
+For new web targets, the intended behavior is agent-led assessment. Codex should not rely on a fixed helper script as the primary workflow. Helper scripts are optional evidence collectors or smoke tests after scope, observations, and hypotheses exist.
 
 ## Quick Start
 

@@ -8,23 +8,46 @@ Use this skill when you want Codex to solve a local or explicitly authorized DVW
 
 The intended behavior is:
 
-1. Log in to the lab with user-provided credentials.
-2. Set the requested security level.
-3. Navigate to the requested module.
-4. Inspect the live page, request/response behavior, cookies, hidden fields, and source code when available.
-5. Read the local knowledge base as background, not as an answer key.
-6. Form hypotheses and choose the smallest useful tool path.
-7. Generate task-specific Python/requests harnesses or Burp/ZAP workflows only when the observations justify automation.
+1. Confirm scope, authorization, credentials, tools, language, and report output path.
+2. Inspect the live target first with browser/HTTP observations.
+3. Review source code when a source path is provided.
+4. Build an application/request model.
+5. Form hypotheses and choose the smallest useful tool path.
+6. Generate task-specific Playwright or Python/requests harnesses only when observations justify automation.
+7. Use Burp/ZAP/ffuf/sqlmap only when they fit the current hypothesis and scope.
 8. Execute tests incrementally and record evidence.
-9. Produce a readable Markdown walkthrough report with operation timeline, intermediate operations, automatic Playwright screenshots or failed screenshot command/error notes, timing, evidence, result, and limitations.
+9. Produce a readable Markdown report with screenshots, operation timeline, timing, evidence, findings, remediation, and limitations.
 
-DVWA is the first training lab for this skill. The broader goal is to teach Codex how to work like a lab-solving agent across authorized web challenges.
+DVWA is the first training lab for this skill. The broader goal is to guide Codex toward agent-led authorized web assessment. Bundled helpers are supporting tools, not fixed workflows.
 
-## Codex Plugin Prompt
+## Prompt: Authorized Web Assessment
 
-Use one of these prompt shapes in Codex.
+Use this when the target is a new authorized lab or simulated-real application, not a DVWA difficulty module.
 
-### Single Difficulty
+```text
+Use $dvwa-automated-testing in authorized web assessment mode against my local simulated target.
+
+Target URL: http://127.0.0.1:3000/
+Authorization: This is my local OWASP Juice Shop lab running on 127.0.0.1, and I authorize same-origin testing.
+Assessment mode: passive/safe first, then targeted harmless verification only when a hypothesis is supported by observed evidence.
+Scope: same-origin only. Do not scan other hosts, ports, or external networks.
+Credentials: no credentials initially; create or use a lab account only if the application workflow requires it and record the account state.
+Source path: D:\WorkSpace\综合实践5\targets\juice-shop
+Tools: use Playwright/browser exploration and screenshots, Python/requests for targeted harnesses, ZAP spider/passive alerts if available at http://127.0.0.1:8090, and Burp only if useful. Do not rely on a fixed helper script as the primary workflow.
+Output language: zh-CN
+Report output directory: D:\WorkSpace\综合实践5\dvwa-results
+Report requirements: produce a detailed Markdown penetration testing report with scope, methodology, application map, crawled pages, forms/API hints, screenshots, security headers, ZAP passive alerts, verified findings, evidence, severity/confidence triage, reproduction steps, remediation, operation timeline, artifacts, limitations, and next recommended manual verification steps.
+Prohibited actions: no destructive payloads, no credential attacks, no web shells, no reverse shells, no persistence, no external callbacks, no ZAP active scan, and no out-of-scope network access.
+```
+
+Expected behavior:
+
+- Codex first explores the application in the browser and builds an app model.
+- Tools are selected from observations and hypotheses; scanner/helper output is supporting evidence only.
+- The final deliverable is a complete Markdown penetration testing report with screenshots and reproduction details.
+- Read `references\authorized-web-assessment.md` for this mode.
+
+## Prompt: DVWA Single Difficulty
 
 ```text
 Use $dvwa-automated-testing to solve my authorized local DVWA <MODULE> challenge.
@@ -43,7 +66,7 @@ Report requirements: produce a readable Markdown walkthrough report as the prima
 Course-report extraction requirements: add a compact zh-CN section named `实验总报告可提取信息`, containing `实验结论`, `各难度漏洞成因`, `解题步骤`, `使用工具与操作`, `核心 payload/测试输入`, `关键截图`, `复现步骤总结`, `impossible/无解原因`, `辅助脚本`, `起止时间和耗时`, and `人工验证关注点`. Keep payloads, paths, parameters, commands, and evidence snippets exact.
 ```
 
-### Difficulty Progression
+## Prompt: DVWA Difficulty Progression
 
 ```text
 Use $dvwa-automated-testing to solve my authorized local DVWA <MODULE> challenge.
@@ -63,24 +86,7 @@ Report requirements: produce a readable Markdown walkthrough report as the prima
 Course-report extraction requirements: add a compact zh-CN section named `实验总报告可提取信息`, containing `实验结论`, `各难度漏洞成因`, `解题步骤`, `使用工具与操作`, `核心 payload/测试输入`, `关键截图`, `复现步骤总结`, `impossible/无解原因`, `辅助脚本`, `起止时间和耗时`, and `人工验证关注点`. Keep payloads, paths, parameters, commands, and evidence snippets exact.
 ```
 
-Minimum required prompt fields:
-
-- lab URL
-- lab login username/password
-- module name
-- source path when available
-
-Difficulty is optional. If supplied, Codex should solve that single difficulty unless the user asks to continue upward. If omitted, Codex should start at `low` and continue upward until it reaches a defended, blocked, or inconclusive level.
-
-Optional but recommended prompt fields:
-
-- output language, for example `zh-CN` or `en-US`
-- output directory for report artifacts
-- whether screenshots are required or optional
-- whether Burp/ZAP/MCP evidence should be included
-- whether to solve only one difficulty or continue upward
-
-## First-Time Setup On Windows
+## Setup And Checks On Windows
 
 From the skill root:
 
@@ -92,207 +98,63 @@ py -3.11 -m playwright install chromium
 py -3.11 .\scripts\tool_check.py
 ```
 
-Always use `py -3.11` for this skill's helpers and generated Python harnesses on Windows. Do not use generic `py -3`, because it may resolve to an unsupported preview Python and break imports such as `requests`.
+Use `py -3.11` for bundled helpers and generated Python harnesses on Windows. Do not use generic `py -3`, because it may resolve to a different interpreter.
 
-For only the minimum Brute Force environment:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\windows_tool_setup.ps1 -SkipGui -SkipIda -SkipBurpMcp
-py -3.11 -m pip install -r .\scripts\requirements.txt
-py -3.11 -m playwright install chromium
-```
-
-Read `references\tool-environment-management.md` for full install/uninstall behavior.
-
-## Local Experiment Steps
-
-Use this sequence for phpStudy-based Windows labs.
-
-1. Start phpStudy.
-2. Start Apache/Nginx and MySQL.
-3. Open `http://127.0.0.1/DVWA/`.
-4. If DVWA is not initialized, open `http://127.0.0.1/DVWA/setup.php` and create/reset the database.
-5. Log in with the lab account, commonly `admin` / `password`.
-6. Confirm the source path, for example `D:\phpStudy\PHPTutorial\WWW\DVWA`.
-7. Run `py -3.11 .\scripts\tool_check.py` from the skill root.
-8. Invoke Codex with the prompt above.
-
-## Check Whether The Environment Is Running
-
-Run these commands before a test session.
-
-### Skill And Tool Dependencies
+To check and optionally start the local lab tools:
 
 ```powershell
-cd <path-to>\dvwa-skills
-py -3.11 .\scripts\tool_check.py
+powershell -ExecutionPolicy Bypass -File .\scripts\check_and_start_lab_tools.ps1
 ```
 
-Expected: Python dependencies are present and optional tools are either detected or clearly reported as missing.
-
-### Automatic Screenshot Check
-
-Install Python dependencies and the Playwright Chromium browser:
+Use `-NoStart` for check-only mode:
 
 ```powershell
-cd <path-to>\dvwa-skills
-py -3.11 -m pip install -r .\scripts\requirements.txt
-py -3.11 -m playwright install chromium
-py -3.11 .\scripts\tool_check.py
+powershell -ExecutionPolicy Bypass -File .\scripts\check_and_start_lab_tools.ps1 -NoStart
 ```
 
-Expected: `playwright` and `Playwright Chromium` are shown as installed. A challenge run should use Playwright for login/security/module screenshots before falling back to screenshot-not-captured notes.
+Common local ports:
 
-### DVWA, MySQL, Burp, And MCP Ports
+- `80`: DVWA/phpStudy web server
+- `3306`: MySQL, if phpStudy uses the default port
+- `8080`: Burp proxy
+- `8090`: ZAP daemon/API
+- `9876`: Burp MCP, if enabled inside Burp
 
-```powershell
-Test-NetConnection 127.0.0.1 -Port 80
-Test-NetConnection 127.0.0.1 -Port 3306
-Test-NetConnection 127.0.0.1 -Port 8080
-Test-NetConnection 127.0.0.1 -Port 9876
-```
+## OWASP Juice Shop Local Target
 
-Expected:
-
-- `80`: DVWA web server is running.
-- `3306`: MySQL is running, if phpStudy uses the default MySQL port.
-- `8080`: Burp or ZAP proxy is running, if proxy evidence is requested.
-- `9876`: Burp MCP is running, if MCP is enabled in Burp.
-
-If phpStudy uses a different MySQL port, check that configured port instead of `3306`.
-
-### Listening Process Check
-
-```powershell
-Get-NetTCPConnection -State Listen -LocalPort 80,3306,8080,9876 |
-  Select-Object LocalAddress,LocalPort,OwningProcess,
-    @{Name='ProcessName';Expression={(Get-Process -Id $_.OwningProcess -ErrorAction SilentlyContinue).ProcessName}} |
-  Sort-Object LocalPort
-```
-
-Typical process names:
-
-- `httpd`, `nginx`, or phpStudy web process for port `80`
-- `mysqld` for port `3306`
-- `BurpSuiteCommunity`, `java`, or `zap` for proxy/MCP ports
-
-### DVWA HTTP Check
-
-```powershell
-curl.exe -sS -I http://127.0.0.1/DVWA/
-curl.exe -sS -L -o NUL -w "final_url=%{url_effective}`nstatus=%{http_code}`n" http://127.0.0.1/DVWA/
-```
-
-Expected: final URL is normally `http://127.0.0.1/DVWA/login.php` and status is `200`.
-
-### Burp MCP Check
-
-```powershell
-curl.exe -sS -o NUL -w "status=%{http_code}`n" http://127.0.0.1:9876
-java -jar C:\Tools\burp-mcp-server\libs\mcp-proxy-all.jar --sse-url http://127.0.0.1:9876
-```
-
-Expected:
-
-- `curl` or browser access to `http://127.0.0.1:9876` may return `403`; that is normal because it is not a normal web page.
-- The stdio proxy should print `Successfully connected to SSE server`.
-
-### Skill Installation Check
-
-```powershell
-Get-Item C:\Users\31435\.codex\skills\dvwa-automated-testing | Format-List FullName,LinkType,Target
-python C:\Users\31435\.codex\skills\.system\skill-creator\scripts\quick_validate.py C:\Users\31435\.codex\skills\dvwa-automated-testing
-```
-
-Expected:
-
-- `LinkType` should be empty if the skill is installed as a normal directory.
-- The validator prints `Skill is valid!`.
-
-Useful Brute Force source files:
+The current simulated-real target can be started from:
 
 ```text
-D:\phpStudy\PHPTutorial\WWW\DVWA\vulnerabilities\brute\source\low.php
-D:\phpStudy\PHPTutorial\WWW\DVWA\vulnerabilities\brute\source\medium.php
-D:\phpStudy\PHPTutorial\WWW\DVWA\vulnerabilities\brute\source\high.php
-D:\phpStudy\PHPTutorial\WWW\DVWA\vulnerabilities\brute\source\impossible.php
+D:\WorkSpace\综合实践5\targets\juice-shop
 ```
 
-## Burp And MCP
-
-Burp is optional for DVWA Brute Force, but useful for visibility and manual replay.
-
-1. Start Burp Suite Community.
-2. Keep Proxy listener on `127.0.0.1:8080`.
-3. If using MCP, load `C:\Tools\burp-mcp-server\build\libs\burp-mcp-all.jar` as a Java extension.
-4. Enable Burp's `MCP` tab on `http://127.0.0.1:9876`.
-5. A browser request to `http://127.0.0.1:9876` may return `403`; that only means the endpoint is not a normal browser page.
-6. Verify the stdio proxy when needed:
+If dependencies are already installed and the app is built:
 
 ```powershell
-java -jar C:\Tools\burp-mcp-server\libs\mcp-proxy-all.jar --sse-url http://127.0.0.1:9876
+Start-Process -FilePath node.exe -ArgumentList "build/app" -WorkingDirectory "D:\WorkSpace\综合实践5\targets\juice-shop" -WindowStyle Hidden
 ```
 
-Expected log line:
+Expected URL:
 
 ```text
-Successfully connected to SSE server at http://127.0.0.1:9876
+http://127.0.0.1:3000/
 ```
 
-MCP is not required. If MCP tools are unavailable, Codex should continue with browser/Burp manual steps, generated Python harnesses, and file artifacts.
+If rebuilding is needed and Docker is unavailable:
 
-## Difficulty Progression Expectation
+```powershell
+cd D:\WorkSpace\综合实践5\targets\juice-shop
+npm.cmd install
+npm.cmd run build:frontend
+npm.cmd run build:server
+node build/app
+```
 
-When the prompt specifies only the challenge type, Codex should:
+## Optional Helper Smoke Tests
 
-- start with `low`
-- solve or prove the current level before moving upward
-- repeat source review, request modeling, baseline probe, test generation, automatic screenshot capture, evidence, and timing for each level
-- continue through `medium`, `high`, and `impossible` while the previous level is solved or sufficiently proven
-- stop at the first level classified from evidence as `not_vulnerable`, `blocked`, or `inconclusive`, or when continuing would be unsafe for lab state
-- explain the stop reason in the Markdown report
+Bundled helpers are only for environment checks, inventory, or regression. They are not the primary way to evaluate the skill's reasoning.
 
-## Brute Force Test Expectation
-
-For a proper skill evaluation, Codex should not immediately run `scripts\dvwa_runner.py` or try the known DVWA credential first. A good run should show:
-
-- live module route inspection
-- source review of each attempted difficulty file
-- request fields and success/failure markers
-- one invalid baseline attempt per attempted difficulty
-- a small generated credential strategy
-- a temporary harness or Burp workflow derived from the observations
-- evidence-based classification of credential discovery and vulnerability status
-- a readable Markdown report in the requested output language
-- a difficulty progression table when difficulty was omitted
-- timing summary for setup, source review, test generation, and execution
-- screenshot links when available, or an explicit reason when screenshots were not captured
-
-## Report Output Expectations
-
-Read `references\reporting-and-artifacts.md` before final output.
-
-The final Markdown report should include:
-
-- summary and result
-- scope and environment
-- difficulty progression table when applicable
-- operation timeline
-- source review
-- request model
-- hypotheses and test design
-- execution evidence
-- automatic Playwright screenshots or failed screenshot command/error notes
-- timing summary
-- no-solution or not-exploitable reason for any defended, blocked, or inconclusive level
-- remediation and limitations
-- course-report extraction block with experiment conclusion, per-difficulty vulnerability causes, solving steps, tools and operations, core payloads/test inputs, key screenshots, reproduction summary, impossible/no-solution reason, helper scripts, and start/finish/elapsed time
-
-## Optional Helper Smoke Test
-
-Use the bundled helper only to verify that DVWA, Python, requests, and optional proxying work. It is not the main way to evaluate the skill's reasoning.
-
-Low level helper example:
+DVWA Brute Force regression helper:
 
 ```powershell
 py -3.11 .\scripts\dvwa_runner.py `
@@ -304,72 +166,31 @@ py -3.11 .\scripts\dvwa_runner.py `
   --source-path D:\phpStudy\PHPTutorial\WWW\DVWA `
   --mode walkthrough `
   --export-tool-artifacts `
-  --output-dir .\dvwa-results
+  --output-dir ..\dvwa-results
 ```
 
-High level helper with Burp capture:
+Authorized web inventory helper:
 
 ```powershell
-py -3.11 .\scripts\dvwa_runner.py `
-  --url http://127.0.0.1/DVWA/ `
-  --username admin `
-  --password password `
-  --module brute-force `
-  --difficulty high `
-  --source-path D:\phpStudy\PHPTutorial\WWW\DVWA `
-  --mode walkthrough `
-  --proxy http://127.0.0.1:8080 `
-  --export-tool-artifacts `
-  --output-dir .\dvwa-results
+py -3.11 .\scripts\authorized_web_assessment.py `
+  --url http://127.0.0.1:3000/ `
+  --authorized `
+  --max-pages 12 `
+  --zap-url http://127.0.0.1:8090 `
+  --out-dir ..\dvwa-results\authorized-web-assessment-juice-shop-<timestamp>
 ```
 
-Runtime reports are written to `dvwa-results`. Keep that directory out of the skill package.
-
-## Knowledge Base Layout
-
-Start at:
-
-```text
-references\knowledge-base\index.md
-```
-
-Each module has:
-
-- `guide.md`: merged operating guide
-- `sources\github.md`: notes split from the single GitHub WalkThrough
-- `sources\cnblogs.md`: notes for the CNBlogs subpage when available
-- `images\`: local mirrored images
-
-Use `references\knowledge-base\source-map.json` to map modules to source URLs, local line ranges, and image counts.
+The inventory helper output can support a later report, but it is not a complete penetration test by itself.
 
 ## Tool Rules
 
-- Brute Force: analyze page/source first, then generate a task-specific Python/requests or Burp workflow.
-- `scripts\dvwa_runner.py`: optional reference helper for smoke tests and regression only.
-- Burp/ZAP: proxy, history, replay, and manual comparison.
-- ffuf: fuzzing and low/medium demonstration artifacts; not preferred for token-heavy Brute Force.
-- sqlmap: SQL Injection modules only after manual proof and authenticated request export.
-- IDA: binary reversing only, not DVWA Brute Force.
-- MCP: optional orchestration layer. Missing MCP is not a blocker.
+- Playwright: browser exploration, screenshots, SPA/network observation, proof capture.
+- Python/requests: small targeted harnesses after the request model is known.
+- Burp: proxy capture, history, replay, manual comparison.
+- ZAP: spider and passive alerts by default; active scan only with explicit authorization and limits.
+- ffuf: scoped content/parameter fuzzing after a safe request model exists.
+- sqlmap: SQL injection only after manual proof and scoped authenticated request export.
+- IDA: binary reversing only, not normal DVWA Web modules.
+- MCP: optional orchestration. Missing MCP is not a blocker.
 
-## Uninstall Tools Cleanly
-
-Preview:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\windows_tool_uninstall.ps1 -WhatIf
-```
-
-Remove optional DVWA security tools:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\windows_tool_uninstall.ps1
-```
-
-Also remove shared prerequisites like Git, Go, Python, and JDK:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\windows_tool_uninstall.ps1 -RemovePrerequisites
-```
-
-Use `-RemovePrerequisites` carefully because those tools may be used by other projects.
+Runtime reports are written to `dvwa-results`. Keep that directory out of the skill package.

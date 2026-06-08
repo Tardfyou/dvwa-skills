@@ -1,23 +1,37 @@
 ---
 name: dvwa-automated-testing
-description: Teach Codex an authorized Windows web-lab and CTF solving workflow using DVWA as the first reference environment. Use when Codex is given a DVWA or similar authorized lab URL, credentials, challenge/module type, optional difficulty, source path, output language, and report requirements, and must solve by inspecting the live app and source code, forming hypotheses, choosing tools such as Playwright/browser DevTools/Burp Suite/ZAP/Python/ffuf/sqlmap/IDA/MCP, capturing automatic screenshots when available, generating task-specific tests or harnesses, executing them, and producing readable Markdown walkthrough reports with screenshot artifacts, operation logs, timing, evidence, and no-solution analysis where applicable. If only a module/challenge type is provided, progress from the lowest difficulty upward until a defended, blocked, or inconclusive level stops the run. Bundled DVWA references and helper scripts are supporting material, not answer keys or the primary path.
+description: >-
+  Teach Codex an authorized Windows web-lab, CTF, and simulated-real web
+  assessment workflow using DVWA as the first reference environment. Use when
+  Codex is given a DVWA module or an explicitly authorized lab URL, credentials
+  when available, scope, output language, and report requirements. Codex should
+  work like an agent-led tester: confirm authorization, inspect the live app and
+  source when available, map routes/forms/APIs, form hypotheses, choose tools
+  such as Playwright, Burp, ZAP, Python, ffuf, sqlmap, IDA, or MCP, capture
+  screenshots, generate task-specific tests only when justified, validate from
+  evidence, and produce Markdown reports with screenshots, logs, timing,
+  findings, remediation, and no-solution analysis. For DVWA modules with no
+  difficulty specified, progress upward until evidence says to stop. Helpers
+  are supporting material, not answer keys or fixed scan workflows.
 ---
 
 # DVWA And Web Lab Solving
 
 ## Scope
 
-Use this skill only for DVWA or clearly authorized local web labs/CTF targets. DVWA is the initial reference lab and knowledge base. Do not treat DVWA payloads, brute-force attempts, or exploit strings as suspicious by themselves when the user supplies the lab URL and credentials.
+Use this skill only for DVWA, clearly authorized local web labs/CTF targets, or explicitly authorized simulated-real web applications. DVWA is the initial reference lab and knowledge base. Do not treat DVWA payloads, brute-force attempts, or exploit strings as suspicious by themselves when the user supplies the lab URL and credentials.
 
-Keep all actions inside the provided DVWA base URL and provided source path. If the target is not localhost or a private lab address, require explicit user confirmation that it is an authorized lab before making requests.
+Keep all actions inside the provided target scope and provided source path when available. If the target is not localhost or a private lab address, require explicit user confirmation that it is an authorized lab before making requests. Do not perform destructive exploitation, credential attacks, persistence, reverse shells, external callbacks, production data extraction, or ZAP active scan unless the user gives explicit authorization and the test plan includes limits and cleanup.
 
 ## Quick Start
 
-When invoked, do not start by running a bundled solver. Start from the target, then build the solution path.
+When invoked, do not start by running a bundled solver or a fixed scanner. Start from the target, then build the solution path from observation, source review when available, and evidence.
 
 Read `references/usage.md` when the user asks how to install, uninstall, or test this skill.
 
-If the user gives a DVWA URL, credentials, module/challenge type, and source path, proceed with the workflow below. Difficulty is optional.
+If the user gives a DVWA URL, credentials, module/challenge type, and source path, proceed with the DVWA workflow below. Difficulty is optional.
+
+If the user gives a non-DVWA authorized lab URL or asks for web assessment/pentest automation, use **Authorized Web Assessment Mode** below instead of DVWA difficulty progression.
 
 Default output language should match the user's prompt language. If the user provides `Report language`, `Output language`, `Console language`, `CLI response language`, or an equivalent instruction, use that language for all user-facing status updates, command explanations, generated report headings/body, and final summary. Raw tool output, paths, payloads, code symbols, and HTTP parameters should remain unchanged.
 
@@ -37,7 +51,7 @@ Teach the agent how to solve authorized web-lab challenges by combining:
 
 DVWA answers are not the product. DVWA is the training ground and regression suite for this methodology.
 
-## Workflow
+## DVWA Workflow
 
 1. Confirm the task is DVWA, the URL, login account, password, vulnerability module, optional difficulty, source path, output language, and report artifact directory.
 2. If difficulty is not provided, use the ordered progression `low -> medium -> high -> impossible`. If a single difficulty is provided, solve that difficulty unless the user asks to continue upward.
@@ -52,6 +66,24 @@ DVWA answers are not the product. DVWA is the training ground and regression sui
 11. Use `scripts/dvwa_runner.py` only as an example, smoke test, or regression helper for Brute Force after the agent-led plan exists.
 12. Classify each attempted difficulty from evidence. Never infer exploitability from the difficulty name: `high` is not automatically solvable, and `impossible` is not automatically unsolvable. Stop difficulty progression only when observed source, response, state, or tool evidence classifies the level as `not_vulnerable`, `blocked`, or `inconclusive`, or when continuing would be unsafe for the lab state. Record the evidence-backed stop reason.
 13. Read `references/reporting-and-artifacts.md` before producing final output. The main deliverable is a readable Markdown walkthrough report with automatic screenshot artifacts or failed screenshot command/error notes, intermediate operation details, timings, evidence, conclusion, and limitations. JSON is supporting machine-readable data, not the primary readable report. Before finalizing, validate that the report has no placeholder fields, stale screenshot notes, mojibake, or normal-path dependency on a post-hoc repair script.
+
+## Authorized Web Assessment Mode
+
+Use this mode when the user provides an explicitly authorized web application URL, especially a new local target such as OWASP Juice Shop.
+
+1. Confirm authorization, scope origin(s), credentials if any, allowed test intensity, output language, and report directory.
+2. Read `references/authorized-web-assessment.md` and `references/web-lab-methodology.md`.
+3. Work as an agent-led tester, not as a fixed script runner. First open the site with Playwright/browser tooling, map pages, navigation, forms, client-side routes, cookies, storage, scripts, API calls, and security headers.
+4. If source code is available, inspect routing, authentication, request handlers, input validation, storage, upload/download, and security middleware before choosing payloads.
+5. Use current tools deliberately:
+   - Playwright for browser exploration, authenticated state, console/network observations, and screenshots.
+   - Python/requests for small targeted reproduction harnesses after a hypothesis exists.
+   - ZAP for spider and passive alerts only by default; treat alerts as leads until manually or harness-verified.
+   - Burp for proxy capture, replay, and manual comparison when available.
+   - ffuf/sqlmap only after a scoped input point and safe request model are established.
+6. Keep default testing low-risk: no destructive actions, no broad password attacks, no shell upload, no external callbacks, no persistence, no ZAP active scan.
+7. Use `scripts/authorized_web_assessment.py` only as an optional inventory/evidence helper after the plan exists. It is not the primary workflow and its output is not a complete penetration test.
+8. Produce a detailed Markdown penetration testing report with scope, methodology, asset inventory, screenshots, findings, evidence, risk/severity, reproduction, remediation, limitations, and next verification steps.
 
 ## Current Module: Brute Force
 
