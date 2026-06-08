@@ -21,7 +21,7 @@ description: >-
 
 Use this skill only for DVWA, clearly authorized local web labs/CTF targets, or explicitly authorized simulated-real web applications. DVWA is the initial reference lab and knowledge base. Do not treat DVWA payloads, brute-force attempts, or exploit strings as suspicious by themselves when the user supplies the lab URL and credentials.
 
-Keep all actions inside the provided target scope and provided source path when available. If the target is not localhost or a private lab address, require explicit user confirmation that it is an authorized lab before making requests. Do not perform destructive exploitation, credential attacks, persistence, reverse shells, external callbacks, production data extraction, or ZAP active scan unless the user gives explicit authorization and the test plan includes limits and cleanup.
+Keep all actions inside the provided target scope and provided source path when available. If the target is not localhost or a private lab address, require explicit user confirmation that it is an authorized lab before making requests. When the user explicitly authorizes active testing, do not exclude login bypass, injection validation, authenticated fuzzing, upload execution proof, command-execution proof, or ZAP active scan by default; run them as scoped tests with evidence, timing, and cleanup notes.
 
 ## Quick Start
 
@@ -71,17 +71,17 @@ DVWA answers are not the product. DVWA is the training ground and regression sui
 
 Use this mode when the user provides an explicitly authorized web application URL, especially a new local target such as OWASP Juice Shop.
 
-1. Confirm authorization, scope origin(s), credentials if any, allowed test intensity, output language, and report directory.
+1. Confirm authorization, scope origin(s), credentials if any, assessment intensity, output language, and report directory.
 2. Read `references/authorized-web-assessment.md` and `references/web-lab-methodology.md`.
 3. Work as an agent-led tester, not as a fixed script runner. First open the site with Playwright/browser tooling, map pages, navigation, forms, client-side routes, cookies, storage, scripts, API calls, and security headers.
 4. If source code is available, inspect routing, authentication, request handlers, input validation, storage, upload/download, and security middleware before choosing payloads.
 5. Use current tools deliberately:
    - Playwright for browser exploration, authenticated state, console/network observations, and screenshots.
    - Python/requests for small targeted reproduction harnesses after a hypothesis exists.
-   - ZAP for spider and passive alerts only by default; treat alerts as leads until manually or harness-verified.
+   - ZAP for spider, passive alerts, and active scan when the user authorizes active testing; treat scanner alerts as leads until reproduced or supported by direct evidence.
    - Burp for proxy capture, replay, and manual comparison when available.
-   - ffuf/sqlmap only after a scoped input point and safe request model are established.
-6. Keep default testing low-risk: no destructive actions, no broad password attacks, no shell upload, no external callbacks, no persistence, no ZAP active scan.
+   - ffuf/sqlmap after a scoped input point and request model are established.
+6. If `Assessment intensity` is `active-comprehensive`, actively test likely vulnerability classes inside scope, including authentication bypass, SQL/NoSQL/command/template/path injection, XSS, CSRF, IDOR/access control, file upload, directory traversal, API abuse, and security misconfiguration. Do not stop at passive evidence when direct validation is possible in the lab.
 7. Use `scripts/authorized_web_assessment.py` only as an optional inventory/evidence helper after the plan exists. It is not the primary workflow and its output is not a complete penetration test.
 8. Produce a detailed Markdown penetration testing report with scope, methodology, asset inventory, screenshots, findings, evidence, risk/severity, reproduction, remediation, limitations, and next verification steps.
 

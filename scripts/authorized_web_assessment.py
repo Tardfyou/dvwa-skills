@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Low-risk authorized web assessment helper.
+"""Authorized web assessment inventory helper.
 
-This script is intentionally conservative. It crawls only the supplied origin,
-captures screenshots, records forms/links/scripts, optionally runs a ZAP spider
-and passive-alert collection, then writes Markdown and JSON evidence.
+This script crawls only the supplied origin, captures screenshots, records
+forms/links/scripts/API hints, optionally runs ZAP spider/passive collection,
+and can trigger ZAP active scan when explicitly requested for an authorized
+lab target. It writes Markdown and JSON evidence.
 """
 
 from __future__ import annotations
@@ -275,8 +276,8 @@ def zap_get(zap_base: str, path: str, params: dict[str, Any] | None = None) -> d
     return response.json()
 
 
-def run_zap_passive(zap_base: str, target_url: str, max_children: int, timeout_s: int) -> dict[str, Any]:
-    result: dict[str, Any] = {"enabled": True, "zap_base": zap_base}
+def run_zap_scan(zap_base: str, target_url: str, max_children: int, timeout_s: int, active: bool) -> dict[str, Any]:
+    result: dict[str, Any] = {"enabled": True, "zap_base": zap_base, "active_scan_requested": active}
     try:
         result["version"] = zap_get(zap_base, "/JSON/core/view/version/")
         scan = zap_get(
@@ -295,6 +296,25 @@ def run_zap_passive(zap_base: str, target_url: str, max_children: int, timeout_s
                 break
             time.sleep(2)
         result["spider_status"] = status
+
+        if active:
+            active_scan = zap_get(
+                zap_base,
+                "/JSON/ascan/action/scan/",
+                {"url": target_url, "recurse": "true", "inScopeOnly": "false"},
+            )
+            active_scan_id = active_scan.get("scan")
+            result["active_scan_id"] = active_scan_id
+            active_deadline = time.time() + timeout_s
+            active_status = "0"
+            while active_scan_id is not None and time.time() < active_deadline:
+                status_json = zap_get(zap_base, "/JSON/ascan/view/status/", {"scanId": active_scan_id})
+                active_status = status_json.get("status", "0")
+                if active_status == "100":
+                    break
+                time.sleep(3)
+            result["active_scan_status"] = active_status
+
         time.sleep(3)
         alerts = zap_get(zap_base, "/JSON/core/view/alerts/", {"baseurl": target_url}).get("alerts", [])
         result["alerts"] = alerts
@@ -354,13 +374,13 @@ def write_report(out_dir: Path, data: dict[str, Any]) -> None:
             f"- API hints found: `{len(data['api_hints'])}`",
             f"- ZAP alerts: `{len(zap.get('alerts', []))}`",
             "",
-            "This run is a low-risk evidence-collection helper for an authorized assessment. It performs same-origin crawling, browser screenshots, request/form/API hint inventory, security-header review, and optional ZAP spider/passive alert collection. It does not replace agent-led testing and does not run destructive payloads, web shells, password spraying, or ZAP active scan.",
+            "This run is an evidence-collection helper for an authorized assessment. It performs same-origin crawling, browser screenshots, request/form/API hint inventory, security-header review, optional ZAP spider/passive alert collection, and optional ZAP active scan when requested. It does not replace agent-led testing.",
             "",
             "## Scope And Authorization",
             "",
             "- The operator supplied `--authorized` for this local or explicitly authorized target.",
             "- Requests were constrained to the target origin.",
-            "- Active exploitation and destructive tests were not performed by this helper.",
+            f"- ZAP active scan requested: `{zap.get('active_scan_requested', False)}`.",
             "",
             "## HTTP Baseline",
             "",
@@ -423,6 +443,8 @@ def write_report(out_dir: Path, data: dict[str, Any]) -> None:
         else:
             lines.append(f"- ZAP version: `{zap.get('version', {}).get('version', '')}`")
             lines.append(f"- Spider status: `{zap.get('spider_status', '')}`")
+            if zap.get("active_scan_requested"):
+                lines.append(f"- Active scan status: `{zap.get('active_scan_status', '')}`")
             lines.append(f"- Alerts by risk: `{json.dumps(zap.get('alerts_by_risk', {}), ensure_ascii=False)}`")
             for alert in zap.get("alerts", [])[:30]:
                 lines.extend(
@@ -453,7 +475,7 @@ def write_report(out_dir: Path, data: dict[str, Any]) -> None:
             "",
             "1. Review the form/API inventory and choose specific vulnerability hypotheses.",
             "2. Confirm each ZAP passive alert manually or with a targeted browser/request harness.",
-            "3. Enable intrusive active tests only after explicit authorization, rate limits, and rollback/cleanup steps are set.",
+            "3. Continue from scanner leads to direct validation with browser/request/source evidence where available.",
             "4. Add authenticated browser state if the application has login-only functionality.",
             "",
             "## Artifacts",
@@ -466,7 +488,7 @@ def write_report(out_dir: Path, data: dict[str, Any]) -> None:
             "",
             "- This helper is not a full penetration test by itself and should not be treated as the skill's default workflow.",
             "- It does not bypass authentication, solve CAPTCHA/MFA, or infer business-logic vulnerabilities.",
-            "- It does not run ZAP active scan, password attacks, destructive file upload tests, command execution, or persistence.",
+            "- It only covers the pages and tool actions reachable within the configured runtime and timeout.",
             "- Single-page applications may require deeper scripted navigation for complete coverage.",
         ]
     )
@@ -474,7 +496,7 @@ def write_report(out_dir: Path, data: dict[str, Any]) -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Run a low-risk authorized web assessment.")
+    parser = argparse.ArgumentParser(description="Run an authorized web assessment inventory and ZAP evidence collection.")
     parser.add_argument("--url", required=True, help="Target base URL.")
     parser.add_argument("--out-dir", required=True, help="Output directory.")
     parser.add_argument("--authorized", action="store_true", help="Required confirmation that the target is authorized.")
@@ -482,6 +504,7 @@ def main() -> int:
     parser.add_argument("--max-pages", type=int, default=12)
     parser.add_argument("--zap-url", default="http://127.0.0.1:8090")
     parser.add_argument("--no-zap", action="store_true")
+    parser.add_argument("--zap-active", action="store_true", help="Run ZAP active scan after spidering. Use only for an authorized target.")
     parser.add_argument("--zap-timeout", type=int, default=60)
     args = parser.parse_args()
 
@@ -501,7 +524,7 @@ def main() -> int:
     api_hints = summarize_api_hints(crawl_pages)
     zap = {"enabled": False, "alerts": [], "alerts_by_risk": {}}
     if not args.no_zap:
-        zap = run_zap_passive(args.zap_url, target_url, args.max_pages, args.zap_timeout)
+        zap = run_zap_scan(args.zap_url, target_url, args.max_pages, args.zap_timeout, args.zap_active)
 
     finished_at = now_iso()
     elapsed = round(time.perf_counter() - started, 3)

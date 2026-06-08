@@ -111,26 +111,28 @@ For non-DVWA authorized web assessment mode, do not use the DVWA difficulty prog
 
 1. **Summary**
    - target, authorization, scope, dates, overall risk, finding counts by severity/status
-2. **Scope And Constraints**
-   - included origins, excluded targets, credentials, safe/passive boundaries, prohibited actions
+2. **Scope And Authorization**
+   - included origins, credentials, authorized assessment intensity, and target boundary
 3. **Methodology And Tools**
-   - browser exploration, source review if available, ZAP passive alerts, Burp/proxy, generated harnesses, screenshots
+   - browser exploration, source review if available, ZAP spider/passive/active scan, Burp/proxy, ffuf/sqlmap when used, generated harnesses, screenshots
 4. **Application Map**
    - pages, routes, forms, API hints, authentication/session observations, storage/cookies, screenshots
 5. **Security Header And Configuration Review**
    - observed headers, missing controls, transport assumptions, CSP/clickjacking notes
 6. **Findings Table**
    - id, title, status, severity, confidence, affected URL/API, evidence artifact
-7. **Detailed Findings**
+7. **Active Test Coverage**
+   - authentication bypass, injection, XSS, CSRF, IDOR/access control, upload/download, traversal, API abuse, fuzzing, scanner coverage, and tool-specific gaps
+8. **Detailed Findings**
    - title, status, severity rationale, affected component, evidence, screenshots, reproduction steps, impact, remediation, limitations
-8. **Operation Timeline**
+9. **Operation Timeline**
    - start/finish time, major operations, tools, commands, outputs, artifacts
-9. **Artifacts**
+10. **Artifacts**
    - Markdown report, JSON/inventory files, screenshots, request files, generated harnesses, proxy/ZAP exports
-10. **Limitations And Next Steps**
+11. **State Changes, Cleanup, Limitations, And Next Steps**
    - untested authenticated areas, scanner-only leads, missing tools, recommended manual verification
 
-Scanner or helper output alone is not a finding. Mark ZAP passive alerts as `Likely` or `Possible` until reproduced by browser evidence, targeted requests, source review, or a small generated harness.
+Scanner or helper output alone is not enough for a confirmed finding. Mark ZAP alerts as `Likely` or `Possible` until reproduced by browser evidence, targeted requests, source review, or a generated harness; for comprehensive authorized assessments, continue from scanner leads to direct validation where the available tools support it.
 
 ## Screenshot Rules
 

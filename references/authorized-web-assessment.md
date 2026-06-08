@@ -8,11 +8,11 @@ The expected behavior is agent-led penetration testing assistance:
 
 1. Observe the live application.
 2. Build an application model.
-3. Choose tools based on hypotheses.
-4. Verify findings with targeted evidence.
-5. Write a complete Markdown report with screenshots and reproduction details.
+3. Use the available tools comprehensively.
+4. Verify vulnerabilities with direct evidence.
+5. Write a complete Markdown report with screenshots, reproduction details, impact, and remediation.
 
-Do not turn the workflow into "run one scanner and paste the output." Helper scripts and scanners are evidence sources only.
+Do not turn the workflow into "run one scanner and paste the output." Scanners and helpers are evidence sources, not the full assessment.
 
 ## Required Inputs
 
@@ -20,41 +20,42 @@ Before making requests, identify these fields from the prompt or ask only when m
 
 - target URL
 - authorization statement
-- scope, normally same-origin for local labs
+- authorized target scope
 - credentials or instruction that no credentials are available
-- allowed intensity, default `passive/safe`
+- assessment intensity, normally `active-comprehensive` for local labs when the user wants complete vulnerability discovery and validation
 - output language
 - report output directory
 
 If the target is not localhost, a private lab address, or a clearly named training target, require explicit authorization before requests.
 
-## Default Boundaries
+## Active-Comprehensive Mode
 
-Default allowed actions:
+When `Assessment intensity: active-comprehensive` is provided, use every available supported tool and technique needed to discover and verify vulnerabilities in the authorized target. Do not exclude a vulnerability class because it is active, exploit-oriented, or scanner-driven.
 
-- same-origin browser navigation
-- page, route, form, link, script, cookie, storage, and API inventory
-- security-header review
-- source-code review when source path is provided
-- passive ZAP spider and passive alerts
-- Burp proxy capture and replay of already observed requests
-- targeted harmless probes against lab inputs
-- screenshots and operation logs
+Include these categories by default when the target exposes relevant functionality and the tools support it:
 
-Default forbidden actions unless the user explicitly authorizes them and the plan includes limits and cleanup:
+- login and authentication bypass
+- default credential and weak credential checks when appropriate for the lab
+- SQL, NoSQL, LDAP, template, path, file inclusion, and command injection validation
+- authenticated fuzzing
+- ZAP spider, passive alerts, and active scan
+- Burp proxy capture, replay, and manual comparison
+- ffuf content and parameter fuzzing
+- sqlmap after a scoped request model exists
+- CSRF and state-changing workflow validation
+- IDOR and access-control checks across lab-created users
+- file upload and execution proof
+- directory traversal, download, and information disclosure checks
+- XSS, DOM XSS, CSP bypass, and client-side logic abuse
+- API abuse, business logic checks, and security misconfiguration validation
+- controlled data extraction needed to prove impact in the lab
 
-- ZAP active scan
-- password spraying, credential stuffing, or broad brute force
-- destructive payloads
-- web shell upload or command execution payloads
-- reverse shells, external callbacks, persistence, or lateral movement
-- production data dumping or sensitive-data exfiltration
-- scanning other origins, ports, or networks outside scope
+The remaining boundary is authorization scope. Keep the work tied to the user-authorized target, and record state changes and cleanup steps in the report.
 
 ## Agent-Led Workflow
 
 1. **Scope and setup**
-   - Record target, scope origin, credentials, authorization, allowed tools, and output directory.
+   - Record target, authorization, target boundary, credentials, assessment intensity, tools, and output directory.
    - Start an operation log and timing.
 
 2. **Live observation**
@@ -63,18 +64,20 @@ Default forbidden actions unless the user explicitly authorizes them and the pla
    - Record title, routes, navigation, forms, buttons, visible app features, cookies, local/session storage, response status, and major scripts.
 
 3. **Surface mapping**
-   - Crawl same-origin pages conservatively.
+   - Crawl the authorized target.
    - For SPAs, inspect client routes and network requests instead of relying only on HTML links.
    - Extract API candidates from network traffic, forms, JavaScript, and source code when available.
    - Record authentication and role assumptions.
 
-4. **Passive tooling**
-   - Use ZAP spider/passive alerts when available.
-   - Treat ZAP alerts as leads. Do not mark them confirmed until reproduced or supported by direct evidence.
+4. **Tooling**
+   - Run ZAP spider and passive alerts when available.
+   - In active-comprehensive mode, run ZAP active scan against the authorized target and record scan policy, start/end time, alert count, and affected URLs.
    - Use Burp for traffic capture and replay when available.
+   - Use ffuf and sqlmap when the target surface and request model justify them.
+   - Treat scanner alerts as leads until reproduced or supported by direct evidence; then classify them as confirmed findings.
 
 5. **Hypothesis generation**
-   - Group possible tests by vulnerability class, input point, expected sink/control, and risk:
+   - Group tests by vulnerability class, input point, expected sink/control, and expected impact:
      - authentication/session
      - access control/IDOR
      - injection
@@ -83,22 +86,22 @@ Default forbidden actions unless the user explicitly authorizes them and the pla
      - file upload/download
      - security headers/CSP/clickjacking
      - information disclosure
-     - business logic
-   - Start with the lowest-risk tests that can prove or disprove the hypothesis.
+     - API/business logic
+   - In active-comprehensive mode, continue from inventory to direct validation instead of stopping at passive leads.
 
 6. **Targeted validation**
-   - Generate small Playwright or Python/requests harnesses only after the observed request model justifies automation.
-   - Keep payloads harmless and local to the lab.
-   - Save request/response snippets, screenshots, and timing for each finding.
+   - Generate Playwright or Python/requests harnesses when repeated browser or request-level validation is useful.
+   - Save request/response snippets, screenshots, command output, ZAP/Burp evidence, and timing for each finding.
    - Classify findings as `Confirmed`, `Likely`, `Possible`, `Informational`, or `Not Reproduced`.
+   - Record any created accounts, uploaded files, changed records, or cleanup steps.
 
 7. **Report writing**
    - The primary deliverable is a readable Markdown report, not JSON or raw scanner output.
-   - Include screenshots, evidence, severity, reproduction steps, affected URLs, impact, remediation, limitations, and next manual verification steps.
+   - Include screenshots, evidence, severity, reproduction steps, affected URLs, impact, remediation, state changes/cleanup, limitations, and next verification steps.
 
 ## Optional Inventory Helper
 
-`scripts/authorized_web_assessment.py` can collect a low-risk first-pass inventory:
+`scripts/authorized_web_assessment.py` can collect a first-pass inventory and ZAP alerts:
 
 ```powershell
 py -3.11 .\scripts\authorized_web_assessment.py `
@@ -106,36 +109,39 @@ py -3.11 .\scripts\authorized_web_assessment.py `
   --authorized `
   --max-pages 12 `
   --zap-url http://127.0.0.1:8090 `
+  --zap-active `
   --out-dir ..\dvwa-results\authorized-web-assessment-juice-shop-<timestamp>
 ```
 
-Use it only as a supporting artifact after the agent has a plan. Its report is an inventory and passive-alert summary, not a complete penetration test.
+Use it only as a supporting artifact after the agent has a plan. Its report is an inventory and alert summary, not a complete penetration test. In active-comprehensive mode, continue with active validation and tool-specific evidence after this helper.
 
 ## Report Structure
 
 For authorized web assessment reports, use this structure:
 
 1. Summary
-2. Scope, authorization, and constraints
+2. Scope, authorization, and assessment intensity
 3. Methodology and tools
 4. Application map
 5. Authentication/session observations
 6. Crawled pages, forms, API hints, and screenshots
-7. Security headers and configuration observations
-8. Findings table
-9. Detailed finding sections
-   - title
-   - status: confirmed/likely/possible/informational/not reproduced
-   - severity and rationale
-   - affected URL/API
-   - evidence and screenshots
-   - reproduction steps
-   - impact
-   - remediation
-   - limitations
-10. Operation timeline
-11. Artifacts
-12. Overall limitations and next steps
+7. Active test coverage
+8. Security headers and configuration observations
+9. Findings table
+10. Detailed finding sections
+    - title
+    - status: confirmed/likely/possible/informational/not reproduced
+    - severity and rationale
+    - affected URL/API
+    - evidence and screenshots
+    - reproduction steps
+    - impact
+    - remediation
+    - state changes/cleanup
+    - limitations
+11. Operation timeline
+12. Artifacts
+13. Overall limitations and next steps
 
 ## Test Prompt
 
@@ -145,14 +151,14 @@ Use this prompt shape in a new Codex window:
 Use $dvwa-automated-testing in authorized web assessment mode against my local simulated target.
 
 Target URL: http://127.0.0.1:3000/
-Authorization: This is my local OWASP Juice Shop lab running on 127.0.0.1, and I authorize same-origin testing.
-Assessment mode: passive/safe first, then targeted harmless verification only when a hypothesis is supported by observed evidence.
-Scope: same-origin only. Do not scan other hosts, ports, or external networks.
-Credentials: no credentials initially; create or use a lab account only if the application workflow requires it and record the account state.
+Authorization: This is my local OWASP Juice Shop lab running on 127.0.0.1, and I authorize full active testing against this target.
+Assessment intensity: active-comprehensive. Use every available supported tool and technique needed to discover and verify vulnerabilities inside the authorized target, including login bypass, injection, access control testing, upload testing, CSRF, XSS, fuzzing, sqlmap when justified, and ZAP active scan.
+Scope: authorized local lab target at http://127.0.0.1:3000/.
+Credentials: no credentials initially; create or use lab accounts if the application workflow requires them and record the account state.
 Source path: D:\WorkSpace\综合实践5\targets\juice-shop
-Tools: use Playwright/browser exploration and screenshots, Python/requests for targeted harnesses, ZAP spider/passive alerts if available at http://127.0.0.1:8090, and Burp only if useful. Do not rely on a fixed helper script as the primary workflow.
+Tools: use Playwright/browser exploration and screenshots, Python/requests for targeted harnesses, ZAP spider/passive/active scan if available at http://127.0.0.1:8090, Burp if useful, ffuf/sqlmap when an input point and request model justify them. Do not rely on a fixed helper script as the primary workflow.
 Output language: zh-CN
 Report output directory: D:\WorkSpace\综合实践5\dvwa-results
-Report requirements: produce a detailed Markdown penetration testing report with scope, methodology, application map, crawled pages, forms/API hints, screenshots, security headers, ZAP passive alerts, verified findings, evidence, severity/confidence triage, reproduction steps, remediation, operation timeline, artifacts, limitations, and next recommended manual verification steps.
-Prohibited actions: no destructive payloads, no credential attacks, no web shells, no reverse shells, no persistence, no external callbacks, no ZAP active scan, and no out-of-scope network access.
+Report requirements: produce a detailed Markdown penetration testing report with scope, methodology, application map, crawled pages, forms/API hints, screenshots, security headers, ZAP alerts including active scan results, verified findings, evidence, severity/confidence triage, reproduction steps, remediation, operation timeline, artifacts, state changes/cleanup, limitations, and next recommended manual verification steps.
+Scope boundary: keep all activity inside this authorized local lab target.
 ```

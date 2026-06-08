@@ -28,16 +28,16 @@ Use this when the target is a new authorized lab or simulated-real application, 
 Use $dvwa-automated-testing in authorized web assessment mode against my local simulated target.
 
 Target URL: http://127.0.0.1:3000/
-Authorization: This is my local OWASP Juice Shop lab running on 127.0.0.1, and I authorize same-origin testing.
-Assessment mode: passive/safe first, then targeted harmless verification only when a hypothesis is supported by observed evidence.
-Scope: same-origin only. Do not scan other hosts, ports, or external networks.
-Credentials: no credentials initially; create or use a lab account only if the application workflow requires it and record the account state.
+Authorization: This is my local OWASP Juice Shop lab running on 127.0.0.1, and I authorize full active testing against this target.
+Assessment intensity: active-comprehensive. Use every available supported tool and technique needed to discover and verify vulnerabilities inside the authorized target, including login bypass, injection, access control testing, upload testing, CSRF, XSS, fuzzing, sqlmap when justified, and ZAP active scan.
+Scope: authorized local lab target at http://127.0.0.1:3000/.
+Credentials: no credentials initially; create or use lab accounts if the application workflow requires them and record the account state.
 Source path: D:\WorkSpace\综合实践5\targets\juice-shop
-Tools: use Playwright/browser exploration and screenshots, Python/requests for targeted harnesses, ZAP spider/passive alerts if available at http://127.0.0.1:8090, and Burp only if useful. Do not rely on a fixed helper script as the primary workflow.
+Tools: use Playwright/browser exploration and screenshots, Python/requests for targeted harnesses, ZAP spider/passive/active scan if available at http://127.0.0.1:8090, Burp if useful, ffuf/sqlmap when an input point and request model justify them. Do not rely on a fixed helper script as the primary workflow.
 Output language: zh-CN
 Report output directory: D:\WorkSpace\综合实践5\dvwa-results
-Report requirements: produce a detailed Markdown penetration testing report with scope, methodology, application map, crawled pages, forms/API hints, screenshots, security headers, ZAP passive alerts, verified findings, evidence, severity/confidence triage, reproduction steps, remediation, operation timeline, artifacts, limitations, and next recommended manual verification steps.
-Prohibited actions: no destructive payloads, no credential attacks, no web shells, no reverse shells, no persistence, no external callbacks, no ZAP active scan, and no out-of-scope network access.
+Report requirements: produce a detailed Markdown penetration testing report with scope, methodology, application map, crawled pages, forms/API hints, screenshots, security headers, ZAP alerts including active scan results, verified findings, evidence, severity/confidence triage, reproduction steps, remediation, operation timeline, artifacts, state changes/cleanup, limitations, and next recommended manual verification steps.
+Scope boundary: keep all activity inside this authorized local lab target.
 ```
 
 Expected behavior:
@@ -187,8 +187,8 @@ The inventory helper output can support a later report, but it is not a complete
 - Playwright: browser exploration, screenshots, SPA/network observation, proof capture.
 - Python/requests: small targeted harnesses after the request model is known.
 - Burp: proxy capture, history, replay, manual comparison.
-- ZAP: spider and passive alerts by default; active scan only with explicit authorization and limits.
-- ffuf: scoped content/parameter fuzzing after a safe request model exists.
+- ZAP: spider, passive alerts, and active scan when authorized by the prompt.
+- ffuf: scoped content/parameter fuzzing after a request model exists.
 - sqlmap: SQL injection only after manual proof and scoped authenticated request export.
 - IDA: binary reversing only, not normal DVWA Web modules.
 - MCP: optional orchestration. Missing MCP is not a blocker.

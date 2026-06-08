@@ -509,7 +509,7 @@ Course-report extraction requirements: add a compact zh-CN section named `实验
 | 文件 | 改进内容 |
 | --- | --- |
 | `SKILL.md` | 新增授权 Web 评估模式；明确新靶场不走 DVWA 难度递进；强调 agent 主导，不以固定脚本为主流程。 |
-| `references/authorized-web-assessment.md` | 新增通用 Web 评估工作流、授权边界、默认禁止动作、报告结构和可复制提示词。 |
+| `references/authorized-web-assessment.md` | 新增通用 Web 评估工作流、授权边界、主动全面测试强度、报告结构和可复制提示词。 |
 | `references/usage.md` | 新增 OWASP Juice Shop 新窗口测试提示词；整理 DVWA 单难度和递进提示词；修正中文字段。 |
 | `references/tool-capabilities.md` | 增加通用授权评估工具契约，明确 ZAP 被动告警只是线索，需由浏览器、请求、源码或 harness 复核。 |
 | `references/reporting-and-artifacts.md` | 新增通用 Web 渗透测试报告结构，包括资产地图、发现表、详细发现、截图、复现、修复和限制。 |
@@ -549,25 +549,25 @@ node build/app
 Use $dvwa-automated-testing in authorized web assessment mode against my local simulated target.
 
 Target URL: http://127.0.0.1:3000/
-Authorization: This is my local OWASP Juice Shop lab running on 127.0.0.1, and I authorize same-origin testing.
-Assessment mode: passive/safe first, then targeted harmless verification only when a hypothesis is supported by observed evidence.
-Scope: same-origin only. Do not scan other hosts, ports, or external networks.
-Credentials: no credentials initially; create or use a lab account only if the application workflow requires it and record the account state.
+Authorization: This is my local OWASP Juice Shop lab running on 127.0.0.1, and I authorize full active testing against this target.
+Assessment intensity: active-comprehensive. Use every available supported tool and technique needed to discover and verify vulnerabilities inside the authorized target, including login bypass, injection, access control testing, upload testing, CSRF, XSS, fuzzing, sqlmap when justified, and ZAP active scan.
+Scope: authorized local lab target at http://127.0.0.1:3000/.
+Credentials: no credentials initially; create or use lab accounts if the application workflow requires them and record the account state.
 Source path: D:\WorkSpace\综合实践5\targets\juice-shop
-Tools: use Playwright/browser exploration and screenshots, Python/requests for targeted harnesses, ZAP spider/passive alerts if available at http://127.0.0.1:8090, and Burp only if useful. Do not rely on a fixed helper script as the primary workflow.
+Tools: use Playwright/browser exploration and screenshots, Python/requests for targeted harnesses, ZAP spider/passive/active scan if available at http://127.0.0.1:8090, Burp if useful, ffuf/sqlmap when an input point and request model justify them. Do not rely on a fixed helper script as the primary workflow.
 Output language: zh-CN
 Report output directory: D:\WorkSpace\综合实践5\dvwa-results
-Report requirements: produce a detailed Markdown penetration testing report with scope, methodology, application map, crawled pages, forms/API hints, screenshots, security headers, ZAP passive alerts, verified findings, evidence, severity/confidence triage, reproduction steps, remediation, operation timeline, artifacts, limitations, and next recommended manual verification steps.
-Prohibited actions: no destructive payloads, no credential attacks, no web shells, no reverse shells, no persistence, no external callbacks, no ZAP active scan, and no out-of-scope network access.
+Report requirements: produce a detailed Markdown penetration testing report with scope, methodology, application map, crawled pages, forms/API hints, screenshots, security headers, ZAP alerts including active scan results, verified findings, evidence, severity/confidence triage, reproduction steps, remediation, operation timeline, artifacts, state changes/cleanup, limitations, and next recommended manual verification steps.
+Scope boundary: keep all activity inside this authorized local lab target.
 ```
 
 ### 8.5 后续增强方向
 
-当前改进重点是让现有工具链被合理调用：Playwright 做真实浏览器观察和截图，Python/requests 做小型复现 harness，ZAP 做爬虫和被动告警，Burp 做代理抓包和重放，ffuf/sqlmap 在明确输入点后再使用。后续如果继续加强 skill，可按工具能力继续扩展：
+当前改进重点是让现有工具链被充分调用：Playwright 做真实浏览器观察和截图，Python/requests 做复现 harness，ZAP 做爬虫、被动告警和主动扫描，Burp 做代理抓包和重放，ffuf/sqlmap 在明确输入点后用于 fuzz 与注入验证。后续如果继续加强 skill，可按工具能力继续扩展：
 
 - 增加认证态录制与复用，例如保存 Playwright storage state。
 - 增加 Burp/ZAP 导出证据的统一报告模板。
 - 增加 API 规范识别，如 OpenAPI、GraphQL introspection 的授权检查流程。
-- 增加安全测试强度分级，从 passive、safe-targeted 到 explicitly-authorized-active。
+- 增加测试强度配置，例如 `active-comprehensive` 下默认使用现有工具做完整漏洞发现与验证。
 - 增加更多靶场回归目标，例如 WebGoat、bWAPP、Mutillidae、PortSwigger Web Security Academy 本地/授权题目。
 - 增加更多可支配渗透测试工具。
